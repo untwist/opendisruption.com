@@ -17,7 +17,7 @@ ARCHIVE_HEADER = """# 🧭 Open Disruption — Link Archive
 
 Welcome to the **Open Disruption Link Archive**, a weekly collection of curated AI news, research papers, product launches, and X (Twitter) threads from our live Office Hours sessions.
 
-> 📺 Watch the weekly show on [YouTube](https://youtube.com/@OpenDisruption)
+> 📺 Watch the weekly show on [YouTube](https://www.youtube.com/@toddbrous)
 > 🌐 Learn more at [opendisruption.com](https://opendisruption.com/)
 
 ---
