@@ -1,4 +1,4 @@
-# 🧠 Open Disruption — Weekly AI News Links
+#  Open Disruption — Weekly AI News Links
 **Date:** [Month Day, Year]  
 **Episode:** Weekly Office Hours
 
@@ -8,27 +8,27 @@ Welcome to this week’s curated list of the most important stories, research pa
 
 ---
 
-## 📰 AI Industry News
+## AI Industry News
 - [Title of Article or Launch](https://example.com)
 - [Another AI news headline](https://example.com)
 
-## 🧪 Research & Papers
+## Research & Papers
 - [arXiv: Paper Title](https://arxiv.org/abs/abc123)
 - [Research blog post](https://example.com)
 
-## 🧰 Tools, Startups & Launches
+## Tools, Startups & Launches
 - [Cool new AI tool](https://example.com)
 - [Startup announcement](https://example.com)
 
-## 🗣️ Great Threads
+## Great Threads
 - [Author — Thread Title or Topic](https://twitter.com/example/status/12345)
 - [Another thread](https://twitter.com/example/status/67890)
 
 ---
 
-## 🗃️ Archive
+## Archive
 You can find **all previous weeks** of curated AI news here:  
-👉 [Open Disruption Link Archive](https://opendisruption.com/weekly-links/)
+[Open Disruption Link Archive](https://opendisruption.com/weekly-links/)
 
 ---
 
