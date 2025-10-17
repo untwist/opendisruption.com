@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+
 # import os
 import re
 from datetime import datetime
@@ -64,6 +65,7 @@ You can find **all previous weeks** of curated AI news here:
 *Follow for weekly deep dives into the future of AI.*
 """
 
+
 def parse_args():
     p = argparse.ArgumentParser(
         description="Create weekly links file from template and update index.md"
@@ -95,8 +97,10 @@ def parse_args():
     )
     return p.parse_args()
 
+
 def ensure_dirs():
     WEEKLY_DIR.mkdir(parents=True, exist_ok=True)
+
 
 def load_template():
     if TEMPLATE_FILE.exists():
@@ -104,7 +108,10 @@ def load_template():
     # Fallback to default template if no template.md is found
     return DEFAULT_TEMPLATE
 
-def fill_template(tpl: str, display_date: str, video_url: str, youtube_text: str) -> str:
+
+def fill_template(
+    tpl: str, display_date: str, video_url: str, youtube_text: str
+) -> str:
     """
     Replaces common placeholders gracefully.
     - Replaces {DISPLAY_DATE}, {YOUTUBE_URL}, {YOUTUBE_TEXT} tokens
@@ -118,12 +125,17 @@ def fill_template(tpl: str, display_date: str, video_url: str, youtube_text: str
 
     # Backward-friendly replacements for the earlier template format
     out = out.replace("[Month Day, Year]", display_date)
-    out = out.replace("[YouTube Link Here](https://youtube.com/your-video-link)", f"[{youtube_text}]({video_url})")
+    out = out.replace(
+        "[YouTube Link Here](https://youtube.com/your-video-link)",
+        f"[{youtube_text}]({video_url})",
+    )
 
     return out
 
+
 def weekly_filename(date_obj: datetime) -> Path:
     return WEEKLY_DIR / f"{date_obj.strftime(DATE_FMT_FILE)}-links.md"
+
 
 def find_weeklies():
     files = []
@@ -134,6 +146,7 @@ def find_weeklies():
             files.append((d, p))
     files.sort(key=lambda x: x[0], reverse=True)
     return files
+
 
 def write_index(files, dry_run=False):
     lines = [ARCHIVE_HEADER, ""]
@@ -147,6 +160,7 @@ def write_index(files, dry_run=False):
         print(content)
     else:
         INDEX_FILE.write_text(content, encoding="utf-8")
+
 
 def main():
     args = parse_args()
@@ -180,6 +194,7 @@ def main():
     write_index(files, dry_run=args.dry_run)
     if not args.dry_run:
         print(f"✅ Updated: {INDEX_FILE} with {len(files)} entries.")
+
 
 if __name__ == "__main__":
     main()
