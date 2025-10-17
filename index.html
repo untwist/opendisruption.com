@@ -84,6 +84,41 @@
             background: #A03A2B;
         }
 
+        .section {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #C04A3B;
+            margin: 0 0 15px 0;
+        }
+
+        .section-content {
+            font-size: 1.1em;
+            color: #333;
+            margin: 0 0 20px 0;
+        }
+
+        .section-button {
+            background: #333;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: normal;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+
+        .section-button:hover {
+            background: #555;
+        }
+
         @media (max-width: 768px) {
             .main-title {
                 font-size: 2.5em;
@@ -130,6 +165,18 @@
     </div>
 
     <a href="http://opendisruption.substack.com/" target="_blank" class="subscribe-button">Subscribe to my Substack</a>
+
+    <div class="section">
+        <div class="section-title">Watch on YouTube</div>
+        <div class="section-content">Catch our weekly Office Hours sessions and AI discussions</div>
+        <a href="https://www.youtube.com/@toddbrous" target="_blank" class="section-button">Visit YouTube Channel</a>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Weekly Link Archive</div>
+        <div class="section-content">Curated AI news, research papers, and insights from our Office Hours</div>
+        <a href="./weekly-links/index.md" class="section-button">Browse Archive</a>
+    </div>
 </body>
 
 </html>
