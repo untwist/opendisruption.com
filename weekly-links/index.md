@@ -11,7 +11,7 @@ Welcome to the **Open Disruption Link Archive**, a weekly collection of curated 
 
 
 - [October 16, 2025](./2025-10-16-links.md)
-- [January 22, 2025](./2025-01-22-links.md)
+
 
 ---
 
