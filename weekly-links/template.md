@@ -8,21 +8,14 @@ Welcome to this week’s curated list of the most important stories, research pa
 
 ---
 
-## AI Industry News
-- [Title of Article or Launch](https://example.com)
-- [Another AI news headline](https://example.com)
+## Links from Office Hours
+*Presented in the order they were discussed during the episode*
 
-## Research & Papers
-- [arXiv: Paper Title](https://arxiv.org/abs/abc123)
-- [Research blog post](https://example.com)
-
-## Tools, Startups & Launches
-- [Cool new AI tool](https://example.com)
-- [Startup announcement](https://example.com)
-
-## Great Threads
-- [Author — Thread Title or Topic](https://twitter.com/example/status/12345)
-- [Another thread](https://twitter.com/example/status/67890)
+- https://example.com
+- https://arxiv.org/abs/abc123
+- https://twitter.com/example/status/12345
+- https://github.com/user/repo
+- https://www.anthropic.com/example
 
 ---
 

@@ -10,7 +10,7 @@ This directory contains automation scripts for creating and managing weekly AI n
 python weekly_links.py --date 2025-01-29 --video-url "https://youtube.com/watch?v=your-video"
 
 # 2. Add your raw URLs to the generated file
-# (Open weekly-links/2025-01-29-links.md and paste URLs)
+# (Open weekly-links/2025-01-29-links.md and paste URLs in the "Links from Office Hours" section)
 
 # 3. Format the URLs automatically
 python format_urls.py --input-file weekly-links/2025-01-29-links.md
@@ -59,7 +59,7 @@ python weekly_links.py --date 2025-01-29 --video-url "https://youtube.com/watch?
 | `--dry-run` | Preview changes without creating files | False | `--dry-run` |
 
 ### format_urls.py
-Automatically formats raw URLs into organized, professional markdown links with descriptive titles.
+Automatically formats raw URLs into organized, professional markdown links with descriptive titles using curated patterns. **No web scraping** - fast and reliable.
 
 **Basic Usage:**
 ```bash
@@ -80,7 +80,6 @@ python format_urls.py --input-file weekly-links/2025-01-29-links.md --dry-run
 | `--urls` | Raw URLs as space-separated string | `--urls "https://example.com https://twitter.com/user/status/123"` |
 | `--output-file` | Output file path (default: overwrites input) | `--output-file formatted-links.md` |
 | `--dry-run` | Preview without writing files | `--dry-run` |
-| `--preserve-order` | Keep original URL order (default: True) | `--preserve-order` |
 
 ## Smart URL Formatting
 
@@ -93,6 +92,14 @@ The `format_urls.py` script automatically recognizes and formats:
 - **AI tools** → "ToolName: Description"
 - **Research papers** → "Institution: Paper Title"
 - **News articles** → "Source: Article Title"
+
+### Curated Patterns
+The script uses carefully curated patterns for consistent, high-quality titles:
+- **State of AI** → "State of AI 2025 Report"
+- **Anthropic** → "Anthropic: Equipping Agents for the Real World with Agent Skills"
+- **Google/DeepMind** → "Google DeepMind: CodeMender AI Agent for Code Security"
+- **Brookings** → "Brookings: New Data Show No AI Jobs Apocalypse (For Now)"
+- **And many more...**
 
 ## Generated Files
 
@@ -113,8 +120,8 @@ The `format_urls.py` script automatically recognizes and formats:
 # 1. Generate template
 python weekly_links.py --date 2025-01-29 --video-url "https://youtube.com/watch?v=abc123" --youtube-text "January 29 Office Hours"
 
-# 2. Edit the file and paste your raw URLs
-# (Open weekly-links/2025-01-29-links.md and paste URLs anywhere)
+# 2. Edit the file and paste your raw URLs in the "Links from Office Hours" section
+# (Open weekly-links/2025-01-29-links.md and paste URLs)
 
 # 3. Format the URLs
 python format_urls.py --input-file weekly-links/2025-01-29-links.md
@@ -153,6 +160,12 @@ The scripts create professionally formatted content like this:
 
 ## Advanced Features
 
+### Section-Aware Processing
+The `format_urls.py` script only processes URLs from the "Links from Office Hours" section, ignoring:
+- Footer links
+- Archive links
+- Other markdown links in the file
+
 ### External Link Handling
 Both scripts automatically convert external links to HTML with `target="_blank"` for better user experience:
 - External links: `<a href="url" target="_blank" rel="noopener noreferrer">text</a>`
@@ -187,8 +200,14 @@ python weekly_links.py --date 01/29/2025  # Wrong format
 
 **No URLs found:**
 ```bash
-# Make sure your file contains URLs
+# Make sure your file contains URLs in the "Links from Office Hours" section
 python format_urls.py --input-file weekly-links/2025-01-29-links.md --dry-run
+```
+
+**Footer URLs being processed:**
+```bash
+# The script only processes URLs from the "Links from Office Hours" section
+# Footer links are automatically ignored
 ```
 
 ### Debug Mode
@@ -203,7 +222,8 @@ python format_urls.py --input-file weekly-links/2025-01-29-links.md --dry-run
 ```
 scripts/
 ├── weekly_links.py          # Template generator
-├── format_urls.py           # URL formatter
+├── format_urls.py           # URL formatter (master script)
+├── requirements.txt         # Python dependencies
 └── README.md               # This documentation
 
 weekly-links/

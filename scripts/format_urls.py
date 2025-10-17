@@ -2,49 +2,65 @@
 """
 URL Formatter for Open Disruption Weekly Links
 
-This script automatically formats raw URLs into organized, professional markdown links
-with descriptive titles, preserving the original order from your presentation.
+A simple, reliable script that takes raw URLs and formats them into clean markdown links
+with descriptive titles using curated patterns. No web scraping - fast and reliable.
 
 Quick Usage:
-    python format_urls.py --input-file weekly-links/2025-10-16-links.md
+    python format_urls.py --input-file weekly-links/2025-01-29-links.md
     python format_urls.py --urls "https://example.com https://twitter.com/user/status/123"
     python format_urls.py --help
-
-For detailed documentation, see README.md in this directory.
 """
 
 import argparse
 import re
 from pathlib import Path
-from urllib.parse import urlparse
-from typing import List, Tuple, Optional
+from typing import List
 
-# URL patterns for different types of content
-URL_PATTERNS = {
-    "twitter": r"https?://(?:www\.)?(?:twitter\.com|x\.com)/[^/]+/status/\d+",
-    "arxiv": r"https?://arxiv\.org/(?:abs|pdf)/(\d+\.\d+)",
-    "github": r"https?://github\.com/([^/]+/[^/]+)",
-    "youtube": r"https?://(?:www\.)?youtube\.com/watch\?v=([^&]+)",
-    "huggingface": r"https?://huggingface\.co/([^/]+)",
-    "anthropic": r"https?://(?:www\.)?anthropic\.com/",
-    "google": r"https?://(?:www\.)?google\.com/",
-    "deepmind": r"https?://deepmind\.google/",
-    "openai": r"https?://(?:www\.)?openai\.com/",
-    "brookings": r"https?://(?:www\.)?brookings\.edu/",
-    "fortune": r"https?://(?:www\.)?fortune\.com/",
-    "arxiv_pdf": r"https?://arxiv\.org/pdf/(\d+\.\d+)",
+# Curated patterns for sites that have consistent, good titles
+CURATED_PATTERNS = {
+    # State of AI
+    "stateof.ai": "State of AI 2025 Report",
+    # Anthropic
+    "anthropic.com/engineering/equipping-agents": "Anthropic: Equipping Agents for the Real World with Agent Skills",
+    "anthropic.com/research/economic-policy-responses": "Anthropic: Economic Policy Responses Research",
+    # Google/DeepMind
+    "deepmind.google/discover/blog/introducing-codemender": "Google DeepMind: CodeMender AI Agent for Code Security",
+    "blog.google/technology/google-labs/video-overviews-nano-banana": "Google Labs: Video Overviews Nano Banana",
+    "cloud.google.com/blog/products/ai-machine-learning/announcing-the-2025-dora-report": "Google Cloud: 2025 DORA Report Announcement",
+    "pair.withgoogle.com/guidebook": "Google PAIR Guidebook",
+    # Research & Academic
+    "brookings.edu/articles/new-data-show-no-ai-jobs-apocalypse-for-now": "Brookings: New Data Show No AI Jobs Apocalypse (For Now)",
+    "budgetlab.yale.edu/research/evaluating-impact-ai-labor-market": "Yale Budget Lab: Evaluating Impact of AI on Labor Market",
+    "dallasfed.org/research/economics/2025/0624": "Dallas Fed: AI and Economic Research",
+    "fortune.com/2025/10/10/ai-cheating-on-homework-chatbots-students-education": "Fortune: AI Cheating on Homework - Students and Education",
+    # AI Tools & Startups
+    "wavespeed.ai": "WaveSpeed.ai - AI Tool",
+    "moondream.ai/blog/moondream-3-preview": "Moondream 3 Preview",
+    "huggingface.co/moondream/moondream3-preview": "Hugging Face: Moondream3 Preview Model",
+    "higgsfield.ai/sora-2-prompt-guide": "Higgsfield.ai: Sora 2 Prompt Guide",
+    "huixiang.baidu.com": "Baidu Huixiang AI Tool",
+    "runware.ai/models": "Runware.ai: AI Models",
+    "streamlake.ai/product/kat-coder": "StreamLake.ai: Kat Coder Product",
+    "scispace.com/ai-detector": "SciSpace AI Detector",
+    "exa.ai/blog/exa-api-2-0": "Exa.ai: API 2.0 Launch",
+    "creativebloq.com/ai/ai-art/could-this-iphone-nano-banana-camera": "Creative Bloq: iPhone Nano Banana Camera for AI Photography",
+    "video-zero-shot.github.io": "Video Zero-Shot Research Project",
+    "kangliao929.github.io/projects/puffin": "Puffin AI Project",
+    # Layoff Trackers
+    "layoffs.fyi": "Layoffs.fyi - Tech Layoff Tracker",
+    "trueup.io/layoffs": "TrueUp.io - Layoff Tracking",
+    "warntracker.com": "WarnTracker - Layoff Warnings",
+    "publish.obsidian.md/vg-layoffs/Archive/2025": "Obsidian: Layoffs Archive 2025",
+    # Stable Diffusion
+    "stable-diffusion-art.com/comfyui-desktop": "Stable Diffusion Art - ComfyUI Desktop",
 }
 
-# Domain-based title generators
-DOMAIN_TITLES = {
-    "stateof.ai": "State of AI 2025 Report",
+# Simple domain fallbacks for major sites
+DOMAIN_FALLBACKS = {
     "anthropic.com": "Anthropic",
-    "arxiv.org": "arXiv",
-    "github.com": "GitHub",
-    "huggingface.co": "Hugging Face",
-    "google.com": "Google",
-    "deepmind.google": "Google DeepMind",
     "openai.com": "OpenAI",
+    "deepmind.google": "Google DeepMind",
+    "google.com": "Google",
     "brookings.edu": "Brookings",
     "fortune.com": "Fortune",
     "yale.edu": "Yale",
@@ -57,15 +73,12 @@ DOMAIN_TITLES = {
     "wavespeed.ai": "WaveSpeed.ai",
     "moondream.ai": "Moondream",
     "higgsfield.ai": "Higgsfield.ai",
-    "huixiang.baidu.com": "Baidu Huixiang",
     "runware.ai": "Runware.ai",
     "streamlake.ai": "StreamLake.ai",
     "scispace.com": "SciSpace",
     "exa.ai": "Exa.ai",
     "creativebloq.com": "Creative Bloq",
     "stable-diffusion-art.com": "Stable Diffusion Art",
-    "video-zero-shot.github.io": "Video Zero-Shot",
-    "kangliao929.github.io": "Puffin AI Project",
     "publish.obsidian.md": "Obsidian",
 }
 
@@ -73,10 +86,10 @@ DOMAIN_TITLES = {
 def parse_args():
     """Parse command line arguments."""
     parser = argparse.ArgumentParser(
-        description="Format raw URLs into organized markdown links"
+        description="Format raw URLs into organized markdown links with curated patterns"
     )
     parser.add_argument(
-        "--input-file", help="Path to file containing raw URLs to format", type=Path
+        "--input-file", help="Path to file containing URLs to format", type=Path
     )
     parser.add_argument(
         "--urls", help="Raw URLs as a string (space-separated)", type=str
@@ -87,30 +100,44 @@ def parse_args():
         type=Path,
     )
     parser.add_argument(
-        "--dry-run",
-        action="store_true",
-        help="Show what would be formatted without writing files",
-    )
-    parser.add_argument(
-        "--preserve-order",
-        action="store_true",
-        default=True,
-        help="Preserve the original order of URLs (default: True)",
+        "--dry-run", action="store_true", help="Show what would be formatted"
     )
     return parser.parse_args()
 
 
 def extract_urls_from_text(text: str) -> List[str]:
     """Extract URLs from text, preserving order."""
-    # URL regex pattern
-    url_pattern = r'https?://[^\s<>"{}|\\^`\[\]]+'
+    # More precise URL pattern that doesn't include trailing punctuation
+    url_pattern = r'https?://[^\s<>"{}|\\^`\[\]()]+'
     urls = re.findall(url_pattern, text)
+    return urls
+
+
+def extract_urls_from_section(content: str) -> List[str]:
+    """Extract URLs only from the 'Links from Office Hours' section."""
+    lines = content.split("\n")
+    urls = []
+    in_links_section = False
+
+    for line in lines:
+        if line.startswith("## Links from Office Hours"):
+            in_links_section = True
+            continue
+        elif line.startswith("## Archive") and in_links_section:
+            break
+        elif in_links_section:
+            # Extract URLs from this line
+            line_urls = extract_urls_from_text(line)
+            urls.extend(line_urls)
+
     return urls
 
 
 def get_domain(url: str) -> str:
     """Extract domain from URL."""
     try:
+        from urllib.parse import urlparse
+
         parsed = urlparse(url)
         return parsed.netloc.lower()
     except:
@@ -118,12 +145,11 @@ def get_domain(url: str) -> str:
 
 
 def generate_title_for_url(url: str) -> str:
-    """Generate a descriptive title for a URL based on its content."""
+    """Generate a title for a URL using curated patterns and fallbacks."""
     domain = get_domain(url)
 
     # Handle Twitter/X URLs
-    if re.match(URL_PATTERNS["twitter"], url):
-        # Extract username from URL
+    if "twitter.com" in url or "x.com" in url:
         match = re.search(r"/([^/]+)/status/", url)
         if match:
             username = match.group(1)
@@ -131,23 +157,15 @@ def generate_title_for_url(url: str) -> str:
         return "Twitter Thread — AI Discussion"
 
     # Handle arXiv URLs
-    if re.match(URL_PATTERNS["arxiv"], url):
+    if "arxiv.org" in url:
         match = re.search(r"/(\d+\.\d+)", url)
         if match:
             paper_id = match.group(1)
             return f"arXiv: Research Paper {paper_id}"
         return "arXiv: Research Paper"
 
-    # Handle arXiv PDF URLs
-    if re.match(URL_PATTERNS["arxiv_pdf"], url):
-        match = re.search(r"/(\d+\.\d+)", url)
-        if match:
-            paper_id = match.group(1)
-            return f"arXiv PDF: Research Paper {paper_id}"
-        return "arXiv PDF: Research Paper"
-
     # Handle GitHub URLs
-    if re.match(URL_PATTERNS["github"], url):
+    if "github.com" in url:
         match = re.search(r"github\.com/([^/]+/[^/]+)", url)
         if match:
             repo = match.group(1)
@@ -155,93 +173,34 @@ def generate_title_for_url(url: str) -> str:
         return "GitHub Repository"
 
     # Handle YouTube URLs
-    if re.match(URL_PATTERNS["youtube"], url):
+    if "youtube.com" in url or "youtu.be" in url:
         return "YouTube Video"
 
-    # Handle Hugging Face URLs
-    if re.match(URL_PATTERNS["huggingface"], url):
-        match = re.search(r"huggingface\.co/([^/]+)", url)
-        if match:
-            model = match.group(1)
-            return f"Hugging Face: {model}"
-        return "Hugging Face Model"
+    # Check curated patterns first
+    for pattern, title in CURATED_PATTERNS.items():
+        if pattern in url:
+            return title
 
-    # Handle specific domains
-    for domain_key, title in DOMAIN_TITLES.items():
+    # Fallback to domain-based title
+    for domain_key, fallback_title in DOMAIN_FALLBACKS.items():
         if domain_key in domain:
-            # Add specific context based on URL path
-            if "engineering" in url:
-                return f"{title}: Engineering Blog"
-            elif "research" in url:
-                return f"{title}: Research"
-            elif "blog" in url:
-                return f"{title}: Blog Post"
-            elif "discover" in url:
-                return f"{title}: Discovery"
-            elif "guidebook" in url:
-                return f"{title}: Guidebook"
-            elif "layoffs" in url:
-                return f"{title}: Layoff Tracker"
-            elif "ai-detector" in url:
-                return f"{title}: AI Detector"
-            elif "api" in url:
-                return f"{title}: API"
-            elif "models" in url:
-                return f"{title}: AI Models"
-            elif "product" in url:
-                return f"{title}: Product"
-            else:
-                return title
+            return fallback_title
 
-    # Handle specific URL patterns
-    if "stateof.ai" in url:
-        return "State of AI 2025 Report"
-    elif "equipping-agents" in url:
-        return "Anthropic: Equipping Agents for the Real World with Agent Skills"
-    elif "economic-policy-responses" in url:
-        return "Anthropic: Economic Policy Responses Research"
-    elif "introducing-codemender" in url:
-        return "Google DeepMind: CodeMender AI Agent for Code Security"
-    elif "video-overviews-nano-banana" in url:
-        return "Google Labs: Video Overviews Nano Banana"
-    elif "announcing-the-2025-dora-report" in url:
-        return "Google Cloud: 2025 DORA Report Announcement"
-    elif "comfyui-desktop" in url:
-        return "Stable Diffusion Art: ComfyUI Desktop"
-    elif "sora-2-prompt-guide" in url:
-        return "Higgsfield.ai: Sora 2 Prompt Guide"
-    elif "moondream-3-preview" in url:
-        return "Moondream 3 Preview"
-    elif "moondream3-preview" in url:
-        return "Hugging Face: Moondream3 Preview Model"
-    elif "exa-api-2-0" in url:
-        return "Exa.ai: API 2.0 Launch"
-    elif "kat-coder" in url:
-        return "StreamLake.ai: Kat Coder Product"
-    elif "nano-banana-camera" in url:
-        return "Creative Bloq: iPhone Nano Banana Camera for AI Photography"
-    elif "video-zero-shot" in url:
-        return "Video Zero-Shot Research Project"
-    elif "puffin" in url:
-        return "Puffin AI Project"
-    elif "vg-layoffs" in url:
-        return "Obsidian: Layoffs Archive 2025"
-
-    # Fallback: use domain name
+    # Final fallback: clean domain name
     if domain:
-        # Clean up domain name
         clean_domain = (
             domain.replace("www.", "")
             .replace(".com", "")
             .replace(".org", "")
             .replace(".edu", "")
+            .replace(".ai", "")
         )
-        return f"{clean_domain.title()}: AI Tool"
+        return f"{clean_domain.title()}: AI Resource"
 
     return "AI Resource"
 
 
-def format_urls_to_markdown(urls: List[str], preserve_order: bool = True) -> str:
+def format_urls_to_markdown(urls: List[str]) -> str:
     """Format a list of URLs into organized markdown."""
     if not urls:
         return ""
@@ -267,25 +226,34 @@ def format_urls_to_markdown(urls: List[str], preserve_order: bool = True) -> str
 
 
 def process_file(
-    input_file: Path, output_file: Optional[Path] = None, dry_run: bool = False
+    input_file: Path, output_file: Path = None, dry_run: bool = False
 ) -> str:
     """Process a file containing raw URLs and format them."""
+    print(f"📁 Reading file: {input_file}")
     if not input_file.exists():
         raise FileNotFoundError(f"Input file not found: {input_file}")
 
     # Read the file
     content = input_file.read_text(encoding="utf-8")
+    print(f"📄 File size: {len(content)} characters")
 
-    # Extract URLs
-    urls = extract_urls_from_text(content)
+    # Extract URLs only from the Links section
+    print("🔍 Extracting URLs from 'Links from Office Hours' section...")
+    urls = extract_urls_from_section(content)
 
     if not urls:
-        print("No URLs found in the file.")
+        print("❌ No URLs found in the Links section.")
         return content
 
-    print(f"Found {len(urls)} URLs to format")
+    print(f"📊 Found {len(urls)} URLs to format")
+    print("📝 Sample URLs:")
+    for i, url in enumerate(urls[:3], 1):
+        print(f"   {i}. {url}")
+    if len(urls) > 3:
+        print(f"   ... and {len(urls) - 3} more")
 
     # Format URLs
+    print("\n🚀 Formatting URLs...")
     formatted_links = format_urls_to_markdown(urls)
 
     # Create the new section
@@ -295,11 +263,12 @@ def process_file(
 {formatted_links}"""
 
     # Replace the old content with the new formatted section
-    # Look for the section between the header and the archive section
+    print("🔄 Replacing content...")
     lines = content.split("\n")
     new_lines = []
     in_old_section = False
     skip_until_archive = False
+    replaced_section = False
 
     for line in lines:
         if line.startswith("## Links from Office Hours") or line.startswith(
@@ -307,11 +276,13 @@ def process_file(
         ):
             in_old_section = True
             skip_until_archive = True
-            # Add the new section
+            replaced_section = True
+            print(f"   🔄 Replacing section: '{line}'")
             new_lines.append(new_section)
             continue
         elif line.startswith("## Archive") and skip_until_archive:
             skip_until_archive = False
+            print(f"   📁 Found Archive section: '{line}'")
             new_lines.append(line)
             continue
         elif skip_until_archive:
@@ -321,15 +292,22 @@ def process_file(
 
     result = "\n".join(new_lines)
 
+    if not replaced_section:
+        print("⚠️  Warning: No 'Links from Office Hours' section found to replace")
+
     if dry_run:
-        print("\n--- Formatted Content Preview ---\n")
+        print("\n" + "=" * 50)
+        print("📋 FORMATTED CONTENT PREVIEW")
+        print("=" * 50)
         print(result)
+        print("=" * 50)
         return result
     else:
         # Write to output file
         output_path = output_file or input_file
+        print(f"💾 Writing to: {output_path}")
         output_path.write_text(result, encoding="utf-8")
-        print(f"Formatted URLs written to: {output_path}")
+        print(f"✅ Successfully formatted URLs written to: {output_path}")
         return result
 
 
@@ -338,7 +316,6 @@ def main():
     args = parse_args()
 
     if args.input_file:
-        # Process file
         try:
             process_file(args.input_file, args.output_file, args.dry_run)
         except Exception as e:
@@ -347,7 +324,7 @@ def main():
     elif args.urls:
         # Process URLs directly
         urls = args.urls.split()
-        formatted = format_urls_to_markdown(urls, args.preserve_order)
+        formatted = format_urls_to_markdown(urls)
         if args.dry_run:
             print("\n--- Formatted URLs ---\n")
             print(formatted)
