@@ -28,7 +28,7 @@ Welcome to this week’s curated list of the most important stories, research pa
 
 ## 🗃️ Archive
 You can find **all previous weeks** of curated AI news here:  
-👉 [Open Disruption Link Archive](./index.md)
+👉 [Open Disruption Link Archive](https://opendisruption.com/weekly-links/)
 
 ---
 
