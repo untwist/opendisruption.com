@@ -1,10 +1,23 @@
 #!/usr/bin/env python3
+"""
+Weekly Links Generator for Open Disruption
+
+This script creates weekly AI news link collections and updates the archive index.
+
+Quick Usage:
+    python weekly_links.py --date 2025-01-29 --video-url "https://youtube.com/watch?v=your-video"
+    python weekly_links.py --dry-run  # Preview changes
+    python weekly_links.py --help     # See all options
+
+For detailed documentation, see README.md in this directory.
+"""
 import argparse
 
 # import os
 import re
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import urlparse
 
 WEEKLY_DIR = Path("weekly-links")
 TEMPLATE_FILE = WEEKLY_DIR / "template.md"
@@ -109,6 +122,39 @@ def load_template():
     return DEFAULT_TEMPLATE
 
 
+def is_external_url(url: str) -> bool:
+    """Check if a URL is external (not relative or same domain)"""
+    if not url or url.startswith("#") or url.startswith("./") or url.startswith("/"):
+        return False
+    try:
+        parsed = urlparse(url)
+        return bool(parsed.netloc)  # Has a domain
+    except Exception:
+        return False
+
+
+def convert_markdown_links_to_html_with_target(markdown_text: str) -> str:
+    """
+    Convert Markdown links to HTML with target="_blank" for external links.
+    Pattern: [text](url) -> <a href="url" target="_blank" rel="noopener noreferrer">text</a>
+    """
+    # Pattern to match Markdown links: [text](url)
+    link_pattern = r"\[([^\]]+)\]\(([^)]+)\)"
+
+    def replace_link(match):
+        text = match.group(1)
+        url = match.group(2)
+
+        if is_external_url(url):
+            return (
+                f'<a href="{url}" target="_blank" rel="noopener noreferrer">{text}</a>'
+            )
+        else:
+            return f'<a href="{url}">{text}</a>'
+
+    return re.sub(link_pattern, replace_link, markdown_text)
+
+
 def fill_template(
     tpl: str, display_date: str, video_url: str, youtube_text: str
 ) -> str:
@@ -129,6 +175,9 @@ def fill_template(
         "[YouTube Link Here](https://youtube.com/your-video-link)",
         f"[{youtube_text}]({video_url})",
     )
+
+    # Convert Markdown links to HTML with target="_blank" for external links
+    out = convert_markdown_links_to_html_with_target(out)
 
     return out
 
