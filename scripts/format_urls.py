@@ -289,7 +289,7 @@ def process_file(
     formatted_links = format_urls_to_markdown(urls)
 
     # Create the new section
-    new_section = f"""## 🔗 Links from Office Hours
+    new_section = f"""## Links from Office Hours
 *Presented in the order they were discussed during the episode*
 
 {formatted_links}"""
@@ -302,15 +302,15 @@ def process_file(
     skip_until_archive = False
 
     for line in lines:
-        if line.startswith("## 🔗 Links from Office Hours") or line.startswith(
-            "## 📰 AI Industry News"
+        if line.startswith("## Links from Office Hours") or line.startswith(
+            "## AI Industry News"
         ):
             in_old_section = True
             skip_until_archive = True
             # Add the new section
             new_lines.append(new_section)
             continue
-        elif line.startswith("## 🗃️ Archive") and skip_until_archive:
+        elif line.startswith("## Archive") and skip_until_archive:
             skip_until_archive = False
             new_lines.append(line)
             continue
@@ -329,7 +329,7 @@ def process_file(
         # Write to output file
         output_path = output_file or input_file
         output_path.write_text(result, encoding="utf-8")
-        print(f"✅ Formatted URLs written to: {output_path}")
+        print(f"Formatted URLs written to: {output_path}")
         return result
 
 
@@ -342,7 +342,7 @@ def main():
         try:
             process_file(args.input_file, args.output_file, args.dry_run)
         except Exception as e:
-            print(f"❌ Error processing file: {e}")
+            print(f"Error processing file: {e}")
             return 1
     elif args.urls:
         # Process URLs directly
@@ -354,7 +354,7 @@ def main():
         else:
             print(formatted)
     else:
-        print("❌ Please provide either --input-file or --urls")
+        print("Please provide either --input-file or --urls")
         return 1
 
     return 0

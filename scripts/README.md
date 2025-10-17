@@ -2,7 +2,7 @@
 
 This directory contains automation scripts for creating and managing weekly AI news link collections for Open Disruption.
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Complete Workflow (Recommended)
 ```bash
@@ -25,14 +25,14 @@ git add . && git commit -m "Add weekly links" && git push
 python format_urls.py --input-file weekly-links/2025-01-29-links.md
 ```
 
-## 📋 Available Scripts
+## Available Scripts
 
 | Script | Purpose | When to Use |
 |--------|---------|-------------|
 | `weekly_links.py` | Creates template structure | Starting a new week |
 | `format_urls.py` | Formats raw URLs into professional links | After pasting URLs |
 
-## 🔧 Script Details
+## Script Details
 
 ### weekly_links.py
 Creates weekly AI news link collections and updates the archive index.
@@ -82,7 +82,7 @@ python format_urls.py --input-file weekly-links/2025-01-29-links.md --dry-run
 | `--dry-run` | Preview without writing files | `--dry-run` |
 | `--preserve-order` | Keep original URL order (default: True) | `--preserve-order` |
 
-## 🎯 Smart URL Formatting
+## Smart URL Formatting
 
 The `format_urls.py` script automatically recognizes and formats:
 
@@ -94,7 +94,7 @@ The `format_urls.py` script automatically recognizes and formats:
 - **Research papers** → "Institution: Paper Title"
 - **News articles** → "Source: Article Title"
 
-## 📁 Generated Files
+## Generated Files
 
 ### Weekly Files
 - **Location**: `weekly-links/YYYY-MM-DD-links.md`
@@ -106,7 +106,7 @@ The `format_urls.py` script automatically recognizes and formats:
 - **Content**: Automatically updated list of all weekly collections
 - **Features**: Sorted by date (newest first)
 
-## 🔄 Complete Workflow Examples
+## Complete Workflow Examples
 
 ### Scenario 1: Starting Fresh (New Week)
 ```bash
@@ -138,12 +138,12 @@ python weekly_links.py --date 2025-01-29 --dry-run
 python format_urls.py --input-file weekly-links/2025-01-29-links.md --dry-run
 ```
 
-## 🎨 Output Format
+## Output Format
 
 The scripts create professionally formatted content like this:
 
 ```markdown
-## 🔗 Links from Office Hours
+## Links from Office Hours
 *Presented in the order they were discussed during the episode*
 
 - <a href="https://www.stateof.ai/" target="_blank" rel="noopener noreferrer">State of AI 2025 Report</a>
@@ -151,7 +151,7 @@ The scripts create professionally formatted content like this:
 - <a href="https://arxiv.org/abs/2510.04871v1" target="_blank" rel="noopener noreferrer">arXiv: TinyRecursiveModels Paper</a>
 ```
 
-## 🔧 Advanced Features
+## Advanced Features
 
 ### External Link Handling
 Both scripts automatically convert external links to HTML with `target="_blank"` for better user experience:
@@ -168,7 +168,7 @@ Both scripts automatically convert external links to HTML with `target="_blank"`
 - Updates archive index with all available weeks
 - Maintains consistent formatting across all entries
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -181,8 +181,8 @@ python weekly_links.py --date 2025-01-29 --force
 **Invalid date format:**
 ```bash
 # Use YYYY-MM-DD format
-python weekly_links.py --date 2025-01-29  # ✅ Correct
-python weekly_links.py --date 01/29/2025  # ❌ Wrong format
+python weekly_links.py --date 2025-01-29  # Correct
+python weekly_links.py --date 01/29/2025  # Wrong format
 ```
 
 **No URLs found:**
@@ -198,7 +198,7 @@ python weekly_links.py --date 2025-01-29 --dry-run
 python format_urls.py --input-file weekly-links/2025-01-29-links.md --dry-run
 ```
 
-## 📊 File Structure
+## File Structure
 
 ```
 scripts/
@@ -214,13 +214,13 @@ weekly-links/
 └── ...
 ```
 
-## 🔗 Integration with GitHub Pages
+## Integration with GitHub Pages
 
 The generated markdown files work seamlessly with GitHub Pages:
 - **Archive**: `https://opendisruption.com/weekly-links/`
 - **Individual weeks**: `https://opendisruption.com/weekly-links/2025-01-29-links.html`
 
-## 📞 Support
+## Support
 
 For issues or questions:
 1. Check this documentation first
