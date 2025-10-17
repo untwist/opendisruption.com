@@ -97,6 +97,23 @@
             }
         }
     </style>
+    <script>
+        // Make all external links open in new tabs
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('a[href]');
+            links.forEach(link => {
+                const href = link.getAttribute('href');
+                // Check if it's an external link (starts with http/https and not the same domain)
+                if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+                    // Don't add target="_blank" to links that already have it
+                    if (!link.hasAttribute('target')) {
+                        link.setAttribute('target', '_blank');
+                        link.setAttribute('rel', 'noopener noreferrer');
+                    }
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
