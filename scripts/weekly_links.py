@@ -118,8 +118,7 @@ def fill_template(tpl: str, display_date: str, video_url: str, youtube_text: str
 
     # Backward-friendly replacements for the earlier template format
     out = out.replace("[Month Day, Year]", display_date)
-    out = out.replace("(https://youtube.com/your-video-link)", f"({video_url})")
-    out = out.replace("[YouTube Link Here]", youtube_text)
+    out = out.replace("[YouTube Link Here](https://youtube.com/your-video-link)", f"[{youtube_text}]({video_url})")
 
     return out
 
