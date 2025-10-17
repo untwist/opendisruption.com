@@ -140,7 +140,7 @@ def get_domain(url: str) -> str:
 
         parsed = urlparse(url)
         return parsed.netloc.lower()
-    except:
+    except Exception:
         return ""
 
 
@@ -266,7 +266,6 @@ def process_file(
     print("🔄 Replacing content...")
     lines = content.split("\n")
     new_lines = []
-    in_old_section = False
     skip_until_archive = False
     replaced_section = False
 
@@ -274,7 +273,6 @@ def process_file(
         if line.startswith("## Links from Office Hours") or line.startswith(
             "## AI Industry News"
         ):
-            in_old_section = True
             skip_until_archive = True
             replaced_section = True
             print(f"   🔄 Replacing section: '{line}'")
