@@ -1,48 +1,112 @@
 # Open Disruption Scripts Documentation
 
-This directory contains automation scripts for creating and managing weekly AI news link collections for Open Disruption, including **Google Analytics tracking** and **HTML generation**.
+This directory contains automation scripts for creating and managing weekly AI news link collections for Open Disruption, including **Google Analytics tracking**, **HTML generation**, and **smart metadata extraction**.
 
 ## 🚀 Quick Start
 
-### Complete Workflow with Google Analytics (Recommended)
+> **📹 Important Reminder**: Upload your video to YouTube first and get the YouTube URL before running the pipeline. This ensures the weekly links template is created with the correct video link from the start.
+
+### 🧠 Smart Hybrid Workflow (Recommended)
 ```bash
-# 1. Generate template for this week
+# 1. Upload your video to YouTube and get the URL
+# 2. Generate template for this week with your YouTube URL
 python weekly_links.py --date 2025-01-29 --video-url "https://youtube.com/watch?v=your-video"
 
-# 2. Add your raw URLs to the generated file
+# 3. Add your raw URLs to the generated file
 # (Open weekly-links/2025-01-29-links.md and paste URLs in the "Links from Office Hours" section)
 
-# 3. Format URLs AND generate HTML with Google Analytics (one command!)
+# 4. Smart formatting with metadata extraction + HTML generation
+python scripts/hybrid_workflow.py --input weekly-links/2025-01-29-links.md
+
+# 5. Review and commit (both .md and .html files)
+git add . && git commit -m "Add weekly links with smart titles and GA tracking" && git push
+```
+
+### ⚡ Fast One-Command Solutions
+```bash
+# Smart processing for most recent file
+python scripts/hybrid_workflow.py --latest
+
+# Process all files with smart extraction
+python scripts/hybrid_workflow.py --all
+
+# Easy wrapper (same as above)
+python scripts/smart_workflow.py --latest
+```
+
+### 🔧 Advanced Options
+```bash
+# Smart extraction for ALL URLs (slower but most informative)
+python scripts/hybrid_workflow.py --input weekly-links/2025-01-29-links.md --smart-only
+
+# Fast formatting only (no metadata extraction)
+python scripts/hybrid_workflow.py --input weekly-links/2025-01-29-links.md --fast-only
+
+# Original workflow (backward compatible)
 python scripts/workflow.py --input weekly-links/2025-01-29-links.md
-
-# 4. Review and commit (both .md and .html files)
-git add . && git commit -m "Add weekly links with GA tracking" && git push
-```
-
-### Simple One-Command Solution
-```bash
-# Process the most recent file (formats URLs + generates HTML with GA)
-python scripts/workflow.py --latest
-
-# Process all files at once
-python scripts/workflow.py --all
-```
-
-### If You Already Have Raw URLs
-```bash
-# Just format the existing file
-python format_urls.py --input-file weekly-links/2025-01-29-links.md
 ```
 
 ## Available Scripts
 
+### 🧠 Smart Processing (New!)
+| Script | Purpose | When to Use |
+|--------|---------|-------------|
+| `hybrid_workflow.py` | **Smart hybrid processing** - metadata extraction + fast formatting | **Recommended for best results** |
+| `smart_workflow.py` | Easy wrapper for hybrid workflow | Quick access to smart processing |
+| `smart_url_formatter.py` | Smart metadata extraction for individual URLs | Testing or specific URL processing |
+| `enhanced_url_formatter.py` | Full metadata extraction (slower but comprehensive) | When you need maximum information |
+
+### ⚡ Original Scripts
 | Script | Purpose | When to Use |
 |--------|---------|-------------|
 | `weekly_links.py` | Creates template structure | Starting a new week |
 | `format_urls.py` | Formats raw URLs into professional links | After pasting URLs |
 | `markdown_to_html.py` | Converts markdown to HTML with Google Analytics | Generate HTML versions |
 | `format_urls_with_html.py` | Formats URLs AND generates HTML with GA | One-step solution |
-| `workflow.py` | **Complete automation** - formats URLs + generates HTML | **Recommended for daily use** |
+| `workflow.py` | **Complete automation** - formats URLs + generates HTML | **Backward compatible** |
+
+## 🧠 Smart Metadata Extraction
+
+The new hybrid workflow includes intelligent metadata extraction that dramatically improves link titles:
+
+### ✨ What It Does
+- **Extracts real page titles** from research papers, news articles, and AI company blogs
+- **Uses smart categorization** to determine which URLs benefit from metadata extraction
+- **Respects rate limits** and terms of service
+- **Falls back gracefully** to original formatting when extraction fails
+
+### 🎯 Smart vs Fast Processing
+| URL Type | Processing Method | Example Result |
+|----------|------------------|---------------|
+| **Research Papers** (arXiv, academic sites) | Smart extraction | `"[2509.25140] ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory"` |
+| **AI Company Blogs** (OpenAI, Anthropic, Google) | Smart extraction | `"Netflix goes 'all in' on generative AI as entertainment industry remains divided \| TechCrunch"` |
+| **News Articles** (TechCrunch, Wired, etc.) | Smart extraction | `"State of Generative Media Survey Report 2025 \| Artificial Analysis"` |
+| **Social Media** (Twitter/X, YouTube) | Fast formatting | `"karpathy — AI Industry Insight"` |
+| **Video Platforms** | Fast formatting | `"YouTube: AI Video Content"` |
+
+### 🔧 Processing Modes
+```bash
+# Hybrid approach (recommended) - smart for beneficial URLs, fast for others
+python scripts/hybrid_workflow.py --input weekly-links/2025-01-29-links.md
+
+# Smart-only mode - metadata extraction for ALL URLs (slower)
+python scripts/hybrid_workflow.py --input weekly-links/2025-01-29-links.md --smart-only
+
+# Fast-only mode - original formatting only (fastest)
+python scripts/hybrid_workflow.py --input weekly-links/2025-01-29-links.md --fast-only
+```
+
+### 🛡️ Safe Domains (80+ domains)
+The system intelligently extracts metadata from safe, beneficial domains:
+- **Academic**: arXiv, NeurIPS, ICML, universities, research institutions
+- **AI Companies**: OpenAI, Anthropic, Google DeepMind, Hugging Face, Stability AI
+- **Tech Platforms**: GitHub, GitLab, Stack Overflow, Medium, Substack
+- **News & Media**: TechCrunch, The Verge, Wired, Reuters, Bloomberg
+
+### ⚠️ Avoided Domains
+- **Social Media**: Twitter/X, YouTube, LinkedIn, Facebook, Instagram
+- **Video Platforms**: YouTube, TikTok, Vimeo
+- **Other**: Reddit, Discord, Slack
 
 ## 🎯 Google Analytics Integration
 
@@ -98,6 +162,54 @@ The HTML files include:
 - **Clean, readable typography**
 - **Archive navigation**
 
+## 📚 Usage Examples
+
+### 🧠 Smart Hybrid Workflow Examples
+```bash
+# Process most recent file with smart extraction
+python scripts/hybrid_workflow.py --latest
+
+# Process specific file with hybrid approach
+python scripts/hybrid_workflow.py --input weekly-links/2025-10-23-links.md
+
+# Process all files with smart extraction
+python scripts/hybrid_workflow.py --all
+
+# Smart extraction for ALL URLs (slower but most informative)
+python scripts/hybrid_workflow.py --input weekly-links/2025-10-23-links.md --smart-only
+
+# Fast formatting only (no metadata extraction)
+python scripts/hybrid_workflow.py --input weekly-links/2025-10-23-links.md --fast-only
+
+# Dry run to see what would be processed
+python scripts/hybrid_workflow.py --input weekly-links/2025-10-23-links.md --dry-run
+```
+
+### 🔧 Individual Tool Examples
+```bash
+# Test smart formatter on specific URLs
+python scripts/smart_url_formatter.py --urls "https://arxiv.org/abs/2509.25140 https://openai.com/index/introducing-chatgpt-atlas/"
+
+# Test enhanced formatter (full metadata extraction)
+python scripts/enhanced_url_formatter.py --urls "https://techcrunch.com/2025/10/21/netflix-goes-all-in-on-generative-ai/"
+
+# Easy wrapper for hybrid workflow
+python scripts/smart_workflow.py --latest
+python scripts/smart_workflow.py --all
+```
+
+### ⚡ Original Workflow Examples
+```bash
+# Original workflow (backward compatible)
+python scripts/workflow.py --input weekly-links/2025-10-23-links.md
+python scripts/workflow.py --latest
+python scripts/workflow.py --all
+
+# Individual components
+python scripts/format_urls.py --input-file weekly-links/2025-10-23-links.md
+python scripts/markdown_to_html.py --input weekly-links/2025-10-23-links.md
+```
+
 ## Script Details
 
 ### weekly_links.py
@@ -119,7 +231,6 @@ python weekly_links.py --date 2025-01-29 --video-url "https://youtube.com/watch?
 | Option | Description | Default | Example |
 |--------|-------------|---------|---------|
 | `--date` | Date in YYYY-MM-DD format | Today's date | `--date 2025-01-29` |
-| `--video-url` | YouTube URL for the episode | `https://youtube.com/your-video-link` | `--video-url "https://youtube.com/watch?v=abc123"` |
 | `--youtube-text` | Link text for YouTube video | `YouTube Link Here` | `--youtube-text "Watch This Week's Office Hours"` |
 | `--force` | Overwrite existing file | False | `--force` |
 | `--dry-run` | Preview changes without creating files | False | `--dry-run` |
@@ -394,6 +505,38 @@ The generated files work seamlessly with GitHub Pages:
 1. **Keep both formats**: Commit both `.md` and `.html` files
 2. **Link to HTML**: Update your main site to link to `.html` versions for tracking
 3. **Analytics data**: All HTML pages will send data to Google Analytics
+
+## 🚨 Troubleshooting
+
+### Common Issues
+```bash
+# If you get "ModuleNotFoundError: No module named 'markdown'"
+uv add markdown
+
+# If you get "ModuleNotFoundError: No module named 'requests'"
+uv add requests beautifulsoup4
+
+# If HTML generation fails
+python scripts/markdown_to_html.py --input weekly-links/2025-10-23-links.md
+
+# If smart extraction is too slow
+python scripts/hybrid_workflow.py --input weekly-links/2025-10-23-links.md --fast-only
+
+# If you want to test without making changes
+python scripts/hybrid_workflow.py --input weekly-links/2025-10-23-links.md --dry-run
+```
+
+### Performance Tips
+- **Hybrid approach** (default) balances speed and quality
+- **Smart-only mode** is slower but gives best titles
+- **Fast-only mode** is fastest but uses generic labels
+- **Dry run** shows what would be processed without making changes
+
+### 🧠 Smart Processing Benefits
+- **Dramatically improved titles** for research papers and news articles
+- **Intelligent categorization** of URLs for optimal processing
+- **Respectful rate limiting** to avoid overwhelming servers
+- **Graceful fallbacks** when metadata extraction fails
 
 ## Support
 
