@@ -153,7 +153,17 @@ def generate_title_for_url(url: str) -> str:
         match = re.search(r"/([^/]+)/status/", url)
         if match:
             username = match.group(1)
-            return f"{username} — AI Discussion"
+            # Use more descriptive labels based on username
+            if username in ["karpathy", "sundarpichai", "elonmusk", "raydalio"]:
+                return f"{username} — AI Industry Insight"
+            elif username in ["emollick", "cryps1s", "mhdfaran"]:
+                return f"{username} — AI Research & Analysis"
+            elif username in ["claudeai", "GoogleAIStudio", "brave"]:
+                return f"{username} — AI Product Update"
+            elif username in ["krea_ai", "wavespeed_ai"]:
+                return f"{username} — AI Tool Launch"
+            else:
+                return f"{username} — AI Discussion"
         return "Twitter Thread — AI Discussion"
 
     # Handle arXiv URLs
@@ -174,7 +184,11 @@ def generate_title_for_url(url: str) -> str:
 
     # Handle YouTube URLs
     if "youtube.com" in url or "youtu.be" in url:
-        return "YouTube Video"
+        # Try to extract video ID for more specific labeling
+        video_id_match = re.search(r"(?:v=|/)([a-zA-Z0-9_-]{11})", url)
+        if video_id_match:
+            return "YouTube: AI Video Content"
+        return "YouTube: AI Video Content"
 
     # Check curated patterns first
     for pattern, title in CURATED_PATTERNS.items():
@@ -186,7 +200,7 @@ def generate_title_for_url(url: str) -> str:
         if domain_key in domain:
             return fallback_title
 
-    # Final fallback: clean domain name
+    # Final fallback: clean domain name with more specific labels
     if domain:
         clean_domain = (
             domain.replace("www.", "")
@@ -195,7 +209,18 @@ def generate_title_for_url(url: str) -> str:
             .replace(".edu", "")
             .replace(".ai", "")
         )
-        return f"{clean_domain.title()}: AI Resource"
+
+        # More specific labels based on domain type
+        if domain.endswith(".ai"):
+            return f"{clean_domain.title()}: AI Platform"
+        elif domain.endswith(".edu"):
+            return f"{clean_domain.title()}: Academic Research"
+        elif domain.endswith(".org"):
+            return f"{clean_domain.title()}: Research Organization"
+        elif "research" in domain or "lab" in domain:
+            return f"{clean_domain.title()}: Research Publication"
+        else:
+            return f"{clean_domain.title()}: AI Resource"
 
     return "AI Resource"
 
