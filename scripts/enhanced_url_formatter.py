@@ -42,76 +42,73 @@ ENHANCED_PATTERNS = {
     "youtu.be": "YouTube",
 }
 
+
 def extract_metadata_from_url(url: str, timeout: int = 5) -> Dict[str, str]:
     """
     Extract metadata from a URL using lightweight HTTP requests.
     Returns a dictionary with title, description, and other metadata.
     """
-    metadata = {
-        "title": "",
-        "description": "",
-        "domain": "",
-        "status": "unknown"
-    }
-    
+    metadata = {"title": "", "description": "", "domain": "", "status": "unknown"}
+
     try:
         # Parse the domain
         parsed = urlparse(url)
         metadata["domain"] = parsed.netloc.lower()
-        
+
         # Set a reasonable timeout and user agent
         headers = {
-            'User-Agent': 'Mozilla/5.0 (compatible; OpenDisruptionBot/1.0; +https://opendisruption.com)'
+            "User-Agent": "Mozilla/5.0 (compatible; OpenDisruptionBot/1.0; +https://opendisruption.com)"
         }
-        
+
         # Make a HEAD request first to check if the page exists
-        head_response = requests.head(url, timeout=timeout, headers=headers, allow_redirects=True)
-        
+        head_response = requests.head(
+            url, timeout=timeout, headers=headers, allow_redirects=True
+        )
+
         if head_response.status_code == 200:
             # If HEAD request works, make a GET request for the first 8KB
             response = requests.get(
-                url, 
-                timeout=timeout, 
-                headers=headers, 
-                stream=True,
-                allow_redirects=True
+                url, timeout=timeout, headers=headers, stream=True, allow_redirects=True
             )
-            
+
             if response.status_code == 200:
                 # Read only the first 8KB to get meta tags
                 content = ""
-                for chunk in response.iter_content(chunk_size=1024, decode_unicode=True):
+                for chunk in response.iter_content(
+                    chunk_size=1024, decode_unicode=True
+                ):
                     content += chunk
                     if len(content) > 8192:  # Stop after 8KB
                         break
-                
+
                 # Parse HTML to extract title and meta description
-                soup = BeautifulSoup(content, 'html.parser')
-                
+                soup = BeautifulSoup(content, "html.parser")
+
                 # Extract title
-                title_tag = soup.find('title')
+                title_tag = soup.find("title")
                 if title_tag and title_tag.string:
                     metadata["title"] = title_tag.string.strip()
-                
+
                 # Extract meta description
-                meta_desc = soup.find('meta', attrs={'name': 'description'})
-                if meta_desc and meta_desc.get('content'):
-                    metadata["description"] = meta_desc.get('content').strip()
-                
+                meta_desc = soup.find("meta", attrs={"name": "description"})
+                if meta_desc and meta_desc.get("content"):
+                    metadata["description"] = meta_desc.get("content").strip()
+
                 metadata["status"] = "success"
             else:
                 metadata["status"] = f"http_error_{response.status_code}"
         else:
             metadata["status"] = f"head_error_{head_response.status_code}"
-            
+
     except requests.exceptions.Timeout:
         metadata["status"] = "timeout"
     except requests.exceptions.ConnectionError:
         metadata["status"] = "connection_error"
     except Exception as e:
         metadata["status"] = f"error: {str(e)}"
-    
+
     return metadata
+
 
 def generate_enhanced_title_for_url(url: str, use_metadata: bool = True) -> str:
     """
@@ -120,41 +117,48 @@ def generate_enhanced_title_for_url(url: str, use_metadata: bool = True) -> str:
     """
     # First, try the original method for known patterns
     original_title = generate_title_for_url_original(url)
-    
+
     # If we have a good curated title, use it
     if any(pattern in url for pattern in CURATED_PATTERNS.keys()):
         return original_title
-    
+
     # If we should use metadata and it's not a social media URL
-    if use_metadata and not any(social in url for social in ['twitter.com', 'x.com', 'youtube.com', 'youtu.be']):
+    if use_metadata and not any(
+        social in url for social in ["twitter.com", "x.com", "youtube.com", "youtu.be"]
+    ):
         print(f"🔍 Extracting metadata from: {url}")
         metadata = extract_metadata_from_url(url)
-        
+
         if metadata["status"] == "success" and metadata["title"]:
             # Clean up the title
             title = metadata["title"]
-            
+
             # Remove common suffixes
-            title = re.sub(r'\s*[-|]\s*(Home|Welcome|Official).*$', '', title, flags=re.IGNORECASE)
-            title = re.sub(r'\s*[-|]\s*.*\.(com|org|edu|ai).*$', '', title, flags=re.IGNORECASE)
-            
+            title = re.sub(
+                r"\s*[-|]\s*(Home|Welcome|Official).*$", "", title, flags=re.IGNORECASE
+            )
+            title = re.sub(
+                r"\s*[-|]\s*.*\.(com|org|edu|ai).*$", "", title, flags=re.IGNORECASE
+            )
+
             # Truncate if too long
             if len(title) > 80:
                 title = title[:77] + "..."
-            
+
             # Add domain context if helpful
             domain = metadata["domain"]
             if domain and domain not in title.lower():
-                if domain.startswith('www.'):
+                if domain.startswith("www."):
                     domain = domain[4:]
                 return f"{title} ({domain})"
             else:
                 return title
         else:
             print(f"⚠️  Metadata extraction failed for {url}: {metadata['status']}")
-    
+
     # Fall back to original method
     return original_title
+
 
 def generate_title_for_url_original(url: str) -> str:
     """Original title generation method from format_urls.py"""
@@ -220,7 +224,7 @@ def generate_title_for_url_original(url: str) -> str:
             .replace(".edu", "")
             .replace(".ai", "")
         )
-        
+
         # More specific labels based on domain type
         if domain.endswith(".ai"):
             return f"{clean_domain.title()}: AI Platform"
@@ -234,6 +238,7 @@ def generate_title_for_url_original(url: str) -> str:
             return f"{clean_domain.title()}: AI Resource"
 
     return "AI Resource"
+
 
 def format_urls_to_markdown_enhanced(urls: List[str], use_metadata: bool = True) -> str:
     """Format URLs with enhanced metadata extraction."""
@@ -257,12 +262,13 @@ def format_urls_to_markdown_enhanced(urls: List[str], use_metadata: bool = True)
             f'- <a href="{url}" target="_blank" rel="noopener noreferrer">{title}</a>'
         )
         markdown_links.append(markdown_link)
-        
+
         # Add a small delay to be respectful to servers
         if use_metadata and i < len(unique_urls):
             time.sleep(0.5)
 
     return "\n".join(markdown_links)
+
 
 def parse_args():
     """Parse command line arguments."""
@@ -270,48 +276,44 @@ def parse_args():
         description="Enhanced URL formatter with metadata extraction"
     )
     parser.add_argument(
-        "--input-file", 
-        type=Path, 
-        help="Input markdown file to process"
+        "--input-file", type=Path, help="Input markdown file to process"
+    )
+    parser.add_argument("--urls", help="Space-separated list of URLs to format")
+    parser.add_argument(
+        "--no-metadata",
+        action="store_true",
+        help="Disable metadata extraction (use original method only)",
     )
     parser.add_argument(
-        "--urls", 
-        help="Space-separated list of URLs to format"
+        "--timeout",
+        type=int,
+        default=5,
+        help="Timeout for HTTP requests in seconds (default: 5)",
     )
     parser.add_argument(
-        "--no-metadata", 
-        action="store_true", 
-        help="Disable metadata extraction (use original method only)"
-    )
-    parser.add_argument(
-        "--timeout", 
-        type=int, 
-        default=5, 
-        help="Timeout for HTTP requests in seconds (default: 5)"
-    )
-    parser.add_argument(
-        "--dry-run", 
-        action="store_true", 
-        help="Show what would be formatted without making changes"
+        "--dry-run",
+        action="store_true",
+        help="Show what would be formatted without making changes",
     )
     return parser.parse_args()
+
 
 def main():
     """Main function."""
     args = parse_args()
-    
+
     if args.input_file:
         # Process file
         print(f"📁 Processing file: {args.input_file}")
         content = args.input_file.read_text(encoding="utf-8")
         urls = extract_urls_from_section(content)
-        
+
         if not urls:
             print("❌ No URLs found in the Links section.")
             return
-        
+
         print(f"📊 Found {len(urls)} URLs to format")
-        
+
         if args.dry_run:
             print("🔍 DRY RUN - Showing enhanced titles:")
             for i, url in enumerate(urls[:5], 1):  # Show first 5 as example
@@ -320,24 +322,27 @@ def main():
             if len(urls) > 5:
                 print(f"   ... and {len(urls) - 5} more")
         else:
-            formatted_links = format_urls_to_markdown_enhanced(urls, not args.no_metadata)
+            formatted_links = format_urls_to_markdown_enhanced(
+                urls, not args.no_metadata
+            )
             print("\n📝 Formatted links:")
             print(formatted_links)
-    
+
     elif args.urls:
         # Process individual URLs
         urls = args.urls.split()
         print(f"📊 Processing {len(urls)} URLs")
-        
+
         for url in urls:
             title = generate_enhanced_title_for_url(url, not args.no_metadata)
             print(f"🔗 {url} -> {title}")
-    
+
     else:
         print("Please provide either --input-file or --urls")
         return 1
-    
+
     return 0
+
 
 if __name__ == "__main__":
     exit(main())
