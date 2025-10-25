@@ -62,7 +62,7 @@ def process_single_file(input_file: Path, dry_run: bool = False):
     print("📝 Step 1: Formatting URLs in markdown...")
     cmd = [
         sys.executable,
-        "format_urls_with_html.py",
+        "scripts/format_urls_with_html.py",
         "--input-file",
         str(input_file),
         "--generate-html",
