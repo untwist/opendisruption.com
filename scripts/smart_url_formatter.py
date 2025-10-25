@@ -29,6 +29,31 @@ from format_urls import (
     format_urls_to_markdown,
 )
 
+# Enhanced curated patterns for better titles
+ENHANCED_CURATED_PATTERNS = {
+    # OpenAI Atlas
+    "chatgpt.com/atlas": "OpenAI Atlas - AI Web Browser",
+    "openai.com/index/introducing-chatgpt-atlas": "OpenAI: Introducing ChatGPT Atlas",
+    # Anthropic
+    "anthropic.com/news/skills": "Anthropic: Agent Skills Announcement",
+    "anthropic.com/engineering/equipping-agents": "Anthropic: Equipping Agents for the Real World",
+    "anthropic.com/news/statement-dario-amodei": "Anthropic: Dario Amodei on American AI Leadership",
+    # GitHub repositories with better descriptions
+    "github.com/antgroup/ditto-talkinghead": "GitHub: Ditto Talking Head (AI Video Generation)",
+    "github.com/Tencent-Hunyuan/HunyuanWorld-Mirror": "GitHub: HunyuanWorld (Tencent AI World Model)",
+    # Research and statements
+    "superintelligence-statement.org": "Statement on Superintelligence",
+    # AI Tools and Platforms
+    "metaphysic.ai/studios": "Metaphysic Studios - AI VFX Innovation",
+    "artificialanalysis.ai/media/survey-2025": "Artificial Analysis: 2025 Generative Media Survey",
+    "deepseek.ai/blog/deepseek-ocr": "DeepSeek: OCR Context Compression",
+    "learnyourway.withgoogle.com": "Google: Learn Your Way AI Learning Platform",
+    # News articles with better context
+    "techcrunch.com/2025/10/21/netflix-goes-all-in": "TechCrunch: Netflix Goes All-In on Generative AI",
+    "zdnet.com/article/adobe-mightve-just-solved": "ZDNet: Adobe Solves Generative AI Legal Risks",
+    "blog.google/technology/research/quantum-echoes": "Google Research: Quantum Echoes Willow Advantage",
+}
+
 # Domains that are safe and beneficial to extract metadata from
 SAFE_DOMAINS = {
     # Academic & Research
@@ -46,7 +71,6 @@ SAFE_DOMAINS = {
     "cell.com",
     "springer.com",
     "elsevier.com",
-    
     # Universities & Research Institutions
     "mit.edu",
     "stanford.edu",
@@ -61,7 +85,6 @@ SAFE_DOMAINS = {
     "brookings.edu",
     "rand.org",
     "nber.org",
-    
     # AI Companies & Labs
     "openai.com",
     "anthropic.com",
@@ -83,7 +106,6 @@ SAFE_DOMAINS = {
     "perplexity.ai",
     "claude.ai",
     "chatgpt.com",
-    
     # Tech Platforms
     "github.com",
     "gitlab.com",
@@ -93,7 +115,6 @@ SAFE_DOMAINS = {
     "dev.to",
     "medium.com",
     "substack.com",
-    
     # News & Media (Tech/AI focused)
     "techcrunch.com",
     "theverge.com",
@@ -113,7 +134,6 @@ SAFE_DOMAINS = {
     "engadget.com",
     "arstechnica.com",
     "slashdot.org",
-    
     # Research Organizations
     "openai.com",
     "ai.google",
@@ -167,6 +187,29 @@ def should_extract_metadata(url: str) -> bool:
 
     # Extract from AI/tech domains
     if domain.endswith(".ai") or "research" in domain or "lab" in domain:
+        return True
+
+    # Extract from major AI company domains (even if not in safe list)
+    ai_company_domains = [
+        "openai.com",
+        "anthropic.com",
+        "chatgpt.com",
+        "deepmind.google",
+        "huggingface.co",
+        "stability.ai",
+        "runwayml.com",
+        "replicate.com",
+        "together.ai",
+        "cohere.ai",
+        "mistral.ai",
+        "perplexity.ai",
+        "claude.ai",
+        "deepseek.ai",
+        "metaphysic.ai",
+        "artificialanalysis.ai",
+    ]
+
+    if any(ai_domain in domain for ai_domain in ai_company_domains):
         return True
 
     return False
@@ -231,12 +274,15 @@ def generate_smart_title_for_url(url: str) -> str:
     """
     Generate a smart title for a URL using selective metadata extraction.
     """
-    # First, try the original method
-    original_title = generate_title_for_url_original(url)
+    # First, check enhanced curated patterns
+    for pattern, title in ENHANCED_CURATED_PATTERNS.items():
+        if pattern in url:
+            return title
 
-    # If we have a good curated title, use it
-    if any(pattern in url for pattern in CURATED_PATTERNS.keys()):
-        return original_title
+    # Then check original curated patterns
+    for pattern, title in CURATED_PATTERNS.items():
+        if pattern in url:
+            return title
 
     # If this URL would benefit from metadata extraction, try it
     if should_extract_metadata(url):
@@ -250,7 +296,7 @@ def generate_smart_title_for_url(url: str) -> str:
             print(f"⚠️  Metadata extraction failed, using fallback")
 
     # Fall back to original method
-    return original_title
+    return generate_title_for_url_original(url)
 
 
 def generate_title_for_url_original(url: str) -> str:
