@@ -144,12 +144,88 @@ def get_domain(url: str) -> str:
         return ""
 
 
-def generate_title_for_url(url: str) -> str:
-    """Generate a title for a URL using curated patterns and fallbacks."""
+def parse_url_path_to_title(url: str, domain: str = None) -> str:
+    """
+    Parse URL path to extract meaningful title.
+    Converts URL paths like '/index/introducing-aardvark/' to readable titles.
+    
+    Args:
+        url: Full URL to parse
+        domain: Optional domain name for context
+    
+    Returns:
+        Parsed title or empty string if no meaningful path found
+    """
+    try:
+        from urllib.parse import urlparse
+        
+        parsed = urlparse(url)
+        path = parsed.path.strip('/')
+        
+        if not path:
+            return ""
+        
+        # Filter out generic segments
+        generic_segments = {'index', 'www', 'home', 'page', 'default', 'main'}
+        
+        # Split path into segments
+        segments = [s for s in path.split('/') if s and s not in generic_segments]
+        
+        if not segments:
+            return ""
+        
+        # Take the last meaningful segment (usually the article/page name)
+        # Or combine last 2 segments if they're short
+        if len(segments) >= 2 and len(segments[-1]) < 10:
+            title_segment = '/'.join(segments[-2:])
+        else:
+            title_segment = segments[-1]
+        
+        # Convert kebab-case, snake_case, or camelCase to readable title
+        # Replace hyphens and underscores with spaces
+        title = title_segment.replace('-', ' ').replace('_', ' ')
+        
+        # Handle camelCase (basic detection)
+        import re
+        title = re.sub(r'([a-z])([A-Z])', r'\1 \2', title)
+        
+        # Capitalize words
+        words = title.split()
+        title = ' '.join(word.capitalize() for word in words)
+        
+        # Clean up common patterns
+        title = re.sub(r'\s+', ' ', title).strip()
+        
+        # Filter out very short or generic titles
+        if len(title) < 3 or title.lower() in generic_segments:
+            return ""
+        
+        return title
+        
+    except Exception:
+        return ""
+
+
+def generate_title_for_url(url: str, enable_twitter_scraping: bool = True) -> str:
+    """
+    Generate a title for a URL using curated patterns and fallbacks.
+    
+    Args:
+        url: URL to generate title for
+        enable_twitter_scraping: Whether to attempt Twitter/X scraping
+    """
     domain = get_domain(url)
 
-    # Handle Twitter/X URLs
+    # Handle Twitter/X URLs with scraping
     if "twitter.com" in url or "x.com" in url:
+        try:
+            from twitter_scraper import generate_twitter_title
+            return generate_twitter_title(url, enable_scraping=enable_twitter_scraping)
+        except ImportError:
+            # Fallback if module not available
+            pass
+        
+        # Fallback to username-based categorization
         match = re.search(r"/([^/]+)/status/", url)
         if match:
             username = match.group(1)
@@ -194,6 +270,33 @@ def generate_title_for_url(url: str) -> str:
     for pattern, title in CURATED_PATTERNS.items():
         if pattern in url:
             return title
+
+    # Try URL path parsing before domain fallback
+    path_title = parse_url_path_to_title(url, domain)
+    if path_title:
+        # Combine domain context with path title for better readability
+        domain_fallback = None
+        for domain_key, fallback_title in DOMAIN_FALLBACKS.items():
+            if domain_key in domain:
+                domain_fallback = fallback_title
+                break
+        
+        if domain_fallback:
+            return f"{domain_fallback}: {path_title}"
+        else:
+            # Clean domain name for context
+            clean_domain = (
+                domain.replace("www.", "")
+                .replace(".com", "")
+                .replace(".org", "")
+                .replace(".edu", "")
+                .replace(".ai", "")
+                .title()
+            )
+            if clean_domain:
+                return f"{clean_domain}: {path_title}"
+            else:
+                return path_title
 
     # Fallback to domain-based title
     for domain_key, fallback_title in DOMAIN_FALLBACKS.items():

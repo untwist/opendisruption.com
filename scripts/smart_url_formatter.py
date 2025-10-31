@@ -215,54 +215,127 @@ def should_extract_metadata(url: str) -> bool:
     return False
 
 
-def extract_title_from_url(url: str, timeout: int = 3) -> Optional[str]:
+def extract_title_from_url(url: str, timeout: int = 5) -> Optional[str]:
     """
-    Extract just the page title from a URL.
+    Extract page title from a URL with enhanced metadata extraction.
+    Handles Open Graph tags, JSON-LD structured data, and meta descriptions.
     Uses a lightweight approach with minimal data transfer.
     """
     try:
         headers = {
-            "User-Agent": "Mozilla/5.0 (compatible; OpenDisruptionBot/1.0; +https://opendisruption.com)",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
             "Accept-Language": "en-US,en;q=0.5",
-            "Accept-Encoding": "gzip, deflate",
+            "Accept-Encoding": "gzip, deflate, br",
             "Connection": "keep-alive",
         }
 
-        # Make a request with a short timeout
-        response = requests.get(url, timeout=timeout, headers=headers, stream=True)
+        # Adjust timeout based on domain type (longer for company blogs)
+        domain = get_domain(url)
+        if any(company in domain for company in ["openai.com", "anthropic.com", "google.com", "deepmind.google"]):
+            timeout = max(timeout, 8)  # Give company blogs more time
 
-        if response.status_code == 200:
-            # Read only the first 4KB to get the title
-            content = ""
-            for chunk in response.iter_content(chunk_size=1024, decode_unicode=True):
-                content += chunk
-                if len(content) > 4096:  # Stop after 4KB
+        # Make a request with retry logic
+        max_retries = 2
+        response = None
+        for attempt in range(max_retries):
+            try:
+                response = requests.get(url, timeout=timeout, headers=headers, stream=True, allow_redirects=True)
+                if response.status_code == 200:
                     break
+            except requests.exceptions.Timeout:
+                if attempt < max_retries - 1:
+                    time.sleep(1)  # Brief delay before retry
+                    continue
+                return None
+            except Exception:
+                return None
 
-            # Parse HTML to extract title
-            soup = BeautifulSoup(content, "html.parser")
+        if not response or response.status_code != 200:
+            return None
+
+        # Read more content for better extraction (up to 16KB)
+        content = ""
+        max_size = 16384  # 16KB for better metadata extraction
+        for chunk in response.iter_content(chunk_size=2048, decode_unicode=True):
+            content += chunk
+            if len(content) > max_size:
+                break
+
+        # Parse HTML to extract title
+        soup = BeautifulSoup(content, "html.parser")
+        title = None
+
+        # Strategy 1: Try Open Graph title (often better than regular title)
+        og_title = soup.find("meta", property="og:title")
+        if og_title and og_title.get("content"):
+            title = og_title.get("content").strip()
+        
+        # Strategy 2: Try Twitter Card title
+        if not title:
+            twitter_title = soup.find("meta", attrs={"name": "twitter:title"})
+            if twitter_title and twitter_title.get("content"):
+                title = twitter_title.get("content").strip()
+        
+        # Strategy 3: Try JSON-LD structured data
+        if not title:
+            scripts = soup.find_all("script", type="application/ld+json")
+            for script in scripts:
+                try:
+                    import json
+                    data = json.loads(script.string)
+                    if isinstance(data, dict):
+                        # Look for title in various fields
+                        for key in ["headline", "name", "title"]:
+                            if key in data and data[key]:
+                                title = str(data[key]).strip()
+                                break
+                        if title:
+                            break
+                except:
+                    continue
+        
+        # Strategy 4: Fall back to regular title tag
+        if not title:
             title_tag = soup.find("title")
-
             if title_tag and title_tag.string:
                 title = title_tag.string.strip()
 
-                # Clean up common title patterns
-                title = re.sub(
-                    r"\s*[-|]\s*(Home|Welcome|Official).*$",
-                    "",
-                    title,
-                    flags=re.IGNORECASE,
-                )
-                title = re.sub(
-                    r"\s*[-|]\s*.*\.(com|org|edu|ai).*$", "", title, flags=re.IGNORECASE
-                )
+        if not title:
+            return None
 
-                # Truncate if too long
-                if len(title) > 100:
-                    title = title[:97] + "..."
+        # Clean up common title patterns
+        # Remove site name suffixes (e.g., "Title | OpenAI")
+        title = re.sub(
+            r"\s*[-|]\s*(Home|Welcome|Official).*$",
+            "",
+            title,
+            flags=re.IGNORECASE,
+        )
+        # Remove domain suffixes (e.g., "Title - example.com")
+        title = re.sub(
+            r"\s*[-|]\s*.*\.(com|org|edu|ai).*$", "", title, flags=re.IGNORECASE
+        )
+        # Remove common separators and clean up
+        title = re.sub(r"\s*[-|]\s*", " — ", title)
+        title = re.sub(r"\s+", " ", title).strip()
 
-                return title
+        # If title is too generic (just site name), try meta description
+        domain_clean = domain.replace("www.", "").replace(".com", "").replace(".org", "").replace(".edu", "").replace(".ai", "")
+        if title.lower() == domain_clean.lower() or len(title) < 10:
+            meta_desc = soup.find("meta", attrs={"name": "description"})
+            if not meta_desc:
+                meta_desc = soup.find("meta", property="og:description")
+            if meta_desc and meta_desc.get("content"):
+                desc = meta_desc.get("content").strip()
+                if len(desc) > 20:  # Use description if it's substantial
+                    title = desc[:80] + "..." if len(desc) > 80 else desc
+
+        # Truncate if too long
+        if len(title) > 100:
+            title = title[:97] + "..."
+
+        return title if title and len(title) > 5 else None
 
     except Exception as e:
         print(f"⚠️  Could not extract title from {url}: {e}")
@@ -270,10 +343,20 @@ def extract_title_from_url(url: str, timeout: int = 3) -> Optional[str]:
     return None
 
 
-def generate_smart_title_for_url(url: str) -> str:
+def generate_smart_title_for_url(url: str, enable_twitter_scraping: bool = True) -> str:
     """
     Generate a smart title for a URL using selective metadata extraction.
     """
+    domain = get_domain(url)
+    
+    # Handle Twitter/X URLs with scraping
+    if "twitter.com" in url or "x.com" in url:
+        try:
+            from twitter_scraper import generate_twitter_title
+            return generate_twitter_title(url, enable_scraping=enable_twitter_scraping)
+        except ImportError:
+            pass  # Fall through to original method
+    
     # First, check enhanced curated patterns
     for pattern, title in ENHANCED_CURATED_PATTERNS.items():
         if pattern in url:
@@ -294,6 +377,45 @@ def generate_smart_title_for_url(url: str) -> str:
             return extracted_title
         else:
             print(f"⚠️  Metadata extraction failed, using fallback")
+
+    # Try URL path parsing before final fallback
+    try:
+        try:
+            from format_urls import parse_url_path_to_title
+        except ImportError:
+            # Try importing from scripts directory
+            import sys
+            from pathlib import Path
+            scripts_dir = Path(__file__).parent
+            if str(scripts_dir) not in sys.path:
+                sys.path.insert(0, str(scripts_dir))
+            from format_urls import parse_url_path_to_title
+        path_title = parse_url_path_to_title(url, domain)
+        if path_title:
+            # Combine with domain context
+            domain_fallback = None
+            for domain_key, fallback_title in DOMAIN_FALLBACKS.items():
+                if domain_key in domain:
+                    domain_fallback = fallback_title
+                    break
+            
+            if domain_fallback:
+                return f"{domain_fallback}: {path_title}"
+            else:
+                clean_domain = (
+                    domain.replace("www.", "")
+                    .replace(".com", "")
+                    .replace(".org", "")
+                    .replace(".edu", "")
+                    .replace(".ai", "")
+                    .title()
+                )
+                if clean_domain:
+                    return f"{clean_domain}: {path_title}"
+                else:
+                    return path_title
+    except ImportError:
+        pass  # Continue to fallback
 
     # Fall back to original method
     return generate_title_for_url_original(url)
