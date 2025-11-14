@@ -130,6 +130,70 @@ def scrape_tweet_content(url: str, timeout: int = 10) -> Optional[str]:
         return None
 
 
+# Mapping of Twitter/X usernames to proper display names
+USERNAME_TO_DISPLAY_NAME = {
+    # Companies & Organizations
+    "openai": "OpenAI",
+    "openaidevs": "OpenAI",
+    "anthropic": "Anthropic",
+    "googlelabs": "Google Labs",
+    "googleai": "Google AI",
+    "deepmind": "DeepMind",
+    "baidu_inc": "Baidu",
+    "huggingface": "Hugging Face",
+    "runwayml": "Runway",
+    "stabilityai": "Stability AI",
+    "midjourney": "Midjourney",
+    "replicate": "Replicate",
+    "together_ai": "Together AI",
+    "cohere": "Cohere",
+    "mistralai": "Mistral AI",
+    "perplexity_ai": "Perplexity",
+    "claudeai": "Claude AI",
+    "character_ai": "Character.AI",
+    "krea_ai": "Krea AI",
+    "wavespeed_ai": "WaveSpeed AI",
+    "higgsfield_ai": "Higgsfield AI",
+    "heydin_ai": "HeyDin AI",
+    "wildmindai": "WildMind AI",
+    "minimax__ai": "MiniMax AI",
+    "hailuo_ai": "Hailuo AI",
+    "extropic_ai": "Extropic AI",
+    "artificialanlys": "Artificial Analysis",
+    "theworldlabs": "The World Labs",
+    "googleanalytics": "Google Analytics",
+    "erniefordevs": "Ernie for Developers",
+    # Individuals (keep as @username for clarity)
+    "sama": "@sama",
+    "karpathy": "@karpathy",
+    "sundarpichai": "@sundarpichai",
+    "elonmusk": "@elonmusk",
+    "raydalio": "@raydalio",
+    "emollick": "@emollick",
+    "drfeifei": "@drfeifei",
+}
+
+
+def format_username(username: str) -> str:
+    """
+    Format username to proper display name.
+    Returns proper name if known, otherwise returns @username format.
+    """
+    username_lower = username.lower()
+    
+    # Check exact match first
+    if username_lower in USERNAME_TO_DISPLAY_NAME:
+        return USERNAME_TO_DISPLAY_NAME[username_lower]
+    
+    # Check case-insensitive match
+    for key, display_name in USERNAME_TO_DISPLAY_NAME.items():
+        if username_lower == key.lower():
+            return display_name
+    
+    # For unknown usernames, use @username format
+    return f"@{username}"
+
+
 def generate_twitter_title(url: str, tweet_text: Optional[str] = None, enable_scraping: bool = True) -> str:
     """
     Generate a title for a Twitter/X URL.
@@ -140,14 +204,16 @@ def generate_twitter_title(url: str, tweet_text: Optional[str] = None, enable_sc
         enable_scraping: Whether to attempt scraping if tweet_text is None
     
     Returns:
-        Formatted title like "username — tweet text..."
+        Formatted title like "OpenAI — tweet text..." or "@username — tweet text..."
+        If scraping fails, returns just the display name or "@username"
     """
     # Extract username from URL
     match = re.search(r"/([^/]+)/status/", url)
     if not match:
-        return "Twitter Thread — AI Discussion"
+        return "Twitter Thread"
     
     username = match.group(1)
+    display_name = format_username(username)
     
     # Try to get tweet text if not provided
     if tweet_text is None and enable_scraping:
@@ -162,17 +228,8 @@ def generate_twitter_title(url: str, tweet_text: Optional[str] = None, enable_sc
         else:
             truncated = tweet_text
         
-        return f"{username} — {truncated}"
+        return f"{display_name} — {truncated}"
     
-    # Fallback to username-based categorization
-    if username in ["karpathy", "sundarpichai", "elonmusk", "raydalio"]:
-        return f"{username} — AI Industry Insight"
-    elif username in ["emollick", "cryps1s", "mhdfaran"]:
-        return f"{username} — AI Research & Analysis"
-    elif username in ["claudeai", "GoogleAIStudio", "brave"]:
-        return f"{username} — AI Product Update"
-    elif username in ["krea_ai", "wavespeed_ai"]:
-        return f"{username} — AI Tool Launch"
-    else:
-        return f"{username} — AI Discussion"
+    # Fallback: Just return the display name (no generic labels)
+    return display_name
 

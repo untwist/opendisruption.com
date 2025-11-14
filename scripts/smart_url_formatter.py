@@ -430,17 +430,13 @@ def generate_title_for_url_original(url: str) -> str:
         match = re.search(r"/([^/]+)/status/", url)
         if match:
             username = match.group(1)
-            if username in ["karpathy", "sundarpichai", "elonmusk", "raydalio"]:
-                return f"{username} — AI Industry Insight"
-            elif username in ["emollick", "cryps1s", "mhdfaran"]:
-                return f"{username} — AI Research & Analysis"
-            elif username in ["claudeai", "GoogleAIStudio", "brave"]:
-                return f"{username} — AI Product Update"
-            elif username in ["krea_ai", "wavespeed_ai"]:
-                return f"{username} — AI Tool Launch"
-            else:
-                return f"{username} — AI Discussion"
-        return "Twitter Thread — AI Discussion"
+            try:
+                from twitter_scraper import format_username
+                return format_username(username)
+            except ImportError:
+                # Fallback: just use @username format
+                return f"@{username}"
+        return "Twitter Thread"
 
     # Handle arXiv URLs
     if "arxiv.org" in url:
