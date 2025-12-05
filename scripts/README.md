@@ -10,7 +10,7 @@ This directory contains automation scripts for creating and managing weekly AI n
 ```bash
 # 1. Upload your video to YouTube and get the URL
 # 2. Generate template for this week with your YouTube URL
-python weekly_links.py --date 2025-01-29 --video-url "https://youtube.com/watch?v=your-video"
+python scripts/weekly_links.py --date 2025-01-29 --video-url "https://youtube.com/watch?v=your-video"
 
 # 3. Add your raw URLs to the generated file
 # (Open weekly-links/2025-01-29-links.md and paste URLs in the "Links from Office Hours" section)
