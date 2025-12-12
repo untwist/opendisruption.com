@@ -12,11 +12,15 @@ This directory contains automation scripts for creating and managing weekly AI n
 # 2. Generate template for this week with your YouTube URL
 python scripts/weekly_links.py --date 2025-01-29 --video-url "https://youtube.com/watch?v=your-video"
 
+python scripts/weekly_links.py --date
+
 # 3. Add your raw URLs to the generated file
 # (Open weekly-links/2025-01-29-links.md and paste URLs in the "Links from Office Hours" section)
 
 # 4. Smart formatting with metadata extraction + HTML generation
 python scripts/hybrid_workflow.py --input weekly-links/2025-01-29-links.md
+
+python scripts/hybrid_workflow.py --input weekly-links/
 
 # 5. Review and commit (both .md and .html files)
 git add . && git commit -m "Add weekly links with smart titles and GA tracking" && git push
