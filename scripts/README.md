@@ -26,6 +26,20 @@ python scripts/hybrid_workflow.py --input weekly-links/
 git add . && git commit -m "Add weekly links with smart titles and GA tracking" && git push
 ```
 
+### 📋 RAW_LINKS Workflow (If you compile links in RAW_LINKS/)
+```bash
+# 1. Open all links in Chrome for office hours
+python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29
+
+# 2. Convert RAW_LINKS to weekly-links and run pipeline
+python scripts/raw_links_to_weekly.py --input RAW_LINKS/2026-01-29
+# Edit weekly-links/2026-01-29-links.md to add YouTube URL
+python scripts/hybrid_workflow.py --input weekly-links/2026-01-29-links.md
+
+# 3. Review and commit
+git add . && git commit -m "Add weekly links for January 29" && git push
+```
+
 ### ⚡ Fast One-Command Solutions
 ```bash
 # Smart processing for most recent file
@@ -59,6 +73,12 @@ python scripts/workflow.py --input weekly-links/2025-01-29-links.md
 | `smart_workflow.py` | Easy wrapper for hybrid workflow | Quick access to smart processing |
 | `smart_url_formatter.py` | Smart metadata extraction for individual URLs | Testing or specific URL processing |
 | `enhanced_url_formatter.py` | Full metadata extraction (slower but comprehensive) | When you need maximum information |
+
+### 📋 RAW_LINKS Workflow (Office Hours)
+| Script | Purpose | When to Use |
+|--------|---------|-------------|
+| `open_links_in_chrome.py` | Open all RAW_LINKS URLs in Chrome tabs; search terms open as Google searches | Before office hours — open links for presentation |
+| `raw_links_to_weekly.py` | Convert RAW_LINKS to weekly-links markdown format | After compiling links — feed into website pipeline |
 
 ### ⚡ Original Scripts
 | Script | Purpose | When to Use |
@@ -111,6 +131,51 @@ The system intelligently extracts metadata from safe, beneficial domains:
 - **Social Media**: Twitter/X, YouTube, LinkedIn, Facebook, Instagram
 - **Video Platforms**: YouTube, TikTok, Vimeo
 - **Other**: Reddit, Discord, Slack
+
+## 📋 RAW_LINKS Workflow (Office Hours)
+
+If you compile links in `RAW_LINKS/YYYY-MM-DD` during the week, use these scripts to open them in Chrome for your office hours and feed them into the website pipeline.
+
+### RAW_LINKS Format
+- **Category headers**: `HEADLINES:`, `GRAPHICS:`, `LLMs:`, `AGENTS:`, `CODING:`, `OTHER:`, `LABOR:`
+- **Direct URLs**: `https://x.com/...`, `https://arxiv.org/...`, etc.
+- **Search topics** (in double quotes): `"Qwen3 max thinking"` — opens as Google search
+
+### Open All Links in Chrome
+```bash
+# Open all URLs and search terms in separate Chrome tabs
+python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29
+
+# Open only HEADLINES category
+python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --category HEADLINES
+
+# Preview without opening
+python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --dry-run
+
+# Also save HTML launcher (fallback if popup blockers block script)
+python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --output-html
+
+# Faster opening (1 second between tabs; default is 5 seconds)
+python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --delay 1.0
+```
+
+### Feed RAW_LINKS into Website Pipeline
+```bash
+# 1. Convert RAW_LINKS to weekly-links markdown (URLs only; search terms excluded)
+python scripts/raw_links_to_weekly.py --input RAW_LINKS/2026-01-29
+
+# 2. Add YouTube URL to the generated file (edit weekly-links/2026-01-29-links.md)
+
+# 3. Run hybrid workflow to format URLs and generate HTML
+python scripts/hybrid_workflow.py --input weekly-links/2026-01-29-links.md
+
+# 4. Review and commit
+git add . && git commit -m "Add weekly links for January 29" && git push
+```
+
+### Notes
+- **Search terms** (in double quotes) are opened as Google searches in Chrome but excluded from the website output. Topics to research are printed when running `raw_links_to_weekly.py`.
+- **Date inference**: If `--date` is omitted, the date is inferred from the filename (e.g. `RAW_LINKS/2026-01-29` → `2026-01-29`).
 
 ## 🎯 Google Analytics Integration
 
@@ -215,6 +280,55 @@ python scripts/markdown_to_html.py --input weekly-links/2025-10-23-links.md
 ```
 
 ## Script Details
+
+### open_links_in_chrome.py
+Opens RAW_LINKS URLs in Google Chrome. Search terms (in double quotes) open as Google searches.
+
+**Basic Usage:**
+```bash
+# Open all links in Chrome
+python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29
+
+# Open only HEADLINES category
+python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --category HEADLINES
+
+# Preview without opening
+python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --dry-run
+
+# Save HTML launcher
+python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --output-html
+```
+
+**All Options:**
+| Option | Description | Example |
+|--------|-------------|---------|
+| `input` | Path to RAW_LINKS file | `RAW_LINKS/2026-01-29` |
+| `--category` | Only open links from this category | `--category HEADLINES` |
+| `--dry-run` | Preview without opening | `--dry-run` |
+| `--output-html` | Save HTML launcher with Open All button | `--output-html` |
+| `--delay` | Seconds between opening each tab (default: 5) | `--delay 1.0` |
+
+### raw_links_to_weekly.py
+Converts RAW_LINKS format to weekly-links markdown. URLs only (search terms excluded). Run `hybrid_workflow.py` afterward.
+
+**Basic Usage:**
+```bash
+# Convert RAW_LINKS to weekly-links (date inferred from filename)
+python scripts/raw_links_to_weekly.py --input RAW_LINKS/2026-01-29
+
+# Specify date explicitly
+python scripts/raw_links_to_weekly.py --input RAW_LINKS/2026-01-29 --date 2026-01-29
+
+# Preview without writing
+python scripts/raw_links_to_weekly.py --input RAW_LINKS/2026-01-29 --dry-run
+```
+
+**All Options:**
+| Option | Description | Example |
+|--------|-------------|---------|
+| `--input` | Path to RAW_LINKS file | `--input RAW_LINKS/2026-01-29` |
+| `--date` | Date in YYYY-MM-DD (default: inferred from filename) | `--date 2026-01-29` |
+| `--dry-run` | Preview output without writing | `--dry-run` |
 
 ### weekly_links.py
 Creates weekly AI news link collections and updates the archive index.
@@ -474,6 +588,8 @@ python format_urls.py --input-file weekly-links/2025-01-29-links.md --dry-run
 
 ```
 scripts/
+├── open_links_in_chrome.py      # Open RAW_LINKS in Chrome
+├── raw_links_to_weekly.py       # Convert RAW_LINKS to weekly-links
 ├── weekly_links.py              # Template generator
 ├── format_urls.py               # URL formatter (original)
 ├── markdown_to_html.py          # Markdown to HTML converter with GA
