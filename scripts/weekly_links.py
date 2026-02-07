@@ -109,6 +109,11 @@ def parse_args():
         action="store_true",
         help="Show what would change but do not write files",
     )
+    p.add_argument(
+        "--update-index",
+        action="store_true",
+        help="Only regenerate weekly-links/index.md from existing *-links.md files (no new file created)",
+    )
     return p.parse_args()
 
 
@@ -215,6 +220,14 @@ def write_index(files, dry_run=False):
 def main():
     args = parse_args()
     ensure_dirs()
+
+    if args.update_index:
+        # Only regenerate archive index from existing *-links.md files
+        files = find_weeklies()
+        write_index(files, dry_run=args.dry_run)
+        if not args.dry_run:
+            print(f"✅ Updated: {INDEX_FILE} with {len(files)} entries.")
+        return
 
     # Parse/validate date
     try:

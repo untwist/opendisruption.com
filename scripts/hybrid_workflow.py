@@ -58,6 +58,26 @@ def parse_args():
     return parser.parse_args()
 
 
+def update_archive_index(dry_run: bool = False) -> bool:
+    """Regenerate weekly-links/index.md from all *-links.md files."""
+    script_dir = Path(__file__).resolve().parent
+    repo_root = script_dir.parent
+    weekly_links_py = script_dir / "weekly_links.py"
+    cmd = [sys.executable, str(weekly_links_py), "--update-index"]
+    if dry_run:
+        cmd.append("--dry-run")
+    try:
+        result = subprocess.run(cmd, cwd=repo_root, capture_output=True, text=True, check=True)
+        if result.stdout:
+            print(result.stdout.strip())
+        return True
+    except subprocess.CalledProcessError as e:
+        print(f"⚠️  Could not update archive index: {e}")
+        if e.stderr:
+            print(e.stderr.strip())
+        return False
+
+
 def get_latest_markdown_file(weekly_links_dir: Path) -> Path:
     """Get the most recent markdown file in the weekly-links directory."""
     markdown_files = list(weekly_links_dir.glob("*.md"))
@@ -380,6 +400,8 @@ def main():
             )
             if success:
                 print("🎉 All files processed successfully!")
+                print("📋 Updating archive index...")
+                update_archive_index(args.dry_run)
             else:
                 print("⚠️  Some files failed to process")
                 return 1
@@ -393,6 +415,8 @@ def main():
             )
             if success:
                 print("🎉 Latest file processed successfully!")
+                print("📋 Updating archive index...")
+                update_archive_index(args.dry_run)
             else:
                 print("❌ Failed to process latest file")
                 return 1
@@ -404,6 +428,8 @@ def main():
             )
             if success:
                 print("🎉 File processed successfully!")
+                print("📋 Updating archive index...")
+                update_archive_index(args.dry_run)
             else:
                 print("❌ Failed to process file")
                 return 1
