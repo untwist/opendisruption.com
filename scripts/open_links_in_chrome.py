@@ -199,9 +199,11 @@ def main():
         sys.exit(1)
 
     for i, (url, _) in enumerate(items):
+        print(f"[{i + 1}/{len(items)}] Opening: {url}")
         open_in_chrome(url, dry_run=False)
         if i < len(items) - 1:
             delay = random.uniform(delay_min, delay_max)
+            print(f"  Waiting {delay:.1f} sec...")
             time.sleep(delay)
 
     print("Done.")
