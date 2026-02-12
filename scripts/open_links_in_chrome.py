@@ -8,12 +8,13 @@ Search terms (in double quotes) are opened as Google searches.
 Usage:
     python open_links_in_chrome.py RAW_LINKS/2026-01-29
     python open_links_in_chrome.py RAW_LINKS/2026-01-29 --category HEADLINES
-    python open_links_in_chrome.py RAW_LINKS/2026-01-29 --delay 1.0   # slower (1 sec between tabs)
+    python open_links_in_chrome.py RAW_LINKS/2026-01-29 --delay 3 8   # random 3-8 sec (reduces blocking risk)
     python open_links_in_chrome.py RAW_LINKS/2026-01-29 --dry-run
     python open_links_in_chrome.py RAW_LINKS/2026-01-29 --output-html
 """
 
 import argparse
+import random
 import subprocess
 import sys
 import time
@@ -148,10 +149,11 @@ def main():
     )
     parser.add_argument(
         "--delay",
+        nargs="+",
         type=float,
-        default=5.0,
-        metavar="SECONDS",
-        help="Seconds to wait between opening each tab (default: 5). Use --delay 1.0 for faster opening.",
+        default=[5.0],
+        metavar="SEC",
+        help="Seconds between tabs: one value (fixed) or two values MIN MAX (random range). Default: 5. Example: --delay 3 8",
     )
     args = parser.parse_args()
 
@@ -186,10 +188,21 @@ def main():
             print(f"\nSearch topics: {', '.join(search_topics)}")
         return
 
+    # Parse delay: one value = fixed, two values = random range
+    delays = args.delay
+    if len(delays) == 1:
+        delay_min = delay_max = delays[0]
+    elif len(delays) == 2:
+        delay_min, delay_max = min(delays), max(delays)
+    else:
+        print("Error: --delay accepts 1 (fixed) or 2 (min max) values.", file=sys.stderr)
+        sys.exit(1)
+
     for i, (url, _) in enumerate(items):
         open_in_chrome(url, dry_run=False)
         if i < len(items) - 1:
-            time.sleep(args.delay)
+            delay = random.uniform(delay_min, delay_max)
+            time.sleep(delay)
 
     print("Done.")
 

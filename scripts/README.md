@@ -155,8 +155,8 @@ python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --dry-run
 # Also save HTML launcher (fallback if popup blockers block script)
 python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --output-html
 
-# Faster opening (1 second between tabs; default is 5 seconds)
-python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --delay 1.0
+# Random delay 3-8 sec (reduces X blocking risk; default is fixed 5 sec)
+python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --delay 3 8
 ```
 
 ### Feed RAW_LINKS into Website Pipeline
@@ -297,6 +297,9 @@ python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --dry-run
 
 # Save HTML launcher
 python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --output-html
+
+# Random delay 3-8 sec between tabs (reduces blocking risk on X)
+python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --delay 3 8
 ```
 
 **All Options:**
@@ -306,7 +309,7 @@ python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --output-html
 | `--category` | Only open links from this category | `--category HEADLINES` |
 | `--dry-run` | Preview without opening | `--dry-run` |
 | `--output-html` | Save HTML launcher with Open All button | `--output-html` |
-| `--delay` | Seconds between opening each tab (default: 5) | `--delay 1.0` |
+| `--delay` | Seconds between tabs: one value (fixed) or two values MIN MAX (random range; reduces X blocking risk). Default: 5 | `--delay 5`, `--delay 3 8` |
 
 ### raw_links_to_weekly.py
 Converts RAW_LINKS format to weekly-links markdown. URLs only (search terms excluded). Run `hybrid_workflow.py` afterward.
