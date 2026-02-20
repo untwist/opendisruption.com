@@ -176,6 +176,7 @@ git add . && git commit -m "Add weekly links for January 29" && git push
 ### Notes
 - **Search terms** (in double quotes) are opened as Google searches in Chrome but excluded from the website output. Topics to research are printed when running `raw_links_to_weekly.py`.
 - **Date inference**: If `--date` is omitted, the date is inferred from the filename (e.g. `RAW_LINKS/2026-01-29` → `2026-01-29`).
+- **Link order**: The hybrid workflow preserves the order of URLs from your markdown (and from RAW_LINKS when you use `raw_links_to_weekly.py` first). To fix missing or out-of-order links, regenerate from RAW: run `raw_links_to_weekly.py` then `hybrid_workflow.py` so the pipeline uses RAW_LINKS as the source of truth.
 
 ## 🎯 Google Analytics Integration
 

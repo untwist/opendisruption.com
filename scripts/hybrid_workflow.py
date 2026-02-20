@@ -239,59 +239,29 @@ def process_with_smart_formatter(input_file: Path, urls: list, dry_run: bool = F
 
 
 def process_with_hybrid_approach(input_file: Path, urls: list, dry_run: bool = False):
-    """Process using hybrid approach: smart for beneficial URLs, fast for others."""
-    print("🔄 Step 1: Hybrid formatting URLs...")
+    """Process using hybrid approach: smart for beneficial URLs, fast for others.
+    Preserves original URL order (no reordering by smart vs fast)."""
+    print("🔄 Step 1: Hybrid formatting URLs (preserving order)...")
 
-    # Analyze URLs to determine which ones would benefit from metadata extraction
-    smart_urls = []
-    fast_urls = []
-
-    for url in urls:
-        if should_extract_metadata(url):
-            smart_urls.append(url)
-        else:
-            fast_urls.append(url)
-
+    smart_count = sum(1 for url in urls if should_extract_metadata(url))
+    fast_count = len(urls) - smart_count
     print(
-        f"📊 Analysis: {len(smart_urls)} URLs will use smart extraction, {len(fast_urls)} will use fast formatting"
+        f"📊 Analysis: {smart_count} URLs will use smart extraction, {fast_count} will use fast formatting"
     )
 
     if dry_run:
-        print("🔍 DRY RUN - Showing hybrid approach:")
-        print("🧠 Smart extraction URLs:")
-        for i, url in enumerate(smart_urls[:3], 1):
+        print("🔍 DRY RUN - Showing hybrid approach (in original order):")
+        for i, url in enumerate(urls[:5], 1):
+            kind = "smart" if should_extract_metadata(url) else "fast"
             title = generate_smart_title_for_url(url)
-            print(f"   {i}. {title}")
-        if len(smart_urls) > 3:
-            print(f"   ... and {len(smart_urls) - 3} more")
-
-        print("⚡ Fast formatting URLs:")
-        for i, url in enumerate(fast_urls[:3], 1):
-            print(f"   {i}. {url} (will use original method)")
-        if len(fast_urls) > 3:
-            print(f"   ... and {len(fast_urls) - 3} more")
+            print(f"   {i}. [{kind}] {title}")
+        if len(urls) > 5:
+            print(f"   ... and {len(urls) - 5} more")
         return True
 
-    # Process smart URLs with metadata extraction
-    if smart_urls:
-        print(f"🧠 Processing {len(smart_urls)} URLs with smart extraction...")
-        smart_formatted = format_urls_to_markdown_smart(smart_urls)
-    else:
-        smart_formatted = ""
-
-    # Process fast URLs with original method
-    if fast_urls:
-        print(f"⚡ Processing {len(fast_urls)} URLs with fast method...")
-        # For now, we'll use the original formatter for fast URLs
-        # In a full implementation, you'd extract just the fast URLs and process them
-        fast_formatted = format_urls_to_markdown_smart(
-            fast_urls
-        )  # Fallback to smart for now
-    else:
-        fast_formatted = ""
-
-    # Combine results
-    all_formatted = smart_formatted + (fast_formatted if fast_formatted else "")
+    # Process all URLs in original order; format_urls_to_markdown_smart decides
+    # per-URL whether to extract metadata (smart) or use fallback (fast).
+    all_formatted = format_urls_to_markdown_smart(urls)
 
     # Replace content in file
     print("🔄 Replacing content...")
