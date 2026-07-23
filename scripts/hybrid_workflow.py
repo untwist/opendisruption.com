@@ -59,7 +59,7 @@ def parse_args():
 
 
 def update_archive_index(dry_run: bool = False) -> bool:
-    """Regenerate weekly-links/index.md from all *-links.md files."""
+    """Regenerate weekly-links/index.md and index.html from all *-links.md files."""
     script_dir = Path(__file__).resolve().parent
     repo_root = script_dir.parent
     weekly_links_py = script_dir / "weekly_links.py"

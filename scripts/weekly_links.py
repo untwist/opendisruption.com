@@ -23,9 +23,11 @@ from urllib.parse import urlparse
 WEEKLY_DIR = Path("weekly-links")
 TEMPLATE_FILE = WEEKLY_DIR / "template.md"
 INDEX_FILE = WEEKLY_DIR / "index.md"
+INDEX_HTML_FILE = WEEKLY_DIR / "index.html"
 FILENAME_RE = re.compile(r"(\d{4}-\d{2}-\d{2})-links\.md$")
 DATE_FMT_FILE = "%Y-%m-%d"
 DATE_FMT_DISPLAY = "%B %d, %Y"
+GA_ID = "G-W5RHK6N572"
 
 ARCHIVE_HEADER = """# 🧭 Open Disruption — Link Archive
 
@@ -82,7 +84,7 @@ You can find **all previous weeks** of curated AI news here:
 
 def parse_args():
     p = argparse.ArgumentParser(
-        description="Create weekly links file from template and update index.md"
+        description="Create weekly links file from template and update index.md + index.html"
     )
     p.add_argument(
         "--date",
@@ -112,7 +114,7 @@ def parse_args():
     p.add_argument(
         "--update-index",
         action="store_true",
-        help="Only regenerate weekly-links/index.md from existing *-links.md files (no new file created)",
+        help="Only regenerate weekly-links/index.md and index.html from existing *-links.md files (no new file created)",
     )
     return p.parse_args()
 
@@ -203,7 +205,7 @@ def find_weeklies():
     return files
 
 
-def write_index(files, dry_run=False):
+def write_index_md(files, dry_run=False):
     lines = [ARCHIVE_HEADER, ""]
     for d, path in files:
         display = d.strftime(DATE_FMT_DISPLAY)
@@ -217,16 +219,152 @@ def write_index(files, dry_run=False):
         INDEX_FILE.write_text(content, encoding="utf-8")
 
 
+def write_index_html(files, dry_run=False):
+    """Write static archive index.html (required for GitHub Pages with .nojekyll)."""
+    items = []
+    for d, path in files:
+        display = d.strftime(DATE_FMT_DISPLAY)
+        html_name = path.name.replace("-links.md", "-links.html")
+        items.append(f'        <li><a href="./{html_name}">{display}</a></li>')
+    list_html = "\n".join(items)
+    content = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Disruption — Link Archive</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){{dataLayer.push(arguments);}}
+        gtag('js', new Date());
+        gtag('config', '{GA_ID}');
+    </script>
+
+    <style>
+        body {{
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }}
+
+        h1, h2 {{
+            color: #C04A3B;
+        }}
+
+        h1 {{
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }}
+
+        h2 {{
+            font-size: 1.8em;
+            margin-top: 2em;
+            margin-bottom: 1em;
+            border-bottom: 2px solid #C04A3B;
+            padding-bottom: 0.5em;
+        }}
+
+        a {{
+            color: #C04A3B;
+            text-decoration: none;
+        }}
+
+        a:hover {{
+            text-decoration: underline;
+        }}
+
+        .back-link {{
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }}
+
+        .intro {{
+            margin-bottom: 1.5em;
+        }}
+
+        .note {{
+            color: #666;
+            border-left: 3px solid #C04A3B;
+            padding-left: 1em;
+            margin: 1.5em 0;
+        }}
+
+        ul {{
+            padding-left: 0;
+        }}
+
+        li {{
+            margin-bottom: 0.5em;
+            list-style: none;
+        }}
+
+        .footer {{
+            margin-top: 3em;
+            padding-top: 1em;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-size: 0.9em;
+        }}
+    </style>
+</head>
+<body>
+    <a href="/" class="back-link">← Back to Open Disruption</a>
+
+    <h1>🧭 Open Disruption — Link Archive</h1>
+
+    <p class="intro">
+        Welcome to the <strong>Open Disruption Link Archive</strong>, a weekly collection of curated AI news,
+        research papers, product launches, and X (Twitter) threads from our live Office Hours sessions.
+    </p>
+
+    <p class="note">
+        📺 Watch the weekly show on <a href="https://www.youtube.com/@toddbrous" target="_blank" rel="noopener noreferrer">YouTube</a><br>
+        🌐 Learn more at <a href="https://opendisruption.com/">opendisruption.com</a>
+    </p>
+
+    <h2>🗓️ Archive</h2>
+
+    <ul>
+{list_html}
+    </ul>
+
+    <p class="footer"><em>This archive is open-source and updated weekly.</em></p>
+</body>
+</html>
+"""
+    if dry_run:
+        print("\n--- index.html (preview) ---\n")
+        print(content)
+    else:
+        INDEX_HTML_FILE.write_text(content, encoding="utf-8")
+
+
+def write_index(files, dry_run=False):
+    write_index_md(files, dry_run=dry_run)
+    write_index_html(files, dry_run=dry_run)
+
+
 def main():
     args = parse_args()
     ensure_dirs()
 
     if args.update_index:
-        # Only regenerate archive index from existing *-links.md files
+        # Only regenerate archive indexes from existing *-links.md files
         files = find_weeklies()
         write_index(files, dry_run=args.dry_run)
         if not args.dry_run:
-            print(f"✅ Updated: {INDEX_FILE} with {len(files)} entries.")
+            print(
+                f"✅ Updated: {INDEX_FILE} and {INDEX_HTML_FILE} with {len(files)} entries."
+            )
         return
 
     # Parse/validate date
@@ -252,11 +390,13 @@ def main():
             out_file.write_text(rendered, encoding="utf-8")
             print(f"✅ Created: {out_file}")
 
-    # Update index
+    # Update indexes (markdown + HTML for static GitHub Pages)
     files = find_weeklies()
     write_index(files, dry_run=args.dry_run)
     if not args.dry_run:
-        print(f"✅ Updated: {INDEX_FILE} with {len(files)} entries.")
+        print(
+            f"✅ Updated: {INDEX_FILE} and {INDEX_HTML_FILE} with {len(files)} entries."
+        )
 
 
 if __name__ == "__main__":

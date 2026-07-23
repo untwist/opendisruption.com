@@ -591,7 +591,7 @@ The script uses carefully curated patterns for consistent, high-quality titles:
 
 ### Archive Index
 
-- **Location**: `weekly-links/index.md`
+- **Location**: `weekly-links/index.md` and `weekly-links/index.html` (both auto-generated)
 - **Content**: Automatically updated list of all weekly collections
 - **Features**: Sorted by date (newest first)
 
@@ -800,6 +800,7 @@ weekly-links/
 ├── template.md                  # Custom template (optional)
 ├── template_with_ga.html       # HTML template with Google Analytics
 ├── index.md                     # Archive index (auto-generated)
+├── index.html                   # Archive index for GitHub Pages (auto-generated)
 ├── 2025-01-15-links.md          # Individual weekly files (markdown)
 ├── 2025-01-15-links.html        # Individual weekly files (HTML with GA)
 ├── 2025-01-22-links.md
@@ -811,27 +812,35 @@ weekly-links/
 
 ## Integration with GitHub Pages
 
-The generated files work seamlessly with GitHub Pages:
+The site publishes as **static HTML** (see `.nojekyll` at the repo root). GitHub Pages does **not** run Jekyll, which avoids build failures when GitHub’s metadata API is down.
 
-### Markdown Files (Original)
+Always commit both formats for each week, and keep the HTML archive index in sync:
+
+1. **Markdown + HTML week files**: `YYYY-MM-DD-links.md` and `YYYY-MM-DD-links.html`
+2. **Archive indexes**: `weekly-links/index.md` **and** `weekly-links/index.html` (both updated by `weekly_links.py --update-index` / `hybrid_workflow.py`)
+3. **Browse Archive** on the homepage links to `/weekly-links/`, which serves `index.html`
+
+### Live URLs
 
 - **Archive**: `https://opendisruption.com/weekly-links/`
-- **Individual weeks**: `https://opendisruption.com/weekly-links/2025-01-29-links.html`
+- **Individual weeks**: `https://opendisruption.com/weekly-links/YYYY-MM-DD-links.html`
 
+If the archive page looks stale after a push but the week’s `.html` URL works, regenerate indexes:
 
+```bash
+uv run python scripts/weekly_links.py --update-index
+```
 
-### HTML Files (With Google Analytics)
-
-- **Individual weeks**: `https://opendisruption.com/weekly-links/2025-01-29-links.html`
-- **Features**: Full Google Analytics tracking, responsive design, professional styling
+Then commit `weekly-links/index.md` and `weekly-links/index.html`.
 
 
 
 ### Recommended Setup
 
-1. **Keep both formats**: Commit both `.md` and `.html` files
-2. **Link to HTML**: Update your main site to link to `.html` versions for tracking
-3. **Analytics data**: All HTML pages will send data to Google Analytics
+1. **Keep both formats**: Commit both `.md` and `.html` files for each week
+2. **Commit both indexes**: `index.md` and `index.html` must both include the new week
+3. **Link to HTML**: Site navigation should use `.html` paths for analytics
+4. **Analytics data**: All HTML pages will send data to Google Analytics
 
 
 
