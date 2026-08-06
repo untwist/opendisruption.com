@@ -19,7 +19,7 @@ python scripts/weekly_links.py --date
 # (Open weekly-links/2025-01-29-links.md and paste URLs in the "Links from Office Hours" section)
 
 # 4. Smart formatting with metadata extraction + HTML generation
-python scripts/hybrid_workflow.py --input weekly-links/2025-01-29-links.md
+python scripts/hybrid_workflow.py --input weekly-links/2025-01-29-links.md --smart-only
 
 python scripts/hybrid_workflow.py --input weekly-links/
 
@@ -134,13 +134,13 @@ The new hybrid workflow includes intelligent metadata extraction that dramatical
 ### 🎯 Smart vs Fast Processing
 
 
-| URL Type                                         | Processing Method | Example Result                                                                                    |
-| ------------------------------------------------ | ----------------- | ------------------------------------------------------------------------------------------------- |
-| **Research Papers** (arXiv, academic sites)      | Smart extraction  | `"[2509.25140] ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory"`                 |
-| **AI Company Blogs** (OpenAI, Anthropic, Google) | Smart extraction  | `"Netflix goes 'all in' on generative AI as entertainment industry remains divided | TechCrunch"` |
-| **News Articles** (TechCrunch, Wired, etc.)      | Smart extraction  | `"State of Generative Media Survey Report 2025 | Artificial Analysis"`                            |
-| **Social Media** (Twitter/X, YouTube)            | Fast formatting   | `"karpathy — AI Industry Insight"`                                                                |
-| **Video Platforms**                              | Fast formatting   | `"YouTube: AI Video Content"`                                                                     |
+| URL Type                                         | Processing Method | Example Result                                                                     |
+| ------------------------------------------------ | ----------------- | ---------------------------------------------------------------------------------- |
+| **Research Papers** (arXiv, academic sites)      | Smart extraction  | `"[2509.25140] ReasoningBank: Scaling Agent Self-Evolving with Reasoning Memory"`  |
+| **AI Company Blogs** (OpenAI, Anthropic, Google) | Smart extraction  | `"Netflix goes 'all in' on generative AI as entertainment industry remains divided |
+| **News Articles** (TechCrunch, Wired, etc.)      | Smart extraction  | `"State of Generative Media Survey Report 2025                                     |
+| **Social Media** (Twitter/X, YouTube)            | Fast formatting   | `"karpathy — AI Industry Insight"`                                                 |
+| **Video Platforms**                              | Fast formatting   | `"YouTube: AI Video Content"`                                                      |
 
 
 
@@ -820,6 +820,8 @@ Always commit both formats for each week, and keep the HTML archive index in syn
 2. **Archive indexes**: `weekly-links/index.md` **and** `weekly-links/index.html` (both updated by `weekly_links.py --update-index` / `hybrid_workflow.py`)
 3. **Browse Archive** on the homepage links to `/weekly-links/`, which serves `index.html`
 
+
+
 ### Live URLs
 
 - **Archive**: `https://opendisruption.com/weekly-links/`
@@ -832,8 +834,6 @@ uv run python scripts/weekly_links.py --update-index
 ```
 
 Then commit `weekly-links/index.md` and `weekly-links/index.html`.
-
-
 
 ### Recommended Setup
 
