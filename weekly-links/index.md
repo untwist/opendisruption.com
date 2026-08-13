@@ -10,6 +10,7 @@ Welcome to the **Open Disruption Link Archive**, a weekly collection of curated 
 ## 🗓️ Archive
 
 
+- [August 13, 2026](./2026-08-13-links.md)
 - [August 06, 2026](./2026-08-06-links.md)
 - [July 30, 2026](./2026-07-30-links.md)
 - [July 23, 2026](./2026-07-23-links.md)
