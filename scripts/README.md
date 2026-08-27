@@ -25,6 +25,9 @@ python scripts/hybrid_workflow.py --input weekly-links/
 
 # 5. Review and commit (both .md and .html files)
 git add . && git commit -m "Add weekly links with smart titles and GA tracking" && git push
+
+# 6. Open all links in Chrome for office hours
+python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --delay 3 8
 ```
 
 
