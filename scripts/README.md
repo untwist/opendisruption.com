@@ -38,7 +38,7 @@ python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --delay 3 8
 # 2. Convert RAW_LINKS to weekly-links and run pipeline
 python scripts/raw_links_to_weekly.py --input RAW_LINKS/2026-01-29
 # Edit weekly-links/2026-01-29-links.md to add YouTube URL
-python scripts/hybrid_workflow.py --input weekly-links/2026-01-29-links.md
+python scripts/hybrid_workflow.py --input weekly-links/2026-01-29-links.md  --smart-only
 
 # 3. Review and commit
 git add . && git commit -m "Add weekly links for January 29" && git push
