@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Local office-hours section slides (not published)
+SLIDES/

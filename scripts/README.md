@@ -188,23 +188,31 @@ If you compile links in `RAW_LINKS/YYYY-MM-DD` during the week, use these script
 
 ### RAW_LINKS Format
 
-- **Category headers**: `HEADLINES:`, `GRAPHICS:`, `LLMs:`, `AGENTS:`, `CODING:`, `OTHER:`, `LABOR:`
+- **Category tags** (preferred): `<HEADLINES>`, `<GRAPHICS>`, `<PROMPT SHARE>`, `<LLMs>`, `<AGENTS>`, `<CODING>`, `<OTHER>`, `<LABOR>` (closing tags like `</HEADLINES>` optional but supported)
+- **Category headers** (legacy): `HEADLINES:`, `GRAPHICS:`, `LLMs:`, `AGENTS:`, `CODING:`, `OTHER:`, `LABOR:`
 - **Direct URLs**: `https://x.com/...`, `https://arxiv.org/...`, etc.
 - **Search topics** (in double quotes): `"Qwen3 max thinking"` — opens as Google search
+
+### Section slides (`SLIDES/`)
+
+Before each non-empty section, `open_links_in_chrome.py` opens a matching PNG from local `SLIDES/` as a Chrome tab (`file://`). Matching is case-insensitive: the filename (without `.png`) must start with the tag name, ignoring spaces and punctuation — e.g. `<LLMs>` → `LLMs and Models.png`, `<OTHER>` → `Other Stuff.png`. Drop a new PNG named after a tag (e.g. `Claw.png` for `<CLAW>`) to cover that section. `SLIDES/` is gitignored and stays on this machine only.
 
 
 
 ### Open All Links in Chrome
 
 ```bash
-# Open all URLs and search terms in separate Chrome tabs
+# Open all URLs and search terms in separate Chrome tabs (with section slides)
 python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29
 
-# Open only HEADLINES category
+# Open only HEADLINES category (slide + that section's links)
 python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --category HEADLINES
 
 # Preview without opening
 python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --dry-run
+
+# Open links only (skip section title slides)
+python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --no-slides
 
 # Also save HTML launcher (fallback if popup blockers block script)
 python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --output-html
@@ -235,6 +243,7 @@ git add . && git commit -m "Add weekly links for January 29" && git push
 ### Notes
 
 - **Search terms** (in double quotes) are opened as Google searches in Chrome but excluded from the website output. Topics to research are printed when running `raw_links_to_weekly.py`.
+- **Section slides** are Chrome-only presentation tabs from local `SLIDES/`; they are never written into weekly-links.
 - **Date inference**: If `--date` is omitted, the date is inferred from the filename (e.g. `RAW_LINKS/2026-01-29` → `2026-01-29`).
 - **Link order**: The hybrid workflow preserves the order of URLs from your markdown (and from RAW_LINKS when you use `raw_links_to_weekly.py` first). To fix missing or out-of-order links, regenerate from RAW: run `raw_links_to_weekly.py` then `hybrid_workflow.py` so the pipeline uses RAW_LINKS as the source of truth.
 
@@ -372,12 +381,12 @@ python scripts/markdown_to_html.py --input weekly-links/2025-10-23-links.md
 
 ### open_links_in_chrome.py
 
-Opens RAW_LINKS URLs in Google Chrome. Search terms (in double quotes) open as Google searches.
+Opens RAW_LINKS URLs in Google Chrome. Search terms (in double quotes) open as Google searches. Before each non-empty section, opens a matching local PNG from `SLIDES/` as a title-card tab.
 
 **Basic Usage:**
 
 ```bash
-# Open all links in Chrome
+# Open all links in Chrome (with section slides)
 python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29
 
 # Open only HEADLINES category
@@ -385,6 +394,9 @@ python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --category HEADLINES
 
 # Preview without opening
 python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --dry-run
+
+# Skip section title slides
+python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --no-slides
 
 # Save HTML launcher
 python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --output-html
@@ -401,6 +413,7 @@ python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --delay 3 8
 | `input`         | Path to RAW_LINKS file                                                                                            | `RAW_LINKS/2026-01-29`     |
 | `--category`    | Only open links from this category                                                                                | `--category HEADLINES`     |
 | `--dry-run`     | Preview without opening                                                                                           | `--dry-run`                |
+| `--no-slides`   | Skip section title slides from `SLIDES/`                                                                          | `--no-slides`              |
 | `--output-html` | Save HTML launcher with Open All button                                                                           | `--output-html`            |
 | `--delay`       | Seconds between tabs: one value (fixed) or two values MIN MAX (random range; reduces X blocking risk). Default: 5 | `--delay 5`, `--delay 3 8` |
 
