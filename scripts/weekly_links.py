@@ -94,7 +94,7 @@ def parse_args():
     p.add_argument(
         "--video-url",
         help="YouTube URL to insert into the new weekly file (optional)",
-        default="https://youtube.com/your-video-link",
+        default="https://www.youtube.com/@toddbrous",
     )
     p.add_argument(
         "--youtube-text",
@@ -180,7 +180,7 @@ def fill_template(
     # Backward-friendly replacements for the earlier template format
     out = out.replace("[Month Day, Year]", display_date)
     out = out.replace(
-        "[YouTube Link Here](https://youtube.com/your-video-link)",
+        "[YouTube Link Here](https://www.youtube.com/@toddbrous)",
         f"[{youtube_text}]({video_url})",
     )
 

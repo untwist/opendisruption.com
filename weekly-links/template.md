@@ -4,7 +4,7 @@
 
 Welcome to this week’s curated list of the most important stories, research papers, threads, and tools in AI.
 
-> Watch the full episode on YouTube: [YouTube Link Here](https://youtube.com/your-video-link)
+> Watch the full episode on YouTube: [YouTube Link Here](https://www.youtube.com/@toddbrous)
 
 ---
 

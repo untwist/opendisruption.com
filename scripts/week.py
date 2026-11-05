@@ -34,7 +34,7 @@ RAW_LINKS_DIR = REPO_ROOT / "RAW_LINKS"
 WEEKLY_DIR = REPO_ROOT / "weekly-links"
 DATE_FMT = "%Y-%m-%d"
 CHROME_DELAY = ["3", "8"]
-YOUTUBE_PLACEHOLDER = "https://youtube.com/your-video-link"
+YOUTUBE_PLACEHOLDER = "https://www.youtube.com/@toddbrous"
 
 
 @dataclass(frozen=True)
