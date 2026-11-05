@@ -4,52 +4,37 @@ This directory contains automation scripts for creating and managing weekly AI n
 
 ## 🚀 Quick Start
 
-> **📹 Important Reminder**: Upload your video to YouTube first and get the YouTube URL before running the pipeline. This ensures the weekly links template is created with the correct video link from the start.
+### One weekly command (recommended)
 
-### 🧠 Smart Hybrid Workflow (Recommended)
-
-```bash
-# 1. Upload your video to YouTube and get the URL
-# 2. Generate template for this week with your YouTube URL
-python scripts/weekly_links.py --date 2026-01-29 --video-url "https://youtube.com/watch?v=your-video"
-
-python scripts/weekly_links.py --date
-
-# 3. Add your raw URLs to the generated file
-# (Open weekly-links/2025-01-29-links.md and paste URLs in the "Links from Office Hours" section)
-
-# 4. Smart formatting with metadata extraction + HTML generation
-python scripts/hybrid_workflow.py --input weekly-links/2025-01-29-links.md --smart-only
-
-python scripts/hybrid_workflow.py --input weekly-links/
-
-# 5. Review and commit (both .md and .html files)
-git add . && git commit -m "Add weekly links with smart titles and GA tracking" && git push
-
-# 6. Open all links in Chrome for office hours
-python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --delay 3 8
-```
-
-
-
-### 📋 RAW_LINKS Workflow (If you compile links in RAW_LINKS/)
+Copy your Google Keep note, then from the repo root:
 
 ```bash
-# 1. Open all links in Chrome for office hours
-python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --delay 3 8
-
-# 2. Convert RAW_LINKS to weekly-links and run pipeline
-python scripts/raw_links_to_weekly.py --input RAW_LINKS/2026-01-29
-# Edit weekly-links/2026-01-29-links.md to add YouTube URL
-python scripts/hybrid_workflow.py --input weekly-links/2026-01-29-links.md  --smart-only
-
-# 3. Review and commit
-git add . && git commit -m "Add weekly links for January 29" && git push
+python scripts/week.py
 ```
 
+That writes `RAW_LINKS/YYYY-MM-DD` from the clipboard, converts to weekly markdown,
+runs smart formatting (`--smart-only`), and opens Chrome with `--delay 3 8`.
 
+```bash
+python scripts/week.py --date 2026-11-05   # override date
+python scripts/week.py --no-chrome        # site files only
+python scripts/week.py --dry-run          # preview counts and paths
+python scripts/week.py --force            # overwrite existing RAW_LINKS file
+python scripts/week.py --input RAW_LINKS/2026-11-05   # skip clipboard; rerun pipeline
+```
 
-### ⚡ Fast One-Command Solutions
+Add the YouTube URL in the generated `weekly-links/YYYY-MM-DD-links.md` when you have it
+(`week.py` reminds you if the placeholder is still there). Then review and commit.
+
+> **📹 Reminder**: Upload your video to YouTube when you can and put the URL in the weekly file.
+> The pipeline still runs with the placeholder; existing weekly files keep a real YouTube link
+> when you re-run convert.
+
+The older multi-step recipes (copy into a RAW_LINKS file by hand, then run each script)
+are preserved in [`ARCHIVE.md`](ARCHIVE.md). The individual scripts below still work for
+one-off steps.
+
+### ⚡ Fast One-Command Solutions (formatting only)
 
 ```bash
 # Smart processing for most recent file
@@ -101,6 +86,7 @@ python scripts/workflow.py --input weekly-links/2025-01-29-links.md
 
 | Script                    | Purpose                                                                      | When to Use                                        |
 | ------------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------- |
+| `week.py`                 | **One weekly command** — clipboard → RAW_LINKS → smart format → Chrome       | **Recommended weekly ritual**                      |
 | `open_links_in_chrome.py` | Open all RAW_LINKS URLs in Chrome tabs; search terms open as Google searches | Before office hours — open links for presentation  |
 | `raw_links_to_weekly.py`  | Convert RAW_LINKS to weekly-links markdown format                            | After compiling links — feed into website pipeline |
 
@@ -225,6 +211,14 @@ python scripts/open_links_in_chrome.py RAW_LINKS/2026-01-29 --delay 3 8
 
 ### Feed RAW_LINKS into Website Pipeline
 
+**Recommended:** copy the Keep note, then run one command:
+
+```bash
+python scripts/week.py --date 2026-01-29
+```
+
+**Manual steps** (still valid; see also [`ARCHIVE.md`](ARCHIVE.md)):
+
 ```bash
 # 1. Convert RAW_LINKS to weekly-links markdown (URLs only; search terms excluded)
 python scripts/raw_links_to_weekly.py --input RAW_LINKS/2026-01-29
@@ -232,7 +226,7 @@ python scripts/raw_links_to_weekly.py --input RAW_LINKS/2026-01-29
 # 2. Add YouTube URL to the generated file (edit weekly-links/2026-01-29-links.md)
 
 # 3. Run hybrid workflow to format URLs and generate HTML
-python scripts/hybrid_workflow.py --input weekly-links/2026-01-29-links.md
+python scripts/hybrid_workflow.py --input weekly-links/2026-01-29-links.md --smart-only
 
 # 4. Review and commit
 git add . && git commit -m "Add weekly links for January 29" && git push
