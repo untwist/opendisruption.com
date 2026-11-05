@@ -216,6 +216,24 @@ You can find **all previous weeks** of curated AI news here:
     return content
 
 
+_EXTERNAL_ANCHOR_RE = re.compile(
+    r'<a\s+[^>]*href=["\']https?://[^"\']+["\'][^>]*>',
+    re.IGNORECASE,
+)
+
+
+def add_blank_target_to_external_links(html: str) -> str:
+    """Add target="_blank" rel="noopener noreferrer" to http(s) links missing them."""
+
+    def replace_anchor(match: re.Match) -> str:
+        tag = match.group(0)
+        if re.search(r"\btarget=", tag, flags=re.IGNORECASE):
+            return tag
+        return tag[:-1] + ' target="_blank" rel="noopener noreferrer">'
+
+    return _EXTERNAL_ANCHOR_RE.sub(replace_anchor, html)
+
+
 def convert_markdown_to_html(
     markdown_file: Path, output_file: Path = None, ga_id: str = GA_MEASUREMENT_ID
 ) -> Path:
@@ -239,7 +257,7 @@ def convert_markdown_to_html(
     # Convert markdown to HTML
     print("🔄 Converting markdown to HTML...")
     md = markdown.Markdown(extensions=["extra", "codehilite"])
-    html_content = md.convert(enhanced_content)
+    html_content = add_blank_target_to_external_links(md.convert(enhanced_content))
 
     # Generate output filename if not provided
     if output_file is None:

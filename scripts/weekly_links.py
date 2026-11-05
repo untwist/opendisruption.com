@@ -183,6 +183,10 @@ def fill_template(
         "[YouTube Link Here](https://www.youtube.com/@toddbrous)",
         f"[{youtube_text}]({video_url})",
     )
+    out = out.replace(
+        '<a href="https://www.youtube.com/@toddbrous" target="_blank" rel="noopener noreferrer">YouTube Link Here</a>',
+        f'<a href="{video_url}" target="_blank" rel="noopener noreferrer">{youtube_text}</a>',
+    )
 
     # Convert Markdown links to HTML with target="_blank" for external links
     out = convert_markdown_links_to_html_with_target(out)

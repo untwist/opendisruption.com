@@ -29,7 +29,7 @@ DEFAULT_TEMPLATE = """#  Open Disruption — Weekly AI News Links
 
 Welcome to this week's curated list of the most important stories, research papers, threads, and tools in AI.
 
-> Watch the full episode on YouTube: [YouTube Link Here](https://www.youtube.com/@toddbrous)
+> Watch the full episode on YouTube: <a href="https://www.youtube.com/@toddbrous" target="_blank" rel="noopener noreferrer">YouTube Link Here</a>
 
 ---
 
