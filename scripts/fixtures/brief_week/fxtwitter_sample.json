@@ -1,0 +1,23 @@
+{
+  "code": 200,
+  "message": "OK",
+  "tweet": {
+    "id": "2118390190246879554",
+    "url": "https://x.com/openai/status/2118390190246879554",
+    "text": "Introducing GPT-6 Cyber: a major advance in security research already helping defenders find vulnerabilities.",
+    "author": {
+      "name": "OpenAI",
+      "screen_name": "openai"
+    },
+    "quote": {
+      "text": "Earlier work on Cyber capabilities.",
+      "author": {
+        "screen_name": "sama"
+      }
+    },
+    "media": {
+      "photos": [],
+      "videos": []
+    }
+  }
+}
