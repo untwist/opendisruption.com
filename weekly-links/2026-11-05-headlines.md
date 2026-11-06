@@ -1,0 +1,81 @@
+# Open Disruption — Proposed Headlines
+**Date:** 2026-11-05
+
+*Review, then apply with `brief_week.py --apply`. Does not change the live page until applied.*
+
+## Links from Office Hours
+
+- <a href="https://fortune.com/2026/11/05/tech-stocks-are-suffering-the-biggest-selloff-since-covid-as-investors-see-premature-end-to-ai-datacenter-boom/" target="_blank" rel="noopener noreferrer">Tech Stocks Suffer Biggest Selloff Since Covid on AI Datacenter Slowdown Fears</a>
+- <a href="https://www.politico.com/news/2026/11/04/democrats-eye-a-silicon-valley-ai-reckoning-01148624" target="_blank" rel="noopener noreferrer">'AI earthquake': Democrats eye a Silicon Valley reckoning</a>
+- <a href="https://rikiyat.github.io/blog/weight-space-programming/" target="_blank" rel="noopener noreferrer">LLMs Can Natively Read and Write Neural Network Weights</a>
+- <a href="https://honnibal.dev/blog/astra-read-write-misleading" target="_blank" rel="noopener noreferrer">The 'Astra can read and write weights to improve Qwen' post is misleading</a>
+- <a href="https://x.com/binance/status/2115960292115124558?a=cMISTV63k8LObFuWc1U&s=20" target="_blank" rel="noopener noreferrer">Binance suspends deposits and withdrawals while it resolves a security issue</a>
+- <a href="https://x.com/comfyui/status/2115928993623109648?a=DtmFWhhAUI3oaNlPeXs&s=46" target="_blank" rel="noopener noreferrer">ComfyUI Says Higgsfield Sent Cease and Desist Over Open Source Challenge</a>
+- <a href="https://x.com/newsfromgoogle/status/2116219345215074538?a=U7MSmzVCiaJO7gGkcXc&s=46" target="_blank" rel="noopener noreferrer">Google's TPUs Successfully Operate in Space</a>
+- <a href="https://x.com/a16z/status/2116267009134694545?a=IUKOCMJu-QfV0Pm5r-Y&s=46" target="_blank" rel="noopener noreferrer">Token prices fall as GPU rental prices climb</a>
+- <a href="https://www.a16z.news/p/charts-of-the-week-job-fud-fades" target="_blank" rel="noopener noreferrer">Charts of the Week: Job FUD Fades</a>
+- <a href="https://x.com/a16z/status/2116974326989857048?a=QxEXMskyJzklrv0dNgU&s=46" target="_blank" rel="noopener noreferrer">Shoppers sent by AI show up ready to buy</a>
+- <a href="https://x.com/semianalysis_/status/2117075900575477855?a=mFxfg7njLdMqHj-DrdI&s=46" target="_blank" rel="noopener noreferrer">SemiAnalysis Releases GDPx, a Frontier Agentic Benchmark Where Top Model Scores 12%</a>
+- <a href="https://x.com/deepseekharness/status/2117256196227019194?a=BkxFeXdlg000JjfMlhw&s=46" target="_blank" rel="noopener noreferrer">DeepSeek Harness Launches Creator Mode for Building Plugins</a>
+- <a href="https://x.com/simonw/status/2117655816581071203?a=_NLnWsR4KJ7pKofVckg&s=46" target="_blank" rel="noopener noreferrer">Simon Willison Tests Qwen 3.8 27B on Weight Interpretation Task</a>
+- <a href="https://x.com/AnthropicAI/status/2117710942826123294?a=PhSIv-5G72isLCZNLIY&s=20" target="_blank" rel="noopener noreferrer">Anthropic introduces FlashProve for provable AI inference</a>
+- <a href="https://www.linkedin.com/feed/news/cisco-hands-the-keys-to-27-year-old-programmer-9633714?utm_source=social_share_storyline&utm_medium=member_ios&rcm=ACoAAABCFa4BKfFdmNIWjXmXVy63x2QcHvLWxl4&utm_campaign=copy_link" target="_blank" rel="noopener noreferrer">Cisco hands the keys to 27-year-old programmer</a>
+- <a href="https://www.tomshardware.com/software/applications/disgruntled-software-developers-start-ambitious-open-source-revolt-using-ai-to-clone-common-services-occupysaas-ai-powered-project-wants-to-kick-auth0-salesforce-and-other-pricy-service-as-software-to-the-curb" target="_blank" rel="noopener noreferrer">Disgruntled developers launch OccupySaaS, using AI to clone pricey SaaS services</a>
+- <a href="https://www.anthropic.com/research/provable-inference" target="_blank" rel="noopener noreferrer">Anthropic Advances Provable Inference for Large Language Models</a>
+- <a href="https://x.com/gdb/status/2118395717966606542?a=gSXp-2Y70hy9-2MYevY&s=20" target="_blank" rel="noopener noreferrer">OpenAI Introduces GPT-6 Cyber for Security Research</a>
+- <a href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro" target="_blank" rel="noopener noreferrer">Moonshot AI Releases Kimi K3.1 Pro, an Open-Weight 3T-Class Multimodal Agentic Model</a>
+- <a href="https://x.com/googleai/status/2118389961426874879?a=vLKP1hetSZ8IjdGo234&s=46" target="_blank" rel="noopener noreferrer">Google Launches Gemini Omni 1.2 Flash With 15-Second Video</a>
+- <a href="https://x.com/arena/status/2118420238756921648?a=mky5r0kVWkLm3mnpRAA&s=20" target="_blank" rel="noopener noreferrer">Google Releases Gemini Omni 1.2 Flash With Longer Videos and Lower Prices</a>
+- <a href="https://x.com/GoogleAIStudio/status/2118390015382454491?a=UnhaIeZPdufBD15RQdA&s=20" target="_blank" rel="noopener noreferrer">Google AI Studio Introduces Gemini Omni 1.2 Flash</a>
+- <a href="https://x.com/krea_ai/status/2118454268365857266?a=fSgg9uo1RtVBmMi2tBc&s=46" target="_blank" rel="noopener noreferrer">Krea Launches All-New Krea Video</a>
+- <a href="https://x.com/openai/status/2118390190246879554?a=5jW9Ry9s2aJaMFOKxJ4&s=46" target="_blank" rel="noopener noreferrer">OpenAI Introduces GPT-6 Cyber for Security Research</a>
+- <a href="https://x.com/openai/status/2118124944928432327?a=Ozc213GB7xFwaadBIMo&s=46" target="_blank" rel="noopener noreferrer">OpenAI Launches ChatGPT Images 2.6 With GIFs and Reference Images</a>
+- <a href="https://x.com/arena/status/2118139063345787124?a=OWwkSC5OvI2isKr31bI&s=20" target="_blank" rel="noopener noreferrer">GPT Image 2.6 Sunburst and Flare arrive on Arena, nearly 2x faster than GPT Image 2.5</a>
+- <a href="https://www.straitstimes.com/singapore/politics/singapore-explores-adapting-web-domain-name-system-to-track-ai-agents-assesses-need-for-national" target="_blank" rel="noopener noreferrer">S'pore exploring adapting web domain name system to track AI agents, need for national registry</a>
+- <a href="https://x.com/elder_plinius/status/2118367196389003752?a=4DbOiwms7IwpIj43TjM&s=20" target="_blank" rel="noopener noreferrer">Pliny the Liberator Alleges AI Labs Are Reverse-Engineering Internet Software for Training</a>
+- <a href="https://x.com/claudeai/status/2118403114890137895?a=bekIGZBra2B46XnJtbE&s=20" target="_blank" rel="noopener noreferrer">Claude Introduces Personal Finance, in Beta in the US</a>
+- <a href="https://x.com/pika_labs/status/2115860471215788262?a=lovgRAiIH0_Do23VexQ&s=20" target="_blank" rel="noopener noreferrer">Pika Launches H3 Flex, a Top Open-Weight Video Model</a>
+- <a href="https://x.com/cocktailpeanut/status/2118435618254405672?a=hG2N_hY9YMclfb9pbcM&s=46" target="_blank" rel="noopener noreferrer">ChatGPT Images Used as a Text-to-Motion Step for AI Video</a>
+- <a href="https://nirvanalan.github.io/projects/holo4d/" target="_blank" rel="noopener noreferrer">Holo4D Re-films Videos from New Camera Angles Using 4D Geometry</a>
+- <a href="https://x.com/remotion/status/2117615187339673650?a=DB1kGVMe_bZePQ7O6sI&s=46" target="_blank" rel="noopener noreferrer">Remotion Introduces a New Editing Experience</a>
+- <a href="https://x.com/Kling_ai/status/2117995299591319932?a=23blQYrxdrgb5KZrH5g&s=20" target="_blank" rel="noopener noreferrer">Kling 4.0 Flash Is Now Fully Available</a>
+- <a href="https://x.com/recraftai/status/2118384725475643591?a=J7cNaabcP0Yh08DhT98&s=20" target="_blank" rel="noopener noreferrer">GPT Image 2.6 Arrives in Recraft Studio</a>
+- <a href="https://x.com/swaymolina/status/2118410974969397581?a=slAt9ogl92MqVMTSI_Y&s=20" target="_blank" rel="noopener noreferrer">Premiere Pro Beta Adds AI-Powered Generative Remove</a>
+- <a href="https://x.com/renproton/status/2118392436863201677?a=CMHRKGMwyGrbr38dq4g&s=20" target="_blank" rel="noopener noreferrer">Opus 5.5 Plus 16 Open-Source Repos Can Replace an After Effects Studio</a>
+- <a href="https://x.com/theworldlabs/status/2118424455873741028?a=7CuZHJtBk5tHOYRTdcs&s=20" target="_blank" rel="noopener noreferrer">World Labs Releases Frameboy, a Real-Time World Model Demo</a>
+- <a href="https://x.com/chetaslua/status/2117169796290916732?a=2xsmNCTDhn-HEMzT0ck&s=46" target="_blank" rel="noopener noreferrer">Post claims Fable 5.5 beats AI video and image models</a>
+- <a href="https://x.com/pjaccetturo/status/2116160696971088319?a=8zKJeit1rWUj2gcAMLM&s=46" target="_blank" rel="noopener noreferrer">PJ Ace's Greatest Film Costs $28,775 to Make</a>
+- <a href="https://x.com/ziha_ai/status/2116117087206941048?a=8oSgd7lHIC6Jdak0XaE&s=46" target="_blank" rel="noopener noreferrer">GPT Image 2.5 prompt for a nostalgic hand-drawn cartoon teen</a>
+- <a href="https://x.com/goodmanprotocol/status/2116389496627364114?a=SAI7DmoHI3lbuy3BikI&s=46" target="_blank" rel="noopener noreferrer">Saul Goodman shares a universal prompt for magical trompe-l'œil 3D optical illusions</a>
+- <a href="https://x.com/azed_ai/status/2116848755362484477?a=PYX9pI2goEx99PwlinA&s=46" target="_blank" rel="noopener noreferrer">Prompt Share: Loose Watercolor Drift</a>
+- <a href="https://x.com/AyeshaEvie/status/2117456171053596757?a=dQSRCI80nYaiaD8DS7o&s=20" target="_blank" rel="noopener noreferrer">Ayesha's Ink Beasts: One Brushstroke, Living Dragons and Tigers</a>
+- <a href="https://x.com/kling_ai/status/2117833041988984943?a=Ze_m58hW9ju9dil2yNY&s=46" target="_blank" rel="noopener noreferrer">Kling AI Creator Tests Kling 4.0 for Feature-Film Shots</a>
+- <a href="https://x.com/artedeingenio/status/2117622425873736092?a=JvO0y1SBihK4NIh6moA&s=46" target="_blank" rel="noopener noreferrer">Midjourney sketchy cartoon style shared via --sref 2579190895</a>
+- <a href="https://x.com/eianlu/status/2117469941364637983?a=yk9B-2Rw1FNTpvzS46Y&s=46" target="_blank" rel="noopener noreferrer">Eian: Claude directed a 2D animated short, using Codex for images and Seedance for video</a>
+- <a href="https://x.com/CharaspowerAI/status/2118372803762090365?a=g5P5W8fVoLf8VFtJwKo&s=20" target="_blank" rel="noopener noreferrer">Pierrick Chevallier shares a chaotic Halloween prompt blending cyber-witch, haunted amusement park, and robotic clowns</a>
+- <a href="https://x.com/xikhar/status/2117776295534997818?a=6-jjzhkG-YTY9KP8hKw&s=20" target="_blank" rel="noopener noreferrer">Shikhar Builds a Full Original Game in 24 Hours Using AI</a>
+- <a href="https://x.com/HeyZoyaKhan/status/2117895256398041230?a=ARWgKOZKk63NvJJxLdc&s=20" target="_blank" rel="noopener noreferrer">AI-Generated Clip Shared on X</a>
+- <a href="https://x.com/minchoi/status/2118433821498515927?a=Uu0WQw-EctHDWQsNuvc&s=20" target="_blank" rel="noopener noreferrer">Self-taught mom's 9-minute AI fantasy film wins four awards</a>
+- <a href="https://x.com/churvikv/status/2118324800305111137?a=wKU-ZO-_vui8fp24xm0&s=20" target="_blank" rel="noopener noreferrer">Wake up autumn: one step turns a monochrome paper world amber</a>
+- <a href="https://x.com/CharaspowerAI/status/2118312404161335307?a=939GYrrG0IL3HAnYkAw&s=20" target="_blank" rel="noopener noreferrer">Minimax H3 Prompt Smashes Iron Into a Savage Title</a>
+- <a href="https://x.com/CharaspowerAI/status/2118418101746221381?a=zKlS-wPEea60CxYRxDw&s=20" target="_blank" rel="noopener noreferrer">One Car, Five Realities: A Zero-Cut AI Transition Prompt</a>
+- <a href="https://x.com/Israa_Ali2077/status/2118387872302825914?a=qQfGCuPsXVAJSISujco&s=20" target="_blank" rel="noopener noreferrer">MiniMax H3 dance and singing tests show strong performance but face drift</a>
+- <a href="https://x.com/eattheethos/status/2118145470304542935?a=2mw1uguOGNR0ZWHvdL0&s=20" target="_blank" rel="noopener noreferrer">Six Ways to Fix Stiff AI Dialogue in Seedance 2.5</a>
+- <a href="https://x.com/I_am_Aiabir/status/2118180756698923263?a=JRP_ZT5lkrO6haF8Jn8&s=20" target="_blank" rel="noopener noreferrer">Eight tools for AI-driven web design</a>
+- <a href="https://x.com/xiaohu/status/2118138861616590922?a=PnxiJpUApJ7qpiSbPR4&s=20" target="_blank" rel="noopener noreferrer">Douyin account 神兽厨房 praised for polished cooking videos featuring mythical beasts</a>
+- <a href="https://x.com/unslothai/status/2116156587404562491?a=nSkPhtE2ZO_yqQqPZgc&s=46" target="_blank" rel="noopener noreferrer">DeepSeek-V4.1-Flash-1017 GGUFs Released by Unsloth AI</a>
+- <a href="https://x.com/levantolabs/status/2117304026911908020?a=1HkfSBKp8_hc4a0dIKw&s=46" target="_blank" rel="noopener noreferrer">Levanto Labs Introduces Sage2, a Language Model for Extraction and Real-Time Decisions</a>
+- <a href="https://github.com/vixhal-baraiya/qwenGPU" target="_blank" rel="noopener noreferrer">qgpu: Qwen3.5-2B Runs CUDA on a GPU Built Into Its Weights</a>
+- <a href="https://frontierharness.org/" target="_blank" rel="noopener noreferrer">Same Model, Different Harnesses: 17.5x Cost Gap in FrontierHarness Eval</a>
+- <a href="https://www.ricursive.com/ripple" target="_blank" rel="noopener noreferrer">Ricursive Releases Ripple-65B Preview, a U.S. Open-Weight Agentic Coding Leader</a>
+- <a href="https://x.com/RicursiveAI/status/2118046765857546733?a=45c9DrIuZjGZGr2NCnQ&s=20" target="_blank" rel="noopener noreferrer">Ricursive Releases Ripple-65B Preview, a Dense LLM Pretrained From Scratch</a>
+- <a href="https://huggingface.co/blog/Diffuspace/clover-35b-a3b-preview" target="_blank" rel="noopener noreferrer">Clover-35B-A3B-Preview: A New Way for Intelligence</a>
+- <a href="https://x.com/karpathy/status/2116957135661945283?a=xcI_MZw-sWb05zJTD2o&s=46" target="_blank" rel="noopener noreferrer">Karpathy Builds HackerTube, a YouTube Recommender Filtered from 20 Years of HN Comments</a>
+- <a href="https://x.com/googlegemma/status/2118036675540689044?a=KPFu3-dgwBquuoELAJI&s=46" target="_blank" rel="noopener noreferrer">Community project uses EmbeddingGemma 2 for real-time classification</a>
+- <a href="https://jobloss.ai/" target="_blank" rel="noopener noreferrer">136,460 US Jobs Linked to AI Since January 2025</a>
+- <a href="https://layoffhedge.com/" target="_blank" rel="noopener noreferrer">2026 Layoffs Hit 766,000+ Jobs Across 635 Major Companies</a>
+- <a href="https://budgetlab.yale.edu/research/tracking-impact-ai-labor-market" target="_blank" rel="noopener noreferrer">Yale Budget Lab: No Clear AI Labor Market Footprint Yet</a>
+- <a href="https://www.mercor.com/apex/" target="_blank" rel="noopener noreferrer">Mercor's APEX benchmarks measure whether frontier AI models can do economically valuable professional work</a>
+- <a href="https://x.com/EpochAIResearch/status/2118390043249434915?a=3VbVrtcDtfToc-6Sot0&s=20" target="_blank" rel="noopener noreferrer">About 1 in 4 US Workers Used Paid AI for Their Job Last Week</a>
+- <a href="https://www.creativebloq.com/news/canvas-mass-layoffs-are-a-warning-sign-for-creative-tech" target="_blank" rel="noopener noreferrer">Canva's mass layoffs are a warning sign for creative tech</a>
+- <a href="https://x.com/erikbryn/status/2118349705906127021?a=Saah8P7UXD9A440yhRE&s=20" target="_blank" rel="noopener noreferrer">US Productivity Growth Jumps to 3.6% Annual Rate</a>

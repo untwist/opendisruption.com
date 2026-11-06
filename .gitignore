@@ -9,5 +9,12 @@ wheels/
 # Virtual environments
 .venv
 
+# Secrets
+.env
+.env.local
+
+# Local fetch cache for weekly briefs
+.cache/
+
 # Local office-hours section slides (not published)
 SLIDES/
