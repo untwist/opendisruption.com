@@ -1,0 +1,109 @@
+# Open Disruption — Proposed Headlines
+**Date:** 2026-10-22
+
+*Review, then apply with `brief_week.py --apply`. Does not change the live page until applied.*
+
+## Links from Office Hours
+
+- <a href="https://x.com/NSACyber/status/2112903220209098897?s=20" target="_blank" rel="noopener noreferrer">NSA Urges Organizations Using PHP to Prepare for Critical Vulnerability Update</a>
+- <a href="https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching" target="_blank" rel="noopener noreferrer">Critical PHP Vulnerabilities Require Immediate Patching</a>
+- <a href="https://cloud.google.com/blog/products/identity-security/responding-to-core-php-vulnerabilities-cve-2026-109618-cve-2026-109619" target="_blank" rel="noopener noreferrer">Critical PHP vulnerabilities CVE-2026-109618 and CVE-2026-109619 threaten unauthenticated remote code execution</a>
+- <a href="https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/" target="_blank" rel="noopener noreferrer">Patch the Planet coalition coordinates global response to critical PHP vulnerabilities</a>
+- <a href="https://x.com/eastdakota/status/2113079352682570051?s=20" target="_blank" rel="noopener noreferrer">Cloudflare Reports Surge in Attempts to Exploit #php2shell</a>
+- <a href="https://x.com/a16z/status/2113042704359985318?s=20" target="_blank" rel="noopener noreferrer">Software Bug Patching Window Collapsing as Attacks Accelerate</a>
+- <a href="https://x.com/darioamodei/status/2112732230124818891?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Dario Amodei Responds to Critic Over Anthropic's Safety Record</a>
+- <a href="https://x.com/GoogleDeepMind/status/2112557925264752930?s=20" target="_blank" rel="noopener noreferrer">Gemini 4 Argon Builds a 3D Periodic Table Synced to Tom Lehrer's "The Elements"</a>
+- <a href="https://x.com/epochairesearch/status/2111165029470949867?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Open-Weight Models Trail Closed Frontier on Cyber Capabilities by About 6-7 Months</a>
+- <a href="https://x.com/deepseek_ai/status/2111375640717033777?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">DeepSeek Releases DeepSeek-V4.1-Flash-1017</a>
+- <a href="https://x.com/anthropicai/status/2111881963657412903?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Anthropic Commits 20% of Shares to Public Benefit Fund</a>
+- <a href="https://claude.com/resources/articles/claude-duet" target="_blank" rel="noopener noreferrer">Introducing Claude Duet: A Proactive Claude Agent Enters Research Preview</a>
+- <a href="https://www.anthropic.com/public-benefit-report" target="_blank" rel="noopener noreferrer">Anthropic Publishes 2026 Public Benefit Report</a>
+- <a href="https://already-clean.goodfire.com/" target="_blank" rel="noopener noreferrer">Neural Networks Are Already Clean</a>
+- <a href="https://x.com/davidsacks/status/2111867605388493282?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">David Sacks: Centralized AI Safety Guardrails Hampered Cyber Defense</a>
+- <a href="https://x.com/satyanadella/status/2112168320946634932?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Satya Nadella: treat AI models as insider risks, with security controls outside the model</a>
+- <a href="https://youtu.be/2Zj6uMv3kTA?si=CDz5iMogD3vMEjW7" target="_blank" rel="noopener noreferrer">Dylan Field on Figma's Origins, the Blocked Adobe Deal, and Whether AI Is Replacing Designers</a>
+- <a href="https://x.com/bfl_ai/status/2112255353677328415?s=20" target="_blank" rel="noopener noreferrer">Black Forest Labs Launches FLUX 3 Max, a Fast Video Generation Model</a>
+- <a href="https://x.com/deepseek_ai/status/2112476496283775135?s=20" target="_blank" rel="noopener noreferrer">DeepSeek Open-Sources DeepInfer Inference Framework</a>
+- <a href="https://llm-d.ai/" target="_blank" rel="noopener noreferrer">llm-d: Kubernetes-native distributed LLM inference</a>
+- <a href="https://x.com/ElevenLabs/status/2112550782063247521?s=20" target="_blank" rel="noopener noreferrer">ElevenLabs Launches Eleven Realtime, a New Speech-to-Speech Model</a>
+- <a href="https://x.com/METR_Evals/status/2112562150313283595?s=20" target="_blank" rel="noopener noreferrer">METR reviews Anthropic's Aug 2026 Risk Report, agreeing catastrophic misalignment risk is low but disputing parts of the analysis</a>
+- <a href="https://x.com/AndrewCurran_/status/2112250754358788437?s=20" target="_blank" rel="noopener noreferrer">DHS Orders Civilian Agencies to Remove DeepSeek Products</a>
+- <a href="https://x.com/wsj/status/2112628141814358283?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Anthropic's Draft IPO Filing Reveals Red-Hot Growth and Massive Losses</a>
+- <a href="https://x.com/a16z/status/2112302943148097968?s=20" target="_blank" rel="noopener noreferrer">Why AI Isn't Diffusing: Most People Aren't Tinkerers</a>
+- <a href="https://x.com/a16z/status/2112637131973878229?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">OpenAI's Karan Singhal on Health AI and Falling Model Costs</a>
+- <a href="https://youtu.be/3gXLmy7DK_4?si=5dapmOT_JwMv87In" target="_blank" rel="noopener noreferrer">Sam Altman on AI Consciousness, Recursive Self-Improvement, and OpenAI's Hardware</a>
+- <a href="https://www.oneusefulthing.org/p/30-months-on-the-exponential-in-charts" target="_blank" rel="noopener noreferrer">AI's rapid progress since GPT-4 shows exponential gains in capability</a>
+- <a href="https://link.amazon/B02KBwJEu" target="_blank" rel="noopener noreferrer">Co-Existence: The Next Phase of AI</a>
+- <a href="https://apnews.com/article/china-export-restrictions-ai-chips-solar-us-5ac381c0c6d6628bbea2e0da7d855a5b" target="_blank" rel="noopener noreferrer">China moves to curb tech exports, including AI, citing national security risks</a>
+- <a href="https://nvidianews.nvidia.com/news/adobe-and-nvidia-expand-collaboration-to-speed-agentic-creation" target="_blank" rel="noopener noreferrer">Adobe and NVIDIA Expand Collaboration to Speed Agentic Creation</a>
+- <a href="https://github.com/nikopueringer/CorridorKey2.0" target="_blank" rel="noopener noreferrer">CorridorKey 2.0 Released: Green and Blue Screen Model and Plugins Now Available</a>
+- <a href="https://corridorkey.com/" target="_blank" rel="noopener noreferrer">CorridorKey 2.0: Neural Green and Blue Screen Keyer for Windows and Mac</a>
+- <a href="https://youtu.be/svrdRAoIlxM?si=LBZFHyCfozEATPYx" target="_blank" rel="noopener noreferrer">I Solved Green Screen, and I'm Giving it to YOU!</a>
+- <a href="https://x.com/chamath/status/2112757725369348417?s=20" target="_blank" rel="noopener noreferrer">Chamath: AI revenue quality is poor, most spending is VC-funded</a>
+- <a href="https://www.linkedin.com/pulse/my-annual-letter-building-frontier-ecosystem-satya-nadella-iujec/" target="_blank" rel="noopener noreferrer">Satya Nadella's annual letter: Building the frontier ecosystem</a>
+- <a href="https://x.com/emmanuel_2m/status/2110342352665473156?s=20" target="_blank" rel="noopener noreferrer">Scenario Open-Sources a Blender Plugin That Adds an AI 3D Team</a>
+- <a href="https://www.reactor.inc/" target="_blank" rel="noopener noreferrer">Reactor: Real-Time Generative Media Infrastructure</a>
+- <a href="https://github.com/reactor-team/reactor-cookbook/tree/main" target="_blank" rel="noopener noreferrer">Reactor Cookbook: Runnable Recipes for the Reactor Platform</a>
+- <a href="https://github.com/reactor-team/reactor-runtime" target="_blank" rel="noopener noreferrer">Reactor Runtime: Build Real-Time AI Models in Python</a>
+- <a href="https://x.com/ComfyUI/status/2112265117924835409?s=20" target="_blank" rel="noopener noreferrer">MOSS-Image Now Supported in ComfyUI</a>
+- <a href="https://x.com/krea_ai/status/2112567020353102324?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Krea 3 Reaches Top of Image Arenas</a>
+- <a href="https://huggingface.co/OpenMOSS-Team/MOSS-Image-Base" target="_blank" rel="noopener noreferrer">OpenMOSS Team Releases MOSS-Image-Base, a 5B-Parameter Text-to-Image Model</a>
+- <a href="https://x.com/charaspowerai/status/2112786463557353785?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Viggle Unveils JST-2, a Physics-Native 3D World Foundation Model</a>
+- <a href="https://x.com/krea_ai/status/2113028279385125210?s=20" target="_blank" rel="noopener noreferrer">Krea 3 Climbs Image Arenas</a>
+- <a href="https://x.com/ElevenCreative/status/2112911862451048478?s=20" target="_blank" rel="noopener noreferrer">Chimera: Characters That Speak for Themselves</a>
+- <a href="https://ideogram.ai/models/vector/" target="_blank" rel="noopener noreferrer">Ideogram Vector: From Prompt or Image to Scalable, Editable SVG Artwork</a>
+- <a href="https://x.com/ideogram_ai/status/2113300317584720259?s=20" target="_blank" rel="noopener noreferrer">Ideogram Launches Its First Vector Model</a>
+- <a href="https://x.com/EndFolding79421/status/2110497810554536216?s=20" target="_blank" rel="noopener noreferrer">MiniMax H3 video reference test for keeping an interior scene consistent</a>
+- <a href="https://x.com/mikefutia/status/2110527574971748540?s=20" target="_blank" rel="noopener noreferrer">Mike Futia's tips for near-zero bad Seedance 2.5 generations</a>
+- <a href="https://x.com/0xwhrrari/status/2105643919119696297?s=20" target="_blank" rel="noopener noreferrer">Opus 5.5 Can Make a Video, But Improving It Takes a Studio</a>
+- <a href="https://x.com/claudeai/status/2111177834127601902?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Claude Projects Highlighted: Wildfire Analysis Prototype</a>
+- <a href="https://x.com/charaspowerai/status/2111517673276240251?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Seedance 2.5 Experiment Shows Imperfect AI Cinematography Can Feel More Real</a>
+- <a href="https://x.com/CharaspowerAI/status/2112136728555249991?s=20" target="_blank" rel="noopener noreferrer">Minimax H3 Praised for Dialogue Scenes</a>
+- <a href="https://x.com/venturetwins/status/2112260772906823958?s=20" target="_blank" rel="noopener noreferrer">FLUX 3 Max Brings Fast, Affordable Frontier-Quality AI Video</a>
+- <a href="https://x.com/aicreataro/status/2108091976574988390?s=20" target="_blank" rel="noopener noreferrer">音と動きをビジュアライズ：Opus 5.5×Blender×Python</a>
+- <a href="https://github.com/topviewai/topview-3d-builder" target="_blank" rel="noopener noreferrer">Topview 3D Builder: Let AI Build Your 3D Scenes</a>
+- <a href="https://x.com/q_a_i_m_01/status/2112224878132879800?s=20" target="_blank" rel="noopener noreferrer">Cavemen Meet Modern Tech in Cinematic AI Video Prompt</a>
+- <a href="https://x.com/CharaspowerAI/status/2112559554860863532?s=20" target="_blank" rel="noopener noreferrer">Bullet-Time Camera Brief: Freeze the Hit, Then Move</a>
+- <a href="https://x.com/higgsfield_ai/status/2112326997204734367?s=20" target="_blank" rel="noopener noreferrer">Higgsfield AI Compares Wan 3.0 and Seedance 2.5 on Anime Water and Light</a>
+- <a href="https://x.com/ComfyUI/status/2112559565078491628?s=20" target="_blank" rel="noopener noreferrer">ComfyUI Shares Flying-Car Police Chase Made From a Blender Blockout and Seedance 2.5</a>
+- <a href="https://x.com/Yun_HDY/status/2112284380437885033?s=20" target="_blank" rel="noopener noreferrer">CozyClay 3.0 Lets You Previs Scenes With Plain-Language Prompts</a>
+- <a href="https://x.com/keshiAIart/status/2112365450554495025?s=20" target="_blank" rel="noopener noreferrer">keshi shares Seedance2.5 video made with Opus5.5 prompts and edits</a>
+- <a href="https://x.com/curiousrefuge/status/2112588184333001099?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Curious Refuge Turns Greybox Footage into a Cinematic Cliffside Scene</a>
+- <a href="https://x.com/pjaccetturo/status/2112899203701547153?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">PJ Ace Cuts Film Generation Costs With One Trick</a>
+- <a href="https://x.com/charaspowerai/status/2112604812940312869?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">AI Smartphone Clip Fakes Amateur Realism With Gravity-Defying VFX</a>
+- <a href="https://x.com/krea_ai/status/2112687858003960046?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Krea 3 Tops Image Arenas</a>
+- <a href="https://x.com/emmanuel_2m/status/2112673359775310084?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Scenario Ships Open-Source Blender AI Plugin With 500 Models</a>
+- <a href="https://x.com/charaspowerai/status/2112861493117014497?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Topaz Starlight Precise 2.6 Upgrades AI Video to 4K HDR 10-bit</a>
+- <a href="https://x.com/yun_hdy/status/2112284382505713951?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Yun Shares a Zero-Keyframe Clay Truck Scene Made With Seedance 2.5</a>
+- <a href="https://x.com/CuriousRefuge/status/2112969152059359552?s=20" target="_blank" rel="noopener noreferrer">Curious Refuge Turns a Greybox Coffee Shot into a Bar Scene with AI</a>
+- <a href="https://x.com/CharaspowerAI/status/2113224086184735094?s=20" target="_blank" rel="noopener noreferrer">Minimax H3 praised for motion design and kinetic typography</a>
+- <a href="https://x.com/Scenario_gg/status/2113250176307536334?s=20" target="_blank" rel="noopener noreferrer">Scenario open-sources its Blender AI plugin</a>
+- <a href="https://x.com/fal/status/2112922156845641823?s=20" target="_blank" rel="noopener noreferrer">Kling 4.0 Now Live on fal</a>
+- <a href="https://x.com/ABAOProductions/status/2113284807056556198?s=20" target="_blank" rel="noopener noreferrer">Cinema 4D's New MCP Feature Used to Build and Animate a 3D Helicopter</a>
+- <a href="https://x.com/CloudlessCloud/status/2113341450423345304?s=20" target="_blank" rel="noopener noreferrer">Ethan Avila's Storyboarding Workflow With Seedance or MiniMax</a>
+- <a href="https://x.com/artificialanlys/status/2112249300860444927?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Artificial Analysis launches AA-PersonalityBench to measure model personality and communication style</a>
+- <a href="https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/" target="_blank" rel="noopener noreferrer">Microsoft AI Completes Pre-training of MAI-Base-2, an 80B-Active MoE Model</a>
+- <a href="https://x.com/minimax_ai/status/2112150867868541221?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">MiniMax Releases M3.1 Flash With Frontier Performance at Lower Cost</a>
+- <a href="https://x.com/exaailabs/status/2112218730952601719?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Exa Launches Exa 3.0, Claiming Top Search Quality</a>
+- <a href="https://x.com/stefanoermon/status/2112222911218291051?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Mercury 3 Released as Most Powerful Diffusion LLM</a>
+- <a href="https://x.com/AIatMeta/status/2112265822274302066?s=20" target="_blank" rel="noopener noreferrer">Meta Releases Muse Glimmer, a 30B Open-Weight Model for Agentic Tasks</a>
+- <a href="https://x.com/ornith_/status/2112553477457268799?s=20" target="_blank" rel="noopener noreferrer">Ornith-1.5-122B: Open-Weight Model Claims Strong and Fast Without Tradeoff</a>
+- <a href="https://x.com/artificialanlys/status/2112564497361568153?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">US Open-Weights Models Gain Ground in Intelligence and Efficiency</a>
+- <a href="https://x.com/spisallyouneed/status/2112242023805964327?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">SKY-001: First Engineering World Model Claims Major Gains on CAD and BIM Tasks</a>
+- <a href="https://x.com/artificialanlys/status/2112582116651466965?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Cost to Reach Intelligence Thresholds Falls Sharply, While Top Model Costs Rise</a>
+- <a href="https://www.reuters.com/science/cern-mistral-partner-build-ai-foundation-models-physics-2026-10-15/" target="_blank" rel="noopener noreferrer">https://www.reuters.com/science/cern-mistral-partner-build-ai-foundation-models-physics-2026-10-15/</a>
+- <a href="https://x.com/richardsocher/status/2112944385415426249?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Recursive Introduces Flint, a Fast Local Coding Model</a>
+- <a href="https://github.com/google-research/harness2" target="_blank" rel="noopener noreferrer">Google Research releases Harness², a framework for recursively optimizing agent harnesses</a>
+- <a href="https://x.com/openai/status/2112907856018309586?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">OpenAI Models Help Discover Critical PHP Security Flaws</a>
+- <a href="https://x.com/deepseek_ai/status/2112476496283775135?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">DeepSeek Open-Sources DeepInfer Inference Framework</a>
+- <a href="https://x.com/kling_ai/status/2112946255257084260?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Kling 4.0 API Now Officially Rolling Out</a>
+- <a href="https://x.com/googlecloud/status/2112896659608785181?s=20" target="_blank" rel="noopener noreferrer">Google Cloud Adds OpenAI Models to Model Garden</a>
+- <a href="https://www.instagram.com/reel/DenRArvuir2/?obrf=ZmhxeDlxMDFodWQy" target="_blank" rel="noopener noreferrer">Robot D1 Merges Together and With a Box in Viral Instagram Clip</a>
+- <a href="https://x.com/unitreerobotics/status/2112819774573179175?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Unitree Introduces H2-X Kung Fu Legend Guardian Robot</a>
+- <a href="https://openai.com/index/building-chatgpt-ad-stack/" target="_blank" rel="noopener noreferrer">How OpenAI built ChatGPT's LLM-powered ad stack for trust and relevance</a>
+- <a href="https://dart.deloitte.com/USDART/home/publications/deloitte/industry/technology/accounting-outcome-based-pricing-agentic-ai" target="_blank" rel="noopener noreferrer">https://dart.deloitte.com/USDART/home/publications/deloitte/industry/technology/accounting-outcome-based-pricing-agentic-ai</a>
+- <a href="https://jobloss.ai/" target="_blank" rel="noopener noreferrer">136,460 US Job Losses Linked to AI Since January 2025</a>
+- <a href="https://layoffhedge.com/" target="_blank" rel="noopener noreferrer">2026 Layoff Tracker: 635 Companies, 766,000+ Jobs Cut</a>
+- <a href="https://budgetlab.yale.edu/research/tracking-impact-ai-labor-market" target="_blank" rel="noopener noreferrer">Yale Budget Lab: No Clear AI Labor Market Footprint Yet</a>
+- <a href="https://www.mercor.com/apex/" target="_blank" rel="noopener noreferrer">Mercor Launches APEX Benchmarks to Measure AI Productivity Across Professional Work</a>
+- <a href="https://www.entrepreneur.com/building-a-business/ai-is-now-the-top-reason-for-layoffs-for-some-workers-its-also-a-path-to-starting-a-business" target="_blank" rel="noopener noreferrer">AI Is Now the Top Reason for Layoffs, but It Also Opens a Path to Starting a Business</a>

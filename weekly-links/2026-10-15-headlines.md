@@ -1,0 +1,79 @@
+# Open Disruption — Proposed Headlines
+**Date:** 2026-10-15
+
+*Review, then apply with `brief_week.py --apply`. Does not change the live page until applied.*
+
+## Links from Office Hours
+
+- <a href="https://x.com/riico_porto/status/2110414206566629659?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Hollywood tem tudo para temer a inteligência artificial</a>
+- <a href="https://www.instagram.com/reel/DeXbXiDIUd7/?rpxt=ZmwzZXo0NmhnNG1w" target="_blank" rel="noopener noreferrer">AI Taking Our Jobs? Robot Can't Handle a Quarter Pipe</a>
+- <a href="https://x.com/SakanaAILabs/status/2110738746304061491?s=20" target="_blank" rel="noopener noreferrer">Sakana AI Unveils The Agentic Scientist for Automated Co-Discovery</a>
+- <a href="https://x.com/aiatmeta/status/2110779754274292212?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Meta Releases Muse Spark Open, Its Most Capable US Open-Weight Model</a>
+- <a href="https://x.com/googledeepmind/status/2110039274922131792?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Google DeepMind Releases Gemini 4 Argon Globally</a>
+- <a href="https://x.com/officiallogank/status/2110038940841545827?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Google Rolls Out Gemini 4 Argon Globally</a>
+- <a href="https://x.com/demishassabis/status/2110041008100843835?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Demis Hassabis Says Gemini 4 Argon Excels at Knowledge Work and Coding</a>
+- <a href="https://x.com/openrouter/status/2110044453977403412?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Gemini 4 Argon Goes Live on OpenRouter</a>
+- <a href="https://x.com/googlecloud/status/2110039621878882558?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Google Cloud Launches Gemini 4 Argon for Everyone</a>
+- <a href="https://x.com/artificialanlys/status/2110068185793970576?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Gemini 4 Argon Now Generally Available, Matching GPT-6 Astra at Lower Cost</a>
+- <a href="https://x.com/epochairesearch/status/2110693857742717372?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Gemini 4 Argon Scores 165 on Epoch Capabilities Index</a>
+- <a href="https://x.com/fchollet/status/2110775560846914009?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Google's Gemini 4 Argon Scores 97.5% on ARC-AGI-3</a>
+- <a href="https://www.anthropic.com/research/self-replicating-ai" target="_blank" rel="noopener noreferrer">AI models may be capable of self-replicating without access to a datacenter</a>
+- <a href="https://x.com/finkd/status/2110778025629347999?s=20" target="_blank" rel="noopener noreferrer">Muse Spark open weights release announced for Mac Studio</a>
+- <a href="https://x.com/AIatMeta/status/2110779754274292212?s=20" target="_blank" rel="noopener noreferrer">Meta Releases Muse Spark Open, a Top US Open-Weight Model</a>
+- <a href="https://x.com/aiatmeta/status/2110517571149807685?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Meta Unveils Muse Wonder and Muse Wonder Full for Agentic Tasks</a>
+- <a href="https://x.com/NVIDIARTXSpark/status/2110813633697694003?s=20" target="_blank" rel="noopener noreferrer">NVIDIA Nemotron 3.5 Bolt 24GB Brings Local Agents Within Reach</a>
+- <a href="https://x.com/artificialanlys/status/2109697083519447118?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Meta Releases Muse Wonder and Muse Wonder Full, Posting Gains on Artificial Analysis Index</a>
+- <a href="https://x.com/openainewsroom/status/2110095403198849132?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">OpenAI Says Employee Planted Hidden Recording Device in Office, Referred to FBI</a>
+- <a href="https://x.com/OpenAI/status/2110741355739963884?s=20" target="_blank" rel="noopener noreferrer">OpenAI commits $5M to Simons Foundation math initiative</a>
+- <a href="https://x.com/AnthropicAI/status/2110846112152105136?s=20" target="_blank" rel="noopener noreferrer">Anthropic commits $5M to support the math community in the AI age</a>
+- <a href="https://www.anthropic.com/news/2026-usage-policy-update" target="_blank" rel="noopener noreferrer">Anthropic Publishes 2026 Usage Policy Update, Effective November 12</a>
+- <a href="https://www.a16z.news/p/this-week-in-charts-are-prediction" target="_blank" rel="noopener noreferrer">Prediction Markets Show Little Political Bias, NBER Study Finds</a>
+- <a href="https://x.com/anthropicai/status/2108680150556737819?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Anthropic Publishes Report on Unintended Claude Actions During Evaluations</a>
+- <a href="https://x.com/jimvandehei/status/2108495293620650261?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">AI Executives Privately Gaming Out Public Revolt Scenarios After Catastrophic AI Event</a>
+- <a href="https://x.com/charaspowerai/status/2108208583615893931?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Dreamina Launches Dreamina Originals to Fund AI-Native Film and Series Production</a>
+- <a href="https://x.com/satyanadella/status/2108931348857827686?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">https://x.com/satyanadella/status/2108931348857827686?s=46&t=OLk-vFzhd1N5tolM7GXrTQ</a>
+- <a href="https://x.com/karpathy/status/2109361546505966046?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Karpathy: A Widening Gap in Understanding of AI Capability</a>
+- <a href="https://futurism.com/future-society/data-center-spending-ai-bubble-construction" target="_blank" rel="noopener noreferrer">Data Center Construction Is Nearly the Only US Sector Growing as Others Decline</a>
+- <a href="https://x.com/sakanaailabs/status/2109385006603006435?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Sakana AI Introduces Multi-Agent Self-Supervision (MASS) for Recursive Self-Improvement</a>
+- <a href="https://x.com/satyanadella/status/2109631106404487523?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Microsoft Bets Big on Its Own Maia Silicon for AI Inference</a>
+- <a href="https://www.anthropic.com/research/distillation-defenses" target="_blank" rel="noopener noreferrer">Anthropic Says New Defenses Cut Distillation Attacks on Claude by More Than 90%</a>
+- <a href="https://www.science.org/doi/10.1126/science.aej2213" target="_blank" rel="noopener noreferrer">Advancing mathematics research with AI-driven formal proof search</a>
+- <a href="https://x.com/anthropicai/status/2110047081414987957?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Anthropic Builds In-House Source Control After Code Merges Surge</a>
+- <a href="https://x.com/elevenlabs/status/2110037384192774210?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Baroness Campbell Delivers First AI-Voiced Speech in UK House of Lords</a>
+- <a href="https://www.accenture.com/en/insights/consulting/talk-my-ai-agent" target="_blank" rel="noopener noreferrer">Talk to My AI Agent: The New Rules of Brand Value</a>
+- <a href="https://shopify.dev/changelog/posts/add-shopping-and-shop-pay-checkout-to-any-agent-with-shop-mcp" target="_blank" rel="noopener noreferrer">Shop MCP adds shopping and Shop Pay checkout to any agent</a>
+- <a href="https://blog.adobe.com/en/publish/2026/04/15/the-age-of-creative-agents-rise-creative-director" target="_blank" rel="noopener noreferrer">The Age of Creative Agents and the Rise of the Creative Director</a>
+- <a href="https://www.hollywoodreporter.com/business/business-news/getty-images-to-file-for-bankruptcy-go-private-1236727902/" target="_blank" rel="noopener noreferrer">Getty Images to File for Bankruptcy, Go Private in Restructuring Deal</a>
+- <a href="https://felixrieseberg.com/how-to-be-more-ambitious-a-tutorial-for-humans-with-models/" target="_blank" rel="noopener noreferrer">How to be more ambitious: A tutorial for humans with models</a>
+- <a href="https://x.com/krea_ai/status/2110760037128012146?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Krea Opens Beta for Krea 3 Image Editing Model</a>
+- <a href="https://x.com/bfl_ai/status/2110751201105256925?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Black Forest Labs Releases FLUX 3 Image Klein</a>
+- <a href="https://x.com/bfl_ai/status/2110386847528681774?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Black Forest Labs Cuts FLUX 3 Video Costs and Speeds Up Generation</a>
+- <a href="https://x.com/bfl_ai/status/2110751201105256925?s=20" target="_blank" rel="noopener noreferrer">Black Forest Labs Releases FLUX 3 Image Klein</a>
+- <a href="https://x.com/kling_ai/status/2110747537187709424?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Kling AI Releases Kling 4.0 Fully to Creators</a>
+- <a href="https://x.com/a16z/status/2110430504860401675?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">How to Sell AI Agents: Platform, Service, or Full-Stack</a>
+- <a href="https://x.com/heyneighbor/status/2110809223408058639?s=20" target="_blank" rel="noopener noreferrer">This Week in Personal AI Agents: Roundup Across Major Players</a>
+- <a href="https://x.com/midjourney/status/2108307894886400511?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Midjourney Tests 'Thinking Mode' for Image Generation</a>
+- <a href="https://x.com/alibaba_qwen/status/2108549075218120949?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Qwen-Image-2.1 and Turbo Release Open Weights for Image Generation and Editing</a>
+- <a href="https://x.com/midjourney/status/2108717365068509447?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Midjourney Opens Limited Community Test of Its MCP</a>
+- <a href="https://x.com/wheresryan22/status/2108948624004526516?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Anatomy: Describe a Machine, Claude Brings It to Life</a>
+- <a href="https://lifehacker.com/tech/i-tried-photocraft-the-ai-clone-of-photoshop" target="_blank" rel="noopener noreferrer">PhotoCraft: AI Clone of Photoshop Nearly Matches the Original</a>
+- <a href="https://x.com/topviewaihq/status/2110615678805774657?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Topview Open-Sources 3D Builder for Editable AI Scene Layouts</a>
+- <a href="https://x.com/chetaslua/status/2109375245320847702?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Claude Next Reportedly Tested on Claude Code, Claims Strong Image and Video Generation</a>
+- <a href="https://x.com/charaspowerai/status/2109600024170520666?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">AI Characters Are Starting to Perform, Not Just Move</a>
+- <a href="https://x.com/tomlikesrobots/status/2109346094333198528?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Midjourney 8.2 "Thinking" Mode Shows Strong Results in Alpha Testing</a>
+- <a href="https://x.com/kling_ai/status/2109615624985219203?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">How Simon Meyer Built a Viral AI Music Video With Kling 4.0</a>
+- <a href="https://x.com/charaspowerai/status/2109237602226168199?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">One Reference Image Becomes a Kame House Trip with Minimax H3</a>
+- <a href="https://x.com/charaspowerai/status/2109705822104064250?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Giant Wolf Stalks City Towers in Seedance 2.5 Prompt Share</a>
+- <a href="https://x.com/tomlikesrobots/status/2109996553746141343?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Remove unwanted music from SeeDance 2.5 videos with Meta's SAM Audio</a>
+- <a href="https://x.com/icreatelife/status/2110778793577095564?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Prompt Share: Blurred Silhouette Portrait Behind Frosted Glass</a>
+- <a href="https://x.com/endfolding79421/status/2110800090897973405?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">FoldingEnd A.I. Tests Story-Driven Prompting in MiniMax H3 With Relism LoRA</a>
+- <a href="https://x.com/alibaba_qwen/status/2109633085658808515?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Qwen Introduces QwenGyre for Elastic RL in Long-Horizon Agent Training</a>
+- <a href="https://www.latimes.com/business/story/2026-10-13/disney-strikes-20-million-deal-for-character-ais-assets-as-ai-startup-files-for-bankruptcy" target="_blank" rel="noopener noreferrer">Disney strikes $20-million deal for Character.ai's assets as AI startup files for bankruptcy</a>
+- <a href="https://blog.character.ai/an-update-on-character-ai/" target="_blank" rel="noopener noreferrer">Character.ai Files Voluntary Chapter 11 for Court-Supervised Sale</a>
+- <a href="https://247wallst.com/investing/2026/10/12/adobe-keeps-cratering-one-wall-street-pros-thesis-projects-50-gains-in-the-next-year/" target="_blank" rel="noopener noreferrer">Adobe Keeps Cratering: One Wall Street Pro's Thesis Projects 50% Gains in the Next Year</a>
+- <a href="https://cybernews.com/security/norway-military-chinese-cars-excercise-footage/" target="_blank" rel="noopener noreferrer">Rented Chinese Cars Recorded Norwegian Military Exercise, But Espionage Unproven</a>
+- <a href="https://x.com/nicolasfulghum/status/2110639678344872311?s=20" target="_blank" rel="noopener noreferrer">China's Combustion Car Sales Fall to One-Third of Market</a>
+- <a href="https://jobloss.ai/" target="_blank" rel="noopener noreferrer">136,460 US Job Losses Linked to AI Since January 2025</a>
+- <a href="https://layoffhedge.com/" target="_blank" rel="noopener noreferrer">2026 Layoff Tracker: 766,000+ Jobs Cut Across 635 Companies</a>
+- <a href="https://budgetlab.yale.edu/research/tracking-impact-ai-labor-market" target="_blank" rel="noopener noreferrer">Yale Budget Lab: No Clear AI Labor Market Footprint Yet</a>
+- <a href="https://www.mercor.com/apex/" target="_blank" rel="noopener noreferrer">Mercor's APEX Benchmarks Track How Well Frontier AI Handles Professional Work</a>

@@ -982,7 +982,7 @@ def _make_anthropic_model(
     if usage is not None:
         usage.model = model_name
 
-    def model(pack: SourcePack) -> dict[str, str]:
+    def _one_call(pack: SourcePack) -> dict[str, str]:
         prompt = _brief_prompt(pack)
         response = requests.post(
             "https://api.anthropic.com/v1/messages",
@@ -1014,11 +1014,37 @@ def _make_anthropic_model(
                 f"Anthropic API returned no text content for model {model_name!r}: "
                 f"{json.dumps(payload)[:500]}"
             )
-        # Allow fenced JSON
-        fence = re.search(r"\{.*\}", content, re.S)
-        return json.loads(fence.group(0) if fence else content)
+        return parse_model_json_object(content)
+
+    def model(pack: SourcePack) -> dict[str, str]:
+        # One retry on malformed model JSON so a single bad reply cannot abort the week.
+        try:
+            return _one_call(pack)
+        except json.JSONDecodeError:
+            try:
+                return _one_call(pack)
+            except json.JSONDecodeError:
+                return {
+                    "status": "error",
+                    "headline": "Brief generation failed",
+                    "script": (
+                        "The model returned unreadable JSON for this source, so no "
+                        "spoken script was drafted. Re-run with --refresh-briefs for "
+                        "this item if needed. The clip was not watched for this rundown."
+                    ),
+                }
 
     return model
+
+
+def parse_model_json_object(content: str) -> dict[str, str]:
+    """Parse a model reply that should contain a JSON object (optionally fenced)."""
+    fence = re.search(r"\{.*\}", content, re.S)
+    text = fence.group(0) if fence else content
+    data = json.loads(text)
+    if not isinstance(data, dict):
+        raise json.JSONDecodeError("expected object", text, 0)
+    return {str(k): str(v) if v is not None else "" for k, v in data.items()}
 
 
 def extract_anthropic_text(payload: dict) -> str:

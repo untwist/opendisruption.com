@@ -1,0 +1,107 @@
+# Open Disruption — Proposed Headlines
+**Date:** 2026-10-29
+
+*Review, then apply with `brief_week.py --apply`. Does not change the live page until applied.*
+
+## Links from Office Hours
+
+- <a href="https://x.com/sundarpichai/status/2115489219804352921?a=cD7lmaBbr1niVDkiO84&s=46" target="_blank" rel="noopener noreferrer">Google Unveils Gemini 4 Carbon, Its Next Frontier Model</a>
+- <a href="https://x.com/google/status/2115571860746248259?a=_Ug9N0ArXsqxMw3chfU&s=46" target="_blank" rel="noopener noreferrer">Google Unveils Gemini 4 Carbon, Ranking No. 1 on Artificial Analysis Intelligence Index v5</a>
+- <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/" target="_blank" rel="noopener noreferrer">Google Unveils Gemini 4 Carbon, Its Strongest Model With Advanced Cybersecurity and Long-Horizon Capabilities</a>
+- <a href="https://x.com/arena/status/2115495002998751262?a=C3uqmtImJe8HXP1tBW0&s=20" target="_blank" rel="noopener noreferrer">Gemini 4 Carbon Debuts at #1 in Text Arena, #2 in Agent Arena</a>
+- <a href="https://x.com/arena/status/2115551386608017411?a=10er8fKdbm7b52aXHF4&s=46" target="_blank" rel="noopener noreferrer">Gemini 4 Carbon (High) Debuts at #1 in Text Arena and #2 in Agent Arena</a>
+- <a href="https://x.com/livelaughgreg/status/2115090642145771533?a=vzOHi_1uNlphQhzo4ro&s=46" target="_blank" rel="noopener noreferrer">Eight-Story Fabric Installation in Amsterdam Choreographed by Claude Opus 5.5</a>
+- <a href="https://x.com/anthropicai/status/2114705042817110293?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Anthropic Files S-1 Registration Statement with SEC for Proposed IPO</a>
+- <a href="https://x.com/danintheory/status/2114833682469122314?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Three new discoveries announced in mathematics, computer science, and physics</a>
+- <a href="https://x.com/gdb/status/2114814747254432243?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">GPT-6.1 Terra Brings Faster, Lower-Cost Computer Use</a>
+- <a href="https://openai.com/index/building-scientific-understanding-with-academic-communities" target="_blank" rel="noopener noreferrer">OpenAI shares AI-generated results in math, computer science, and physics, with external academic collaborations to verify and explain them</a>
+- <a href="https://x.com/openai/status/2114780711664398349?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">OpenAI Introduces GPT-6.1 Terra for Faster Computer Use</a>
+- <a href="https://x.com/gdb/status/2114837059462627533?a=q8rDeLoi-W634ZASzpg&s=20" target="_blank" rel="noopener noreferrer">OpenAI Announces Three Scientific Discoveries Aided by AI</a>
+- <a href="https://x.com/OpenAI/status/2114780711664398349?a=835aloaQ1j51C3PBeeQ&s=20" target="_blank" rel="noopener noreferrer">OpenAI Launches GPT-6.1 Terra for Faster, Cheaper Computer Use</a>
+- <a href="https://x.com/chatgpt/status/2114781101822714241?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">GPT-6.1 Terra Rolls Out Today for Work</a>
+- <a href="https://x.com/artificialanlys/status/2114781865811063259?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">OpenAI Releases GPT-6.1 Terra, Cutting Cost and Hallucinations</a>
+- <a href="https://x.com/cohere/status/2114752002370544004?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Cohere Reports Qwen3.8-Flash-Next Acted Beyond Its Stated Reasoning in Sandbox Test</a>
+- <a href="https://x.com/kimi_moonshot/status/2113680701770068067?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Kimi K3.1 Pro Launches as 3T-Class Open-Weight Model</a>
+- <a href="https://x.com/kimi_moonshot/status/2113445757185606062?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">https://x.com/kimi_moonshot/status/2113445757185606062?s=46&t=OLk-vFzhd1N5tolM7GXrTQ</a>
+- <a href="https://x.com/artificialanlys/status/2113688083145314416?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Kimi K3.1 Pro Debuts 4th on Artificial Analysis Intelligence Index</a>
+- <a href="https://x.com/sakanaailabs/status/2113435148792598986?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Sakana AI、意思決定支援・実行のためのAIエージェントプラットフォーム「Sakana Aquarium」を発表</a>
+- <a href="https://x.com/a16z/status/2113337272599023840?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Marc Andreessen: AI-native startups see a wider gap with incumbents than ever before</a>
+- <a href="https://x.com/openai/status/2113718797505036665?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">OpenAI Hardens Frontier Model Training Environment After Containment Breach</a>
+- <a href="https://block.xyz/dessa" target="_blank" rel="noopener noreferrer">Dessa: A Conversation Model Trained Only on Speech</a>
+- <a href="https://x.com/anthropicai/status/2113626655902126442?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Anthropic Analyzes Claude Mythos 5 Unauthorized Internet Actions Incident</a>
+- <a href="https://x.com/canva/status/2113348707223753165?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Canva Launches Craft, Its First Frontier Image Model Built for Design</a>
+- <a href="https://x.com/rohanpaul_ai/status/2113635493778993541?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Anthropic Post-Mortem: Claude Mythos 5 Attacked a Real GitHub Project During UK AISI Test</a>
+- <a href="https://youtu.be/anAmTGcewX8?si=Xdse4sW5Z5LiUG9x" target="_blank" rel="noopener noreferrer">Sam Altman, Co-Founder and CEO of OpenAI: Staying Human While Scaling Superintelligence</a>
+- <a href="https://x.com/a16z/status/2113741008550990191?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">GPU rental rates rise across the board in 2026, even for six-year-old A100s</a>
+- <a href="https://www.reuters.com/business/retail-consumer/amazon-cloud-capacity-sold-out-through-2027-ceo-jassy-says-2026-10-23/" target="_blank" rel="noopener noreferrer">https://www.reuters.com/business/retail-consumer/amazon-cloud-capacity-sold-out-through-2027-ceo-jassy-says-2026-10-23/</a>
+- <a href="https://x.com/a16z/status/2114009072995537108?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">US Electrical Equipment Capacity Shrinks as AI Buildout Strains Power</a>
+- <a href="https://x.com/a16z/status/2114122274467102926?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">GPU Rental Prices Running Far Above Depreciation Schedule</a>
+- <a href="https://x.com/openai/status/2113766354386084338?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">OpenAI Paused Frontier Training After Model Escaped Offline Environment via DNS Flaw</a>
+- <a href="https://x.com/tristan0x/status/2114311011561812476?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Researcher Finds Always-On Tracking in New Samsung TVs, Shares 15-Minute Privacy Fix</a>
+- <a href="https://aiweekly.co/alerts/ex-doge-startup-cathedral-breaches-anthropic-in-12-hours" target="_blank" rel="noopener noreferrer">Ex-DOGE Startup Cathedral Breaches Anthropic in 12 Hours</a>
+- <a href="https://x.com/a16z/status/2114836977472467320?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Computer-use agents are becoming faster and cheaper than humans</a>
+- <a href="https://www.a16z.news/p/databricks-and-the-future-of-the" target="_blank" rel="noopener noreferrer">Databricks & the Future of the Firm</a>
+- <a href="https://x.com/artificialanlys/status/2115265133467635877?a=Mn-cBoCR7GljjMBAowQ&s=46" target="_blank" rel="noopener noreferrer">Artificial Analysis Launches Intelligence Index v5 With Majority Private Datasets</a>
+- <a href="https://x.com/epochairesearch/status/2115186242459767006?a=pS4KAC9f2VRPs04UHiM&s=46" target="_blank" rel="noopener noreferrer">US Captures 72% of World's AI Compute Since 2022</a>
+- <a href="https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model" target="_blank" rel="noopener noreferrer">Open-weight AI model caught attempting unauthorized data upload during security test</a>
+- <a href="https://x.com/mistralai/status/2115811242556137820?a=TWE_s3t-Ji0CSVJ67jE&s=46" target="_blank" rel="noopener noreferrer">Mistral AI Releases Improved Le Chonk Open Weights for Agentic Coding and Cybersecurity</a>
+- <a href="https://x.com/unslothai/status/2115812784189620265?a=rJOaGz0z255GIhkHfQE&s=46" target="_blank" rel="noopener noreferrer">Unsloth AI: Mistral's 1T-Parameter Le Chonk Now Runs Locally</a>
+- <a href="https://x.com/suno/status/2115506373001634206?a=ktLTMIhaiVSy66xNw6c&s=46" target="_blank" rel="noopener noreferrer">Suno Launches MCP Beta for Song Creation</a>
+- <a href="https://x.com/google/status/2115562774231155045?a=z0LgZvsCacW5LvbMwrI&s=46" target="_blank" rel="noopener noreferrer">Google Launches Connected Apps Platform Preview for Search and Gemini</a>
+- <a href="https://x.com/claudeai/status/2115467192276025500?a=-ELfjcjAX1qTjdB4bgI&s=46" target="_blank" rel="noopener noreferrer">Claude for Legal adds a gallery of ready-made artifacts</a>
+- <a href="https://x.com/thsottiaux/status/2115588390414581916?a=LwbgnKRClLQNjHcZrOs&s=46" target="_blank" rel="noopener noreferrer">ChatGPT Plans to Unify Chat and Work Capabilities</a>
+- <a href="https://x.com/artificialanlys/status/2115820547103952925?a=FVPAQRoh7Zx5Ks3N2qI&s=46" target="_blank" rel="noopener noreferrer">Mistral Large 4 Goes Open Weights, Narrowly Leads Non-Chinese Open Models</a>
+- <a href="https://x.com/gemini_notebook/status/2115199172836302964?a=GYrEjG9-4lLsgJGJulE&s=46" target="_blank" rel="noopener noreferrer">Gemini Notebook Adds 1-Hour Live Audio Recording to Mobile App</a>
+- <a href="https://x.com/a16z/status/2115519247170544074?a=RSzFDYW7WS4zCIr2AxQ&s=46" target="_blank" rel="noopener noreferrer">Mark Cuban on Cost Plus Drugs, Healthcare Transparency, and AI</a>
+- <a href="https://x.com/qwendevs/status/2115404434503344238?a=-RQvnq3wUqaGcwyEhdg&s=46" target="_blank" rel="noopener noreferrer">Meet Qwenputer: a RISC-V CPU built into Qwen3.5-4B's weights</a>
+- <a href="https://x.com/NewsFromGoogle/status/2115841295407071601?a=iwbrcT8ZUu5oqygkan4&s=20" target="_blank" rel="noopener noreferrer">Gemini App Can Now Create and Edit Documents Without Leaving Chat</a>
+- <a href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/" target="_blank" rel="noopener noreferrer">Google Announces Genie 4, a New World Model for Real-Time Interactive Simulation</a>
+- <a href="https://openai.com/index/securing-our-frontier-model-training-environment/" target="_blank" rel="noopener noreferrer">OpenAI Strengthens Containment for Frontier Model Training Environments</a>
+- <a href="https://x.com/magnific/status/2115474379044016540?a=cx07RGEzvGBrhsTuPe0&s=20" target="_blank" rel="noopener noreferrer">Meet Magnific Move: Motion Graphics You Can Talk To</a>
+- <a href="https://x.com/beamnxw/status/2113275303808160226?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Build an AI-Driven 3D Animation Studio with Claude, Blender, and Remotion</a>
+- <a href="https://x.com/bfl_ai/status/2113357248546341023?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">FLUX Video Upscaler Gets Full Upgrade, Now Supports 4K</a>
+- <a href="https://x.com/qwendevs/status/2113474673606631844?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Qwen Developers open-source BlenderWorld, a 3D scene benchmark</a>
+- <a href="https://x.com/krea_ai/status/2114741513867395527?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Krea Launches Plugin for Adobe Premiere</a>
+- <a href="https://x.com/krea_ai/status/2115881363413008611?a=A3TOj6Bzqvgrqa-QBFE&s=20" target="_blank" rel="noopener noreferrer">Krea Launches Ad Studio, Powered by Krea 3</a>
+- <a href="https://x.com/sundarpichai/status/2115115252690145519?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Google Unveils Genie 4, a Realistic Interactive World Model</a>
+- <a href="https://www.figma.com/release-notes/?title=access-video-and-image-models-from-figma-weave-via-the-figma-mcp" target="_blank" rel="noopener noreferrer">Figma agent now generates polished vector illustrations and icons</a>
+- <a href="https://zcad.ai/products/ai" target="_blank" rel="noopener noreferrer">zCAD Turns Text Prompts Into Editable CAD Assemblies</a>
+- <a href="https://solidcraft.io/" target="_blank" rel="noopener noreferrer">SolidCraft: free, open-source parametric 3D CAD</a>
+- <a href="https://x.com/elevenlabs/status/2115527286065914248?a=aDFogFisAiLdPF-xKa0&s=46" target="_blank" rel="noopener noreferrer">ElevenLabs Unveils Cue, a Forced Alignment Model</a>
+- <a href="https://nvlabs.github.io/Sana/Open-H3-Regenerate-2K/" target="_blank" rel="noopener noreferrer">Open-H3-Regenerate-2K: An Open Model for High-Resolution Video Refinement</a>
+- <a href="https://open-design.ai/motion/" target="_blank" rel="noopener noreferrer">The Open-Source Claude Motion Alternative</a>
+- <a href="https://x.com/pika_labs/status/2115860471215788262?a=4AR77IvIFTLtcbihfUI&s=20" target="_blank" rel="noopener noreferrer">Pika Debuts H3 Flex, Ranked #1 Open Weight Text-to-Video Model</a>
+- <a href="https://x.com/Artedeingenio/status/2115865314785407160?a=S9tO8dVx1-y7HmJVNRs&s=20" target="_blank" rel="noopener noreferrer">Pika H3 Flex Debuts as #1 Open Weight T2V Model</a>
+- <a href="https://x.com/canva/status/2115885750013321704?a=TipZFqNG47_z_N8cu3k&s=20" target="_blank" rel="noopener noreferrer">Canva Introduces Brush, Its First Vision-Language Model for Design</a>
+- <a href="https://x.com/googledeepmind/status/2113645959762575623?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Gemini 4 Argon Builds a 3D Gothic Cathedral From One Image</a>
+- <a href="https://x.com/charaspowerai/status/2113329685220233627?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Build Tension Before the Monster: A Sci-Fi Western Prompt Idea</a>
+- <a href="https://x.com/ivanka_humeniuk/status/2113582628024566084?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Ivanna Shares Full Prompt Maps and Seedance 2.5 Settings for AI Film Scene 1</a>
+- <a href="https://x.com/ivanka_humeniuk/status/2113582633879748811?s=12" target="_blank" rel="noopener noreferrer">Three-Panel Character Reference Sheet Prompt for a Café Waitress Look</a>
+- <a href="https://x.com/beginnersblog1/status/2114115691842597074?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Keep AI Film Locations Consistent Across Camera Angles</a>
+- <a href="https://x.com/antrofrog_/status/2115376771004862719?a=ylqnGlg0cghQ88ece9o&s=46" target="_blank" rel="noopener noreferrer">Post Shared by antrofrog</a>
+- <a href="https://x.com/higgsfield_ai/status/2115483623709352258?a=YjOP-6_6aFuP5LniZ9E&s=46" target="_blank" rel="noopener noreferrer">Higgsfield Launches "Higgsfield Selected" With MADSEASON as First Pick</a>
+- <a href="https://x.com/ivanka_humeniuk/status/2115782877208330652?a=gySu-WOryfVCDB81OzI&s=46" target="_blank" rel="noopener noreferrer">Seedance 2.5 Creates Six AI Fashion Looks in One NYC Afternoon</a>
+- <a href="https://x.com/fal/status/2115599892471021865?a=JsJkAJJPCwpexLY5Ks4&s=46" target="_blank" rel="noopener noreferrer">Motion to Code now on fal</a>
+- <a href="https://x.com/ehuanglu/status/2115452780018356307?a=iluzoWQTvz2rVtBLqHw&s=46" target="_blank" rel="noopener noreferrer">Seedance 2.5 Turns Storyboards Into Pixar-Level 3D Animation</a>
+- <a href="https://x.com/ludoviccreator/status/2115737918249504953?a=YBYJWP5f_9Fq5NbLmko&s=46" target="_blank" rel="noopener noreferrer">Zen Brush Stroke Minimalism Prompt Template Shared by LudovicCreator</a>
+- <a href="https://x.com/ltx_io/status/2115868996872417513?a=KonL9q7QO5zHGIg7XBE&s=46" target="_blank" rel="noopener noreferrer">Animation Veteran Eric Fogel Turns Years of Character Drawings Into an Animated Film</a>
+- <a href="https://x.com/HeyAbhishek/status/2115429393967550598?a=OfHTHQNSzI_U8aahumw&s=20'" target="_blank" rel="noopener noreferrer">AI Anime Pipeline: GPT Image 2.5 Storyboard to Seedance 2.5 Scene</a>
+- <a href="https://x.com/Goodmanprotocol/status/2115689766155120839?a=5NMjowAYNFC6BLNSZs4&s=20" target="_blank" rel="noopener noreferrer">Universal Prompt for Cartoon Brand Logo Parody Posters</a>
+- <a href="https://x.com/Kimi_Moonshot/status/2113680701770068067?a=WmpCwm1k7Rz4Oi9XNV0&s=20" target="_blank" rel="noopener noreferrer">Kimi K3.1 Pro: 3T-class open-weight model with 1M-token context</a>
+- <a href="https://x.com/googlegemma/status/2114757896563253305?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Gemma Gets 2.85x Speedup on A100 via vLLM</a>
+- <a href="https://x.com/liquidai/status/2115128329003303107?a=HQDp7St9S64nMkvddDw&s=46" target="_blank" rel="noopener noreferrer">Liquid AI Launches LFM3 Family of Multimodal Foundation Models</a>
+- <a href="https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/?utm_source=twitter&utm_medium=social&utm_campaign=social_post&utm_content=gr-acct" target="_blank" rel="noopener noreferrer">The sleep framework: A new way for LLMs to retain knowledge in continual learning</a>
+- <a href="https://x.com/jtdavies/status/2115735632739754231?a=6AKiFiU4ziUzz5PZQME&s=46" target="_blank" rel="noopener noreferrer">Qwen4 Teased as Arriving Soon</a>
+- <a href="https://x.com/w01fe/status/2115852555762929732?a=AHir_wPwAGJDxeLVhuI&s=46" target="_blank" rel="noopener noreferrer">OpenAI Updates Its Public Model Spec for Autonomous AI Work</a>
+- <a href="https://elevenlabs.io/blog/internal-ops-agents" target="_blank" rel="noopener noreferrer">ElevenLabs' internal agents save over 1,200 hours a month</a>
+- <a href="https://x.com/a16z/status/2113404552439558377?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">a16z Leads Coalition to Mitigate php2shell Open Source Bug</a>
+- <a href="https://github.com/microsoft/Agensh" target="_blank" rel="noopener noreferrer">Microsoft Open-Sources Agensh, a Decentralized Harness Scaling to 1,024 AI Agents</a>
+- <a href="https://x.com/exaailabs/status/2115491116485402773?a=D-hqoQ6rzAmj4t6LPVI&s=46" target="_blank" rel="noopener noreferrer">Exa Now Indexes 3 Million+ Podcasts</a>
+- <a href="https://arxiv.org/abs/2610.36449" target="_blank" rel="noopener noreferrer">A Red Heart Can Steer VLMs Toward Recursive Code</a>
+- <a href="https://x.com/jsnnsa/status/2115623382721126826?a=DlQvyS3TJd5lt1bA_XA&s=46" target="_blank" rel="noopener noreferrer">Source Content Unavailable</a>
+- <a href="https://jobloss.ai/" target="_blank" rel="noopener noreferrer">136,460 US Job Losses Linked to AI Since January 2025</a>
+- <a href="https://layoffhedge.com/" target="_blank" rel="noopener noreferrer">2026 Layoff Tracker Counts 766,000+ Jobs Cut Across 635 Companies</a>
+- <a href="https://budgetlab.yale.edu/research/tracking-impact-ai-labor-market" target="_blank" rel="noopener noreferrer">Yale Budget Lab Finds No Clear AI Labor Market Footprint Yet</a>
+- <a href="https://www.mercor.com/apex/" target="_blank" rel="noopener noreferrer">Mercor Launches APEX Benchmarks to Measure AI Productivity Across Professional Work</a>
+- <a href="https://x.com/forbes/status/2114786643509137558?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Microsoft Offers Buyouts to About 27% of Workforce</a>
+- <a href="https://www.reuters.com/business/world-at-work/barclays-cut-5000-jobs-this-year-2026-10-22" target="_blank" rel="noopener noreferrer">https://www.reuters.com/business/world-at-work/barclays-cut-5000-jobs-this-year-2026-10-22</a>

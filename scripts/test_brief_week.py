@@ -563,6 +563,13 @@ def test_extract_usage_from_anthropic_payload():
     assert extract_anthropic_usage(payload) == (412, 138)
 
 
+def test_parse_model_json_object_accepts_fenced_json():
+    from brief_week import parse_model_json_object
+
+    raw = 'Here you go:\n```json\n{"status": "ok", "headline": "Hi", "script": "There."}\n```\n'
+    assert parse_model_json_object(raw)["headline"] == "Hi"
+
+
 def test_fetch_cache_skips_network_on_hit(tmp_path: Path):
     from brief_week import BriefItem, SourcePack, fetch_source_pack, load_fetch_cache, save_fetch_cache
 

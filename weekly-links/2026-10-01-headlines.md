@@ -1,0 +1,90 @@
+# Open Disruption — Proposed Headlines
+**Date:** 2026-10-01
+
+*Review, then apply with `brief_week.py --apply`. Does not change the live page until applied.*
+
+## Links from Office Hours
+
+- <a href="https://www.instagram.com/reel/DdtnetogfTP/?stkn=MXhhOThhczgwNWJrZQ==" target="_blank" rel="noopener noreferrer">VICTORSLAP posts AI-made art featuring Van Gogh, Frida Kahlo, and Leonardo da Vinci</a>
+- <a href="https://www.instagram.com/reel/Ddy3SVfCM8S/?stkn=YzE2cmsyNTN4enZn" target="_blank" rel="noopener noreferrer">https://www.instagram.com/reel/Ddy3SVfCM8S/?stkn=YzE2cmsyNTN4enZn</a>
+- <a href="https://x.com/googledeepmind/status/2105388084154056939?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Google DeepMind Introduces Gemini 4 Argon</a>
+- <a href="https://x.com/sundarpichai/status/2105121763176894804?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Sundar Pichai Says Google Signed White House Accord on Super Intelligence</a>
+- <a href="https://x.com/JensenHuang/status/2105348324484342238?s=20" target="_blank" rel="noopener noreferrer">Jensen Huang on the White House Accord on Super Intelligence</a>
+- <a href="https://x.com/openai/status/2104984504133918973?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">OpenAI introduces dots, powered by GPT-6 Astra</a>
+- <a href="https://x.com/openai/status/2104993966043320759?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">OpenAI Launches Ultrafast Premium Speed Tier</a>
+- <a href="https://x.com/openai/status/2104987422308335828?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Codex Security Cloud Gets Major Upgrade</a>
+- <a href="https://x.com/openai/status/2104986129686741046?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">OpenAI Launches GPT-6.1 Sol</a>
+- <a href="https://x.com/openai/status/2104986131238695200?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">OpenAI Launches GPT-6.1 Sol With Lower Costs</a>
+- <a href="https://openai.com/index/helping-small-businesses-put-ai-to-work/" target="_blank" rel="noopener noreferrer">OpenAI and America's SBDC Expand AI Training for Small Businesses</a>
+- <a href="https://x.com/davidsacks/status/2105722354114723844?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">David Sacks on the White House Accord on Super Intelligence</a>
+- <a href="https://x.com/sama/status/2104995014208258235?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">OpenAI Launches Dots, a Always-On AI Assistant</a>
+- <a href="https://x.com/sama/status/2103567198690349362?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">OpenAI Commits to Broad Review of AI Agents' Actions During Training and Evaluation</a>
+- <a href="https://x.com/openai/status/2103587050347995581?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">OpenAI Discloses 53 Cases of Uploaded Images Leaked Through AI Agents</a>
+- <a href="https://fortune.com/2026/09/26/openai-ai-agents-secure-sandbox-escape-training-pause-second-time-hugging-face-hack/" target="_blank" rel="noopener noreferrer">OpenAI pauses training a second time after AI agents escaped a secure sandbox again</a>
+- <a href="https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/" target="_blank" rel="noopener noreferrer">Internal OpenAI research agent reached external chatbot via DNS gap</a>
+- <a href="https://x.com/jensenhuang/status/2104499465055023424?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Jensen Huang Introduces NVIDIA Open Agent Safety Platform</a>
+- <a href="https://x.com/justlingonberry/status/2104431004337479933?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Leaked Gemini 4 Pro Reportedly Outperforms Rival AI Models</a>
+- <a href="https://youtu.be/TxyayEjTiZQ?si=w06pxACTUfQ-q3Mp" target="_blank" rel="noopener noreferrer">Nvidia CEO Jensen Huang says AI is software, not a new species</a>
+- <a href="https://x.com/satyanadella/status/2103455884366188544?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Satya Nadella Unveils Biggest Copilot Update, Building It as a New OS for Work</a>
+- <a href="https://x.com/runwayml/status/2103484927320723684?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Runway launches Layers to split images into editable parts</a>
+- <a href="https://www.npr.org/2026/09/26/nx-s1-5979085/the-ai-safety-debate-is-confusing-heres-our-guide-to-the-different-factions" target="_blank" rel="noopener noreferrer">The AI safety debate is confusing. Here's our guide to the different factions</a>
+- <a href="https://www.anthropic.com/research/yes-claude-can-do-nine-loops" target="_blank" rel="noopener noreferrer">Claude computes a nine-loop amplitude in N=4 super-Yang-Mills</a>
+- <a href="https://www.nytimes.com/2026/09/25/technology/openai-hugging-face-hack.html?unlocked_article_code=1.D1E.TERU.qXYkI2fp0Pp9&smid=url-share" target="_blank" rel="noopener noreferrer">https://www.nytimes.com/2026/09/25/technology/openai-hugging-face-hack.html?unlocked_article_code=1.D1E.TERU.qXYkI2fp0Pp9&smid=url-share</a>
+- <a href="https://x.com/steipete/status/2103491173927272531?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Microsoft Launches Autopilot, a Persistent Personal Agent Built on OpenClaw</a>
+- <a href="https://x.com/claudeai/status/2104633115620823187?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Anthropic Introduces Claude Sonnet 5.5</a>
+- <a href="https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist/" target="_blank" rel="noopener noreferrer">OpenAI reports first self-replicating prompt injections in its models</a>
+- <a href="https://www.technologyreview.com/2026/08/13/1141410/how-kids-feel-about-ai-own-words/" target="_blank" rel="noopener noreferrer">How kids feel about AI, in their own words</a>
+- <a href="https://x.com/finkd/status/2104550609403695581?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Meta Launches Meta Enterprise Platform to Help Businesses Grow with AI</a>
+- <a href="https://www.a16z.news/p/openai-understands-something-important" target="_blank" rel="noopener noreferrer">OpenAI Understands Something Important and Rare</a>
+- <a href="https://x.com/forbes/status/2104603313534558632?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Florida Asks Judge To Block OpenAI From Building New Models Amid Safety Debate</a>
+- <a href="https://x.com/a16z/status/2104603462742983165?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">TypeSafe AI Unveils Jev: A Model Built to Bring Automation Into Software</a>
+- <a href="https://vercel.com/ai-gateway/leaderboards/models" target="_blank" rel="noopener noreferrer">Top AI Models by Usage on Vercel AI Gateway</a>
+- <a href="https://x.com/a16z/status/2105726958021885977?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">a16z's State of Markets II: Tech Is the Everything Cycle</a>
+- <a href="https://x.com/a16z/status/2105752116757422375?s=20" target="_blank" rel="noopener noreferrer">a16z Releases State of Markets II Report on Tech and AI Cycle</a>
+- <a href="https://x.com/theworldlabs/status/2104665621120311465?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">World Labs Joins AMD</a>
+- <a href="https://x.com/drfeifei/status/2104664403681632453?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">https://x.com/drfeifei/status/2104664403681632453?s=46&t=OLk-vFzhd1N5tolM7GXrTQ</a>
+- <a href="https://www.anthropic.com/research/claude-shaped-science" target="_blank" rel="noopener noreferrer">Claude-shaped science: how Matthew Schwartz built BootLoops</a>
+- <a href="https://x.com/openclaw/status/2105023990607786313?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">OpenClaw Enterprise Announced with Red Hat, NVIDIA, and OpenAI</a>
+- <a href="https://research.google/blog/coherent-long-form-video-generation/?utm_source=twitter&utm_medium=social&utm_campaign=social_post&utm_content=gr-acct" target="_blank" rel="noopener noreferrer">Google Research unveils AI video co-director for coherent long-form video</a>
+- <a href="https://x.com/charaspowerai/status/2103439435056422921?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Topaz Astra's Starlight 2.6 Advances AI Video Upscaling</a>
+- <a href="https://x.com/fal/status/2102879559104237764?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">fal Launches 3D to Video on H3 Max</a>
+- <a href="https://x.com/higgsfield_ai/status/2103600795216425072?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Higgsfield AI Releases "Passport Rush," a Hybrid Blender and AI-Animated Short</a>
+- <a href="https://x.com/invideoofficial/status/2103854605067227422?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">GPT-6 Astra Meets the invideo Editor</a>
+- <a href="https://x.com/ltx_io/status/2104587955599999307?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">LTX.io Announces VFX Week With Daily Capability Drops</a>
+- <a href="https://x.com/kling_ai/status/2104586933473247280?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Kling AI Unveils THE BEAT, a Drummer's Return Created with Kling 4.0</a>
+- <a href="https://x.com/runwayml/status/2105358708599619790?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Runway Unveils Praxis-1, an Open-Weight World Action Model for Robot Control</a>
+- <a href="https://x.com/ltx_io/status/2105736098064609519?s=20" target="_blank" rel="noopener noreferrer">LTX Launches Layout to Render (Beta) for 3D Blocking</a>
+- <a href="https://x.com/bfl_ai/status/2105734605621825738?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Black Forest Labs Introduces FLUX 3 Image</a>
+- <a href="https://x.com/runwayml/status/2105685396734853582?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Runway Unveils Project Continuum, a Real-Time Video Operating System Research App</a>
+- <a href="https://x.com/comfyui/status/2105470097947308267?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Ideogram 4.5 Arrives in ComfyUI as a Drift-Resistant Edit Model</a>
+- <a href="https://x.com/uncanny_harry/status/2103502235405893957?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">invideo Launches Effects Editor With 90+ Built-In Effects</a>
+- <a href="https://x.com/midjourney/status/2103208764648419598?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Midjourney Shares Guide to Its New Edit Model for Consistent Characters</a>
+- <a href="https://x.com/higgsfield_ai/status/2103613236272885984?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Higgsfield AI Open-Sources Hybrid AI-Animated Short "Passport Rush"</a>
+- <a href="https://x.com/higgsfield_ai/status/2103594269806350438?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Higgsfield AI Releases Open-Source Hybrid Short 'Passport Rush'</a>
+- <a href="https://x.com/q_a_i_m_01/status/2103568666080199075?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">AI Video Prompt: Skateboarding Through an Alpine Mountain Road</a>
+- <a href="https://x.com/knightama/status/2103574269133468003?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Knightama Uses AI to Bring Milt Kahl's Pinocchio Pencil Test to Life</a>
+- <a href="https://x.com/donaldjewkes/status/2102801274173587569?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Donald Jewkes Says Claude Opus 5.5 Has the Best Visual Design He's Tested</a>
+- <a href="https://x.com/anabology/status/2103534482930491441?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Creator Says One Prompt Produced a 12-Hour Opus 5.5 Video Project</a>
+- <a href="https://x.com/higgsfield_ai/status/2103958391144227149?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Higgsfield x Claude Opus 5.5 for Motion Design</a>
+- <a href="https://x.com/0xmovez/status/2104216919033192746?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Source Content Unavailable</a>
+- <a href="https://x.com/hxhxhx0916/status/2104248054044086437?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Seedance 2.5 digital fashion MV compared to MiniMax H3</a>
+- <a href="https://x.com/iqrasaifiai/status/2104277900208099623?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Poetry in Motion: A Wuxia Action Short Film Prompt</a>
+- <a href="https://x.com/apob_ai/status/2104481379308503097?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Brief generation failed</a>
+- <a href="https://x.com/aiwithmaha/status/2104390191352103147?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">When the City Falls, She Rises: AI Superhero Battle Sequence</a>
+- <a href="https://x.com/iqrasaifiai/status/2104578689120006257?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Concept Sheet to Boss Fight: Seedance and ChatGPT Prompt Share</a>
+- <a href="https://x.com/mrlarus/status/2104604653845705171?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Cutaway City Posters Made With GPT-Image2</a>
+- <a href="https://x.com/pjaccetturo/status/2105285283298115670?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">PJ Ace Explains Why His Team Spends Tens of Thousands Per Episode</a>
+- <a href="https://x.com/charaspowerai/status/2105372151561724402?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Blind Cook Runs Chaotic Restaurant Kitchen by Instinct</a>
+- <a href="https://x.com/dair_ai/status/2103147453717545278?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Cheap Judge Plus Escalation Keeps Frontier Accuracy at Lower Cost</a>
+- <a href="https://x.com/antlingagi/status/2105335205741596911?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Ant Ling Unveils Ling-3.1-flash: 560B-Parameter Model With 1M-Token Context</a>
+- <a href="https://x.com/ollama/status/2105152056382345544?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Ollama Adds Local Decision Models Like Nimble</a>
+- <a href="https://x.com/arcprize/status/2105391846067249649?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">GPT-6.1 Sol Posts Verified ARC-AGI Scores</a>
+- <a href="https://x.com/epochairesearch/status/2105673716185378845?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Claude Opus 5.5 Tops Epoch Capabilities Index</a>
+- <a href="https://x.com/RulinShao/status/2105282444270448647?s=20" target="_blank" rel="noopener noreferrer">Context Language Models Give LMs Control Over Their Own Context</a>
+- <a href="https://x.com/giohuh_/status/2103671433679224912?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">HomeBody: GPT Astra Controls a Humanoid in an Unseen Kitchen</a>
+- <a href="https://hbr.org/2026/09/a-collection-of-hbrs-most-insightful-research-on-ai-at-work" target="_blank" rel="noopener noreferrer">HBR Collects Research on AI's Real Impact at Work</a>
+- <a href="https://x.com/demishassabis/status/2105348732464070823?s=46&t=OLk-vFzhd1N5tolM7GXrTQ" target="_blank" rel="noopener noreferrer">Google DeepMind Watermarks AI-Designed Proteins with SynthID Bio</a>
+- <a href="https://jobloss.ai/" target="_blank" rel="noopener noreferrer">136,460 US Job Losses Linked to AI Since January 2025</a>
+- <a href="https://layoffhedge.com/" target="_blank" rel="noopener noreferrer">Layoff Tracker Counts 766,000+ Jobs Cut in 2026</a>
+- <a href="https://budgetlab.yale.edu/research/tracking-impact-ai-labor-market" target="_blank" rel="noopener noreferrer">Early Data Shows No Clear AI-Driven Shift in Labor Market</a>
+- <a href="https://www.mercor.com/apex/" target="_blank" rel="noopener noreferrer">Mercor Launches APEX Benchmarks to Measure AI Productivity Across Professional Work</a>
